@@ -1,0 +1,84 @@
+@CHARSET "UTF-8";
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+/*  设置总的大框架 */
+#all {
+	margin-top: 10px;
+	margin-left: 20%;
+}
+/* --------------------设置公用的cs---------------------------- */
+/* 二级标题  */
+.secondName {
+	font-size: 25px;
+	color: blue;
+	font-weight: bolder;
+}
+/*  标识字，例如【学历：本科大三】  */
+.flag {
+	font-size: 18px;
+	font-weight: bolder;
+}
+/*  重点信息  */
+.importKey{
+	font-size: 16px;
+	font-weight: bolder;
+}
+/*过渡图片*/
+.pillar{
+	padding-top: 15px;
+}
+
+/* ------------------------------------------------ */
+/*  修饰 杨建伟   */
+#myName {
+	font-size: 30px;
+	color: blue;
+	font-weight: bolder;
+}
+
+/*  个人信息的Table  */
+#inforT {
+	/* border: dotted */
+}
+
+#inforT tr td {
+	padding-right: 30px;
+}
+/* --------------------教育背景---------------------------- */
+#eduBground {
+	margin-top: 20px;
+}
+
+.introduce {
+	padding-left: 40px;
+}
+
+.ulFlag li {
+	list-style-image: url("../pic/arrow.jpg");
+}
+/* --------------------专业技能与培训---------------------------- */
+#iteamDiv{
+	margin-top: 20px;
+}
+#iteamT tr td{
+	/* border: solid; */
+}
+/* --------------------项目经验---------------------------- */
+#skillDiv{
+	margin-top: 20px;
+}
+.introduceIteam{
+	padding-left: 0px;
+}
+/* --------------------校园实践---------------------------- */
+#schoolDiv{
+	margin-top: 20px;
+}
+
+/* --------------------教育技能---------------------------- */
+#eduSkillDiv{
+	margin-top: 20px;
+}
