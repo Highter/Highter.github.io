@@ -23,6 +23,7 @@ git push origin hexo  //push到Github项目的hexo分支上
 ```git
 git clone -b hexo git@github.com:yourname/yourname.github.io.git  //将Github中hexo分支clone到本地
 cd  yourname.github.io  //切换到刚刚clone的文件夹内
+npm install    //安装必要的所需组件，不用再init
 hexo new post "test"   //新建一个.md文件，并编辑完成自己的博客内容
 git add source  //添加文字
 git commit -m "测试"
