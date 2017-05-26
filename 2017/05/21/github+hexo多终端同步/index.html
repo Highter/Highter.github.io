@@ -94,7 +94,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/05/21/github+hexo多终端同步/index.html">
 <meta property="og:site_name" content="Highter&#39;s blog">
 <meta property="og:description" content="或许你会有这样的需求：在A电脑使用hexo写博客，也想使用B电脑用hexo写博客，这时候我要如何保证A电脑的hexo站点和B电脑的hexo站点信息同步呢？本文将用最简单的思路来解决这个问题。">
-<meta property="og:updated_time" content="2017-05-21T12:21:08.000Z">
+<meta property="og:updated_time" content="2017-05-21T12:22:09.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="github+hexo多终端同步">
 <meta name="twitter:description" content="或许你会有这样的需求：在A电脑使用hexo写博客，也想使用B电脑用hexo写博客，这时候我要如何保证A电脑的hexo站点和B电脑的hexo站点信息同步呢？本文将用最简单的思路来解决这个问题。">
@@ -370,7 +370,7 @@
       
         <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>操作思路很简单，就是把站点的东西全部存放在github项目中的hexo分支中，A、B电脑只要维护项目的hexo分支就行。</p>
 <h3 id="初始化hexo分支-A电脑"><a href="#初始化hexo分支-A电脑" class="headerlink" title="初始化hexo分支(A电脑)"></a>初始化hexo分支(A电脑)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">git init  //初始化本地仓库</div><div class="line">git add . //添加所有的文件(hexo所有的文件)</div><div class="line">git commit -m &quot;blog source hexo&quot;</div><div class="line">git branch hexo  //新建hexo分支</div><div class="line">git checkout hexo  //切换到hexo分支上</div><div class="line">git remote add origin git@github.com:yourname/yourname.github.io.git  //将本地与Github项目对接</div><div class="line">git push origin hexo  //push到Github项目的hexo分支上</div></pre></td></tr></table></figure>
-<h3 id="使用hexo分支-B电脑"><a href="#使用hexo分支-B电脑" class="headerlink" title="使用hexo分支(B电脑)"></a>使用hexo分支(B电脑)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">git clone -b hexo git@github.com:yourname/yourname.github.io.git  //将Github中hexo分支clone到本地</div><div class="line">cd  yourname.github.io  //切换到刚刚clone的文件夹内</div><div class="line">hexo new post &quot;test&quot;   //新建一个.md文件，并编辑完成自己的博客内容</div><div class="line">git add source  //添加文字</div><div class="line">git commit -m &quot;测试&quot;</div><div class="line">git push origin hexo  //更新分支</div><div class="line">hexo d -g   //同步博客到Github中的master</div></pre></td></tr></table></figure>
+<h3 id="使用hexo分支-B电脑"><a href="#使用hexo分支-B电脑" class="headerlink" title="使用hexo分支(B电脑)"></a>使用hexo分支(B电脑)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">git clone -b hexo git@github.com:yourname/yourname.github.io.git  //将Github中hexo分支clone到本地</div><div class="line">cd  yourname.github.io  //切换到刚刚clone的文件夹内</div><div class="line">npm install    //安装必要的所需组件，不用再init</div><div class="line">hexo new post &quot;test&quot;   //新建一个.md文件，并编辑完成自己的博客内容</div><div class="line">git add source  //添加文字</div><div class="line">git commit -m &quot;测试&quot;</div><div class="line">git push origin hexo  //更新分支</div><div class="line">hexo d -g   //同步博客到Github中的master</div></pre></td></tr></table></figure>
 <h3 id="维护hexo分支-A、B电脑"><a href="#维护hexo分支-A、B电脑" class="headerlink" title="维护hexo分支(A、B电脑)"></a>维护hexo分支(A、B电脑)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">git pull origin hexo  //先pull完成本地与远端的融合</div><div class="line">hexo new post &quot; new blog name&quot;</div><div class="line">git add source</div><div class="line">git commit -m &quot;XX&quot;</div><div class="line">git push origin hexo</div><div class="line">hexo d -g</div></pre></td></tr></table></figure>
 
       
@@ -379,6 +379,11 @@
     <div>
       
         
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/wechat-qcode.jpg" alt="Highter wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎您扫一扫上面的微信公众号，订阅我的博客！</div>
+</div>
+
 
       
     </div>
@@ -386,6 +391,27 @@
     <div>
       
         
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/uploads/wechat-reward-image.jpg" alt="Highter WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/uploads/alipay-reward-image.jpg" alt="Highter Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
 
       
     </div>
@@ -414,18 +440,14 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/05/21/管理多个github账号/" rel="next" title="管理多个github账号">
-                <i class="fa fa-chevron-left"></i> 管理多个github账号
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/05/21/virtualbox安装centos/" rel="prev" title="VirtualBox安装centos7">
-                VirtualBox安装centos7 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/05/21/管理多个github账号/" rel="prev" title="管理多个github账号">
+                管理多个github账号 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -632,6 +654,8 @@
   
 
 
+  
+
 
 
 
@@ -653,6 +677,9 @@
 
   
   <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
 
 
   
