@@ -326,7 +326,7 @@ changyan:
 #youyan_uid: your uid
 
 # Support for LiveRe comments system.
-# You can get your uid from https://livere.com/insight/myCode (General web site)
+# You can get your uid from https://livere.com/insightbaidu/myCode (General web site)
 #livere_uid: your uid
 
 # Baidu Share
@@ -466,7 +466,7 @@ algolia_search:
 
 # Local search
 local_search:
-  enable: false
+  enable: true
 
 # External URL with BASE64 encrypt & decrypt
 # Usage: {% exturl text url "title" %}
