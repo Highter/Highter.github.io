@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[CentOS安装JDK]]></title>
+    <url>%2F2017%2F05%2F21%2FCentOS%E5%AE%89%E8%A3%85JDK%2F</url>
+    <content type="text"><![CDATA[创建目录在/usr/local下创建java/jdk目录1234[higher@localhost ~]$ pwd/home/higher[higher@localhost ~]$ mkdir /usr/local/javamkdir: cannot create directory ‘/usr/local/java’: Permission denied 用户权限不足，切换到root用户 123456[higher@localhost ~]$ su rootPassword: [root@localhost higher]# mkdir /usr/local/java[root@localhost higher]# cd /usr/local/java/[root@localhost java]# mkdir jdk[root@localhost java]# cd jdk/ 下载JDK压缩包1[root@localhost jdk]# wget -c http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.tar.gz 如图表示下载成功 解压1[root@localhost jdk]# tar -zxvf jdk-8u131-linux-x64.tar.gz 设置环境变量进入jdk目录，查看当前位置123[root@localhost jdk]# cd jdk1.8.0_131/[root@localhost jdk1.8.0_131]# pwd/usr/local/java/jdk/jdk1.8.0_131 编辑profile文件1[root@localhost jdk1.8.0_131]# vim /etc/profile 在profile文件末尾添加如下内容：12345JAVA_HOME=/usr/local/java/jdk/jdk1.8.0_131JRE_HOME=/usr/local/java/jdk/jdk1.8.0_131/jreCLASS_PATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar:$JRE_HOME/libPATH=$PATH:$JAVA_HOME/bin:$JRE_HOME/binexport JAVA_HOME JRE_HOME CLASS_PATH PATH 让修改生效:1[root@localhost jdk1.8.0_131]# source /etc/profile 验证1[root@localhost jdk1.8.0_131]# java -version 注意:如果查看到得JDK版本为OpenJDK不要惊慌，这是因为在安装CentOS的时候，自带了一个OpenJDK。如图 这个JDK并不是我们想要的，我们需要在/usr/bin目录重新设置java javac 链接。 12345[root@localhost jdk1.8.0_131]# cd /usr/bin/[root@localhost bin]# rm -rf java[root@localhost bin]# rm -rf javac[root@localhost bin]# ln -s /usr/local/java/jdk/jdk1.8.0_131/bin/java java[root@localhost bin]# ln -s /usr/local/java/jdk/jdk1.8.0_131/bin/javac javac 设置之后重新运行命令 java -version ,如图表示成功]]></content>
+      <categories>
+        <category>java</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+        <tag>centos</tag>
+        <tag>jdk</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Jenkins安装]]></title>
+    <url>%2F2017%2F05%2F21%2FJenkins%E5%AE%89%E8%A3%85%2F</url>
+    <content type="text"><![CDATA[下载下载地址： https://jenkins.io/download/选择适合自己电脑型号的版本，我这里下载的是win系统的版本。 安装解压解压，得到jenkins.msi安装包，双击运行 欢迎界面点击Next 选择安装路径选择好安装路径之后，点击Next 安装点击Install，开始安装 等待安装 安装完成到此，Jenkins 已经安装完成，点击Finish跳转到网页上进行配置 配置Jenkins server配置页面在2.6步骤的时候点击Finish会自动跳转到配置页面，如果不小心关闭了，在浏览器上输入 http://127.0.0.1:8080 自行打开 输入默认密码根据提示，找到密码输入，点击Continue 配置Jenkins server安装插件，这里选择推荐的插件进行安装，点击Install suggested plugins即可。当然用户也可以自定义选择插件进行安装，如果这一步选择插件有遗漏的话，后续也可以进行补充安装 等待配置等待安装，等待10分钟左右（电脑配置不同安装时间也不同） 设置用户和密码安装完之后，跳到配置用户和密码的界面，输入相关信息，设置用户和密码，点击 Sava and Finish 即可。如果这一步被跳过，默认用户名就是admin，默认密码就是3.2步骤的密码 配置成功到此，Jenkins server已经配置成功了。点击 Start using Jenkins 开启Jenkins之旅吧！ 访问Jenkins服务器登陆接下来在日常使用中，如果想打开Jenkins服务器，在浏览器输入 http://127.0.0.1:8080 ，填写配置的用户名和密码，点击登陆即可 Jenkins主界面登陆成功之后，就可以进入到Jenkins主界面了。欢迎来到新大陆！ Jenkins服务器维护命令打开控制台/命令行 - &gt;转到您的Jenkins安装目录。分别执行以下命令停止：jenkins.exe stop开始：jenkins.exe start重新启动：jenkins.exe restart]]></content>
+      <categories>
+        <category>jenkins</category>
+      </categories>
+      <tags>
+        <tag>jenkins</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Mac下hexo使用next主题]]></title>
+    <url>%2F2017%2F05%2F21%2FMac%E4%B8%8Bhexo%E5%AE%89%E8%A3%85next%E4%B8%BB%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[Mac下hexo使用next主题下载主题在终端窗口下，切到 Hexo 站点目录下，下载NexT主题。这里我使用的站点目录是 Highter.github.io 1Hunter-Mac:Highter.github.io yangjianwei$ git clone https://github.com/iissnan/hexo-theme-next themes/next 开启主题在站点目录下修改 _config.yml 文件 1theme: next 验证主题验证主题需要启动服务来看效果，在启动服务前先执行 hexo clean 来清理hexo缓存 清理缓存1Hunter-Mac:Highter.github.io yangjianwei$ hexo clean 启动服务1Hunter-Mac:Highter.github.io yangjianwei$ hexo server 查看效果在浏览器输入http://localhost:4000/查看效果 设置主题设置主题方案Muse - 默认 Scheme，这是 NexT 最初的版本，黑白主调，大量留白Mist - Muse 的紧凑版本，整洁有序的单栏外观Pisces - 双栏 Scheme，小家碧玉似的清新Scheme 的切换通过更改 主题配置文件，搜索 scheme 关键字。 你会看到有三行 scheme 的配置，将你需用启用的 scheme 前面注释 # 去除即可这里选择 Pisces作为例子我的 主题配置文件 路径在：1../Highter.github.io/themes/next/_config.yml 修改如下：1234# Schemes#scheme: Muse#scheme: Mistscheme: Pisces 设置语言编辑 站点配置文件， 将 language 设置成你所需要的语言。建议明确设置你所需要的语言，例如选用简体中文，我的 站点配置文件 路径在：1../Highter.github.io/_config.yml 配置如下： 1language: zh-Hans 目前 NexT 支持的语言如以下表格所示： 语言 代码 设定示例 English en language: en 简体中文 zh-Hans language: zh-Hans Français fr-FR language: fr-FR Português pt language: pt or language: pt-BR 繁體中文 zh-hk 或者 zh-tw language: zh-hk Русский язык ru language: ru Deutsch de language: de 日本語 ja language: ja Indonesian id language: id Korean ko language: ko 设置菜单默认运行只有 Home 、Archives 、Tags修改主题 主题配置文件12345678menu: home: / #首页 categories: /categories #分类 about: /about #关于 archives: /archives #归档 tags: /tags #标签 sitemap: /sitemap.xml commonweal: /404.html 设置侧栏left - 靠左放置right - 靠右放置修改主题 主题配置文件12sidebar: position: left 头像编辑主题 主题配置文件 修改字段 avatar， 值设置成头像的链接地址。其中，头像的链接地址可以是： 地址 值 完整的互联网 URI http://example.com/avatar.png 站点内的地址 将头像放置主题目录下的 source/uploads/ （新建 uploads 目录若不存在） 配置为：avatar: /uploads/avatar.png或者 放置在 source/images/ 目录下 配置为：avatar: /images/avatar.png 头像设置示例avatar: /uploads/avatar.jpg 设置站点1234567# Sitetitle: Highter's blog #标题subtitle: Smile at life ^_^ #小标题description: Life is short,I use Java #描述author: Highter #作者language: zh-Hans #语言timezone: 添加文章把自己所写的文章添加到站点的_posts文件下 123Hunter-Mac:Highter.github.io yangjianwei$ hexo cleanINFO Deleted database.Hunter-Mac:Highter.github.io yangjianwei$ hexo s 到这一步我们可以查看一下效果 分类页当我们点击分类的时候可以看到如图 需要初始化分类 hexo new page categories12Hunter-Mac:Highter.github.io yangjianwei$ hexo new page categoriesINFO Created: ~/Documents/msg/github/Highter.github.io/source/categories/index.md 修改~/Documents/msg/github/Highter.github.io/source/categories/index.md 文件123456---title: 分类date: 2017-05-18 22:38:17type: "categories"comments: false--- 标签页需要初始化标签 hexo new page tags12Hunter-Mac:Highter.github.io yangjianwei$ hexo new page tagsINFO Created: ~/Documents/msg/github/Highter.github.io/source/tags/index.md 修改~/Documents/msg/github/Highter.github.io/source/tags/index.md 文件123456---title: 标签date: 2017-05-18 22:57:40type: "tags"comments: false--- 设置文章分类和标签添加类似下面的分类和标签，注意categories和tags的冒号后需要空格12345---title: CentOS安装JDKcategories: [java]tags: [java,centos,jdk]--- 设置阅读更多修改 主题配置文件1234# Please use &lt;!-- more --&gt; in the post to control excerpt accurately.auto_excerpt: enable: true #设置为true length: 150 效果 设置描述123456---title: CentOS安装JDKcategories: [java]tags: [java,centos,jdk]description: 本文介绍在linux系统下安装JDK，这里选择在CentOS系统下实践。#摘要描述--- 结束语上面只是一些关于主题的基础配置，更多详情配置参考Next主题使用文档]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Mac下使用Hexo搭建github博客]]></title>
+    <url>%2F2017%2F05%2F21%2FMac%E4%B8%8B%E4%BD%BF%E7%94%A8Hexo%E6%90%AD%E5%BB%BAgithub%E5%8D%9A%E5%AE%A2%2F</url>
+    <content type="text"><![CDATA[Mac下使用Hexo搭建github博客注意：本文实践是在mac系统下进行，hexo安装参考Mac下安装Hexo一文。 复制github仓库地址在自己的github账号下复制 *.github.io仓库的地址，如果没有，需要新建一个 关联github终端里cd到存放博客的文件夹下，这里我的文件夹名字为 Highter.github.io，编辑_config.yml，滑到最底部，将deploy里的内容改为如下：1234deploy: type: git repository: https://github.com/Highter/Highter.github.io.git // 这个地方填写自己的仓库地址 branch: master 部署到github发布到github1Hunter-Mac:Highter.github.io yangjianwei$ hexo deploy 根据提示输入用户名和密码，回车即可 注意： 运行 hexo deploy部署到github ，若提示“ERROR Deployer not found: git”，如下 则安装hexo-deployer-git,如图表示安装成功 1Hunter-Mac:Highter.github.io yangjianwei$ npm install hexo-deployer-git --save 查看效果在浏览器输入https://yangjianwei.github.io/ 查看效果(细心的朋友可能发现了访问链接和步骤2配置的仓库地址不一样。个人有几个github账号，为了方便大家看到效果，我把测试的东西推送到yangjianwei这个账号上了)]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>github</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Mac下安装Hexo]]></title>
+    <url>%2F2017%2F05%2F21%2FMac%E4%B8%8B%E5%AE%89%E8%A3%85Hexo%2F</url>
+    <content type="text"><![CDATA[安装流程指导安装流程：homebrew—-&gt;nodejs—-&gt;hexo 注意：hexo是基于nodejs的，而安装nodejs这里使用homebrew方式 安装homebrew1ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" 安装nodejs 1brew install node 安装hexo1sudo npm install -g hexo 初始化初始化文件夹创建存放博客的文件夹，这里我创建的文件夹名字为 Highter.github.io(为了之后和github配合使用)12Hunter-Mac:github yangjianwei$ mkdir Highter.github.ioHunter-Mac:github yangjianwei$ hexo init Highter.github.io/ 安装npm切换到所建立文件夹路径下，安装npm12Hunter-Mac:github yangjianwei$ cd Highter.github.io/Hunter-Mac:Highter.github.io yangjianwei$ npm install 启动hexo服务器1Hunter-Mac:Highter.github.io yangjianwei$ hexo server 如图表示启动成功 查看效果在浏览器输入http://localhost:4000 查看效果]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Mac电脑生成SSH key和Github通信]]></title>
+    <url>%2F2017%2F05%2F21%2FMac%E7%94%B5%E8%84%91%E7%94%9F%E6%88%90SSH%20key%E5%92%8CGithub%E9%80%9A%E4%BF%A1%2F</url>
+    <content type="text"><![CDATA[检查ssh1234Hunter-Mac:Highter.github.io yangjianwei$ ls -al ~/.sshtotal 16drwx------ 3 yangjianwei staff 102 Dec 13 15:20 .drwxr-xr-x+ 60 yangjianwei staff 2040 May 14 14:58 .. 注意：如果已经存在ssh key，则可以看到 id_rsa 和 id_rsa.pub ，可跳过第二步。 生成ssh1ssh-keygen -t rsa -b 4096 -C "your_email@example.com" 邮箱填写自己的邮箱，中间一直按回车即可。 查看本地ssh查看ssh的key值 1Hunter-Mac:.ssh yangjianwei$ cat ~/.ssh/id_rsa.pub github配置ssh在github上找到ssh配置页面，Profile-&gt;SSH and GPG keys-&gt;New SSH key，填写ssh的title和key值]]></content>
+      <categories>
+        <category>git</category>
+      </categories>
+      <tags>
+        <tag>github</tag>
+        <tag>ssh</tag>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[VirtualBox安装centos7]]></title>
+    <url>%2F2017%2F05%2F21%2Fvirtualbox%E5%AE%89%E8%A3%85centos%2F</url>
+    <content type="text"><![CDATA[下载下载地址： https://www.centos.org/download/我这里选择的是DVD ISO版本。 创建虚拟系统新建 虚拟电脑名称和系统类型填写名称，这里填写 CentOS7,类型选择 Linux，版本选择 Other Linux(64-bit) 内存大小设置内存大小，我电脑内存是8G的，所以这里我赋予它2G，大家可以根据自己电脑配置情况设置 虚拟硬盘选择 现在创建虚拟硬盘 虚拟硬盘文件类型文件类型选择VDI(VirtualBox 磁盘映像) 动态分配建议选择动态分配，不会占用太多物理空间，根据情况动态分配 文件位置和大小选择保存位置和设置极限大小 设置虚拟系统 系统选择让 光驱 启动优先 存储选择 光驱 位置 网络设置网络，连接方式选择 网络地址转换(NAT) 安装安装首页选择 Install CentOS Linux 7,回车 选择语言 安装主界面进入安装主界面之后要设置 软件选择 和 安装位置 软件选择选择所需要的附加选项，点击 完成 安装位置选择 本地标准磁盘，点击 完成 开始安装设置完 软件选择 和 安装位置 之后点击 开始安装 用户设置设置 ROOT密码 和 创建用户 ROOT密码 创建用户 等待安装设置完 ROOT密码 和 创建用户 之后等待安装 安装完成安装完成之后点击 重启 即可 启动启动前配置启动的时候提示需要同意协议书和设置网络，如果你在步骤 4.3 上已经设置了，这里就不需要再设置 同意协议书勾选 同意 复选框，点击 完成 即可 设置网络点击右边开关，显示 开启 之后点击完成即可 输入用户密码输入步骤 4.4.2 设置的密码 系统主界面登录之后可以看到系统的主界面，如图]]></content>
+      <categories>
+        <category>centos</category>
+      </categories>
+      <tags>
+        <tag>centos</tag>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[github+hexo多终端同步]]></title>
+    <url>%2F2017%2F05%2F21%2Fgithub%2Bhexo%E5%A4%9A%E7%BB%88%E7%AB%AF%E5%90%8C%E6%AD%A5%2F</url>
+    <content type="text"><![CDATA[思路操作思路很简单，就是把站点的东西全部存放在github项目中的hexo分支中，A、B电脑只要维护项目的hexo分支就行。 初始化hexo分支(A电脑)1234567git init //初始化本地仓库git add . //添加所有的文件(hexo所有的文件)git commit -m &quot;blog source hexo&quot;git branch hexo //新建hexo分支git checkout hexo //切换到hexo分支上git remote add origin git@github.com:yourname/yourname.github.io.git //将本地与Github项目对接git push origin hexo //push到Github项目的hexo分支上 使用hexo分支(B电脑)12345678git clone -b hexo git@github.com:yourname/yourname.github.io.git //将Github中hexo分支clone到本地cd yourname.github.io //切换到刚刚clone的文件夹内npm install //安装必要的所需组件，不用再inithexo new post &quot;test&quot; //新建一个.md文件，并编辑完成自己的博客内容git add source //添加文字git commit -m &quot;测试&quot;git push origin hexo //更新分支hexo d -g //同步博客到Github中的master 维护hexo分支(A、B电脑)123456git pull origin hexo //先pull完成本地与远端的融合hexo new post &quot; new blog name&quot;git add sourcegit commit -m &quot;XX&quot;git push origin hexohexo d -g]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[管理多个github账号]]></title>
+    <url>%2F2017%2F05%2F21%2F%E7%AE%A1%E7%90%86%E5%A4%9A%E4%B8%AAgithub%E8%B4%A6%E5%8F%B7%2F</url>
+    <content type="text"><![CDATA[场景描述之前在电脑上添加A账号的ssh，后来使用B账号的github，在提交代码的时候遇到这样的情况，比如fatal: remote error: Permission denied 解决方案参考这篇文章https://code.tutsplus.com/tutorials/quick-tip-how-to-work-with-github-and-multiple-accounts–net-22574]]></content>
+      <categories>
+        <category>git</category>
+      </categories>
+      <tags>
+        <tag>github</tag>
+        <tag>git</tag>
+      </tags>
+  </entry>
+</search>
