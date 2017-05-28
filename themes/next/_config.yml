@@ -298,7 +298,7 @@ mathjax:
 #swiftype_key:
 
 # Baidu Analytics ID
-#baidu_analytics:
+baidu_analytics: 56b3b1b05c9439d781cc973fe59e5816
 
 # Duoshuo ShortName
 #duoshuo_shortname:
@@ -306,7 +306,7 @@ mathjax:
 # Disqus
 disqus:
   enable: false
-  shortname:
+  shortname: highter
   count: true
 
 # Hypercomments
