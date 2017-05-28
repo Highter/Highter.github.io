@@ -37,9 +37,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Mac下hexo使用next主题]]></title>
-    <url>%2F2017%2F05%2F21%2FMac%E4%B8%8Bhexo%E5%AE%89%E8%A3%85next%E4%B8%BB%E9%A2%98%2F</url>
-    <content type="text"><![CDATA[Mac下hexo使用next主题下载主题在终端窗口下，切到 Hexo 站点目录下，下载NexT主题。这里我使用的站点目录是 Highter.github.io 1Hunter-Mac:Highter.github.io yangjianwei$ git clone https://github.com/iissnan/hexo-theme-next themes/next 开启主题在站点目录下修改 _config.yml 文件 1theme: next 验证主题验证主题需要启动服务来看效果，在启动服务前先执行 hexo clean 来清理hexo缓存 清理缓存1Hunter-Mac:Highter.github.io yangjianwei$ hexo clean 启动服务1Hunter-Mac:Highter.github.io yangjianwei$ hexo server 查看效果在浏览器输入http://localhost:4000/查看效果 设置主题设置主题方案Muse - 默认 Scheme，这是 NexT 最初的版本，黑白主调，大量留白Mist - Muse 的紧凑版本，整洁有序的单栏外观Pisces - 双栏 Scheme，小家碧玉似的清新Scheme 的切换通过更改 主题配置文件，搜索 scheme 关键字。 你会看到有三行 scheme 的配置，将你需用启用的 scheme 前面注释 # 去除即可这里选择 Pisces作为例子我的 主题配置文件 路径在：1../Highter.github.io/themes/next/_config.yml 修改如下：1234# Schemes#scheme: Muse#scheme: Mistscheme: Pisces 设置语言编辑 站点配置文件， 将 language 设置成你所需要的语言。建议明确设置你所需要的语言，例如选用简体中文，我的 站点配置文件 路径在：1../Highter.github.io/_config.yml 配置如下： 1language: zh-Hans 目前 NexT 支持的语言如以下表格所示： 语言 代码 设定示例 English en language: en 简体中文 zh-Hans language: zh-Hans Français fr-FR language: fr-FR Português pt language: pt or language: pt-BR 繁體中文 zh-hk 或者 zh-tw language: zh-hk Русский язык ru language: ru Deutsch de language: de 日本語 ja language: ja Indonesian id language: id Korean ko language: ko 设置菜单默认运行只有 Home 、Archives 、Tags修改主题 主题配置文件12345678menu: home: / #首页 categories: /categories #分类 about: /about #关于 archives: /archives #归档 tags: /tags #标签 sitemap: /sitemap.xml commonweal: /404.html 设置侧栏left - 靠左放置right - 靠右放置修改主题 主题配置文件12sidebar: position: left 头像编辑主题 主题配置文件 修改字段 avatar， 值设置成头像的链接地址。其中，头像的链接地址可以是： 地址 值 完整的互联网 URI http://example.com/avatar.png 站点内的地址 将头像放置主题目录下的 source/uploads/ （新建 uploads 目录若不存在） 配置为：avatar: /uploads/avatar.png或者 放置在 source/images/ 目录下 配置为：avatar: /images/avatar.png 头像设置示例avatar: /uploads/avatar.jpg 设置站点1234567# Sitetitle: Highter's blog #标题subtitle: Smile at life ^_^ #小标题description: Life is short,I use Java #描述author: Highter #作者language: zh-Hans #语言timezone: 添加文章把自己所写的文章添加到站点的_posts文件下 123Hunter-Mac:Highter.github.io yangjianwei$ hexo cleanINFO Deleted database.Hunter-Mac:Highter.github.io yangjianwei$ hexo s 到这一步我们可以查看一下效果 分类页当我们点击分类的时候可以看到如图 需要初始化分类 hexo new page categories12Hunter-Mac:Highter.github.io yangjianwei$ hexo new page categoriesINFO Created: ~/Documents/msg/github/Highter.github.io/source/categories/index.md 修改~/Documents/msg/github/Highter.github.io/source/categories/index.md 文件123456---title: 分类date: 2017-05-18 22:38:17type: "categories"comments: false--- 标签页需要初始化标签 hexo new page tags12Hunter-Mac:Highter.github.io yangjianwei$ hexo new page tagsINFO Created: ~/Documents/msg/github/Highter.github.io/source/tags/index.md 修改~/Documents/msg/github/Highter.github.io/source/tags/index.md 文件123456---title: 标签date: 2017-05-18 22:57:40type: "tags"comments: false--- 设置文章分类和标签添加类似下面的分类和标签，注意categories和tags的冒号后需要空格12345---title: CentOS安装JDKcategories: [java]tags: [java,centos,jdk]--- 设置阅读更多修改 主题配置文件1234# Please use &lt;!-- more --&gt; in the post to control excerpt accurately.auto_excerpt: enable: true #设置为true length: 150 效果 设置描述123456---title: CentOS安装JDKcategories: [java]tags: [java,centos,jdk]description: 本文介绍在linux系统下安装JDK，这里选择在CentOS系统下实践。#摘要描述--- 结束语上面只是一些关于主题的基础配置，更多详情配置参考Next主题使用文档]]></content>
+    <title><![CDATA[Mac下安装Hexo]]></title>
+    <url>%2F2017%2F05%2F21%2FMac%E4%B8%8B%E5%AE%89%E8%A3%85Hexo%2F</url>
+    <content type="text"><![CDATA[安装流程指导安装流程：homebrew—-&gt;nodejs—-&gt;hexo 注意：hexo是基于nodejs的，而安装nodejs这里使用homebrew方式 安装homebrew1ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" 安装nodejs 1brew install node 安装hexo1sudo npm install -g hexo 初始化初始化文件夹创建存放博客的文件夹，这里我创建的文件夹名字为 Highter.github.io(为了之后和github配合使用)12Hunter-Mac:github yangjianwei$ mkdir Highter.github.ioHunter-Mac:github yangjianwei$ hexo init Highter.github.io/ 安装npm切换到所建立文件夹路径下，安装npm12Hunter-Mac:github yangjianwei$ cd Highter.github.io/Hunter-Mac:Highter.github.io yangjianwei$ npm install 启动hexo服务器1Hunter-Mac:Highter.github.io yangjianwei$ hexo server 如图表示启动成功 查看效果在浏览器输入http://localhost:4000 查看效果]]></content>
       <categories>
         <category>hexo</category>
       </categories>
@@ -48,9 +48,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Mac下安装Hexo]]></title>
-    <url>%2F2017%2F05%2F21%2FMac%E4%B8%8B%E5%AE%89%E8%A3%85Hexo%2F</url>
-    <content type="text"><![CDATA[安装流程指导安装流程：homebrew—-&gt;nodejs—-&gt;hexo 注意：hexo是基于nodejs的，而安装nodejs这里使用homebrew方式 安装homebrew1ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" 安装nodejs 1brew install node 安装hexo1sudo npm install -g hexo 初始化初始化文件夹创建存放博客的文件夹，这里我创建的文件夹名字为 Highter.github.io(为了之后和github配合使用)12Hunter-Mac:github yangjianwei$ mkdir Highter.github.ioHunter-Mac:github yangjianwei$ hexo init Highter.github.io/ 安装npm切换到所建立文件夹路径下，安装npm12Hunter-Mac:github yangjianwei$ cd Highter.github.io/Hunter-Mac:Highter.github.io yangjianwei$ npm install 启动hexo服务器1Hunter-Mac:Highter.github.io yangjianwei$ hexo server 如图表示启动成功 查看效果在浏览器输入http://localhost:4000 查看效果]]></content>
+    <title><![CDATA[Mac下hexo使用next主题]]></title>
+    <url>%2F2017%2F05%2F21%2FMac%E4%B8%8Bhexo%E5%AE%89%E8%A3%85next%E4%B8%BB%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[Mac下hexo使用next主题下载主题在终端窗口下，切到 Hexo 站点目录下，下载NexT主题。这里我使用的站点目录是 Highter.github.io 1Hunter-Mac:Highter.github.io yangjianwei$ git clone https://github.com/iissnan/hexo-theme-next themes/next 开启主题在站点目录下修改 _config.yml 文件 1theme: next 验证主题验证主题需要启动服务来看效果，在启动服务前先执行 hexo clean 来清理hexo缓存 清理缓存1Hunter-Mac:Highter.github.io yangjianwei$ hexo clean 启动服务1Hunter-Mac:Highter.github.io yangjianwei$ hexo server 查看效果在浏览器输入http://localhost:4000/查看效果 设置主题设置主题方案Muse - 默认 Scheme，这是 NexT 最初的版本，黑白主调，大量留白Mist - Muse 的紧凑版本，整洁有序的单栏外观Pisces - 双栏 Scheme，小家碧玉似的清新Scheme 的切换通过更改 主题配置文件，搜索 scheme 关键字。 你会看到有三行 scheme 的配置，将你需用启用的 scheme 前面注释 # 去除即可这里选择 Pisces作为例子我的 主题配置文件 路径在：1../Highter.github.io/themes/next/_config.yml 修改如下：1234# Schemes#scheme: Muse#scheme: Mistscheme: Pisces 设置语言编辑 站点配置文件， 将 language 设置成你所需要的语言。建议明确设置你所需要的语言，例如选用简体中文，我的 站点配置文件 路径在：1../Highter.github.io/_config.yml 配置如下： 1language: zh-Hans 目前 NexT 支持的语言如以下表格所示： 语言 代码 设定示例 English en language: en 简体中文 zh-Hans language: zh-Hans Français fr-FR language: fr-FR Português pt language: pt or language: pt-BR 繁體中文 zh-hk 或者 zh-tw language: zh-hk Русский язык ru language: ru Deutsch de language: de 日本語 ja language: ja Indonesian id language: id Korean ko language: ko 设置菜单默认运行只有 Home 、Archives 、Tags修改主题 主题配置文件12345678menu: home: / #首页 categories: /categories #分类 about: /about #关于 archives: /archives #归档 tags: /tags #标签 sitemap: /sitemap.xml commonweal: /404.html 设置侧栏left - 靠左放置right - 靠右放置修改主题 主题配置文件12sidebar: position: left 头像编辑主题 主题配置文件 修改字段 avatar， 值设置成头像的链接地址。其中，头像的链接地址可以是： 地址 值 完整的互联网 URI http://example.com/avatar.png 站点内的地址 将头像放置主题目录下的 source/uploads/ （新建 uploads 目录若不存在） 配置为：avatar: /uploads/avatar.png或者 放置在 source/images/ 目录下 配置为：avatar: /images/avatar.png 头像设置示例avatar: /uploads/avatar.jpg 设置站点1234567# Sitetitle: Highter's blog #标题subtitle: Smile at life ^_^ #小标题description: Life is short,I use Java #描述author: Highter #作者language: zh-Hans #语言timezone: 添加文章把自己所写的文章添加到站点的_posts文件下 123Hunter-Mac:Highter.github.io yangjianwei$ hexo cleanINFO Deleted database.Hunter-Mac:Highter.github.io yangjianwei$ hexo s 到这一步我们可以查看一下效果 分类页当我们点击分类的时候可以看到如图 需要初始化分类 hexo new page categories12Hunter-Mac:Highter.github.io yangjianwei$ hexo new page categoriesINFO Created: ~/Documents/msg/github/Highter.github.io/source/categories/index.md 修改~/Documents/msg/github/Highter.github.io/source/categories/index.md 文件123456---title: 分类date: 2017-05-18 22:38:17type: "categories"comments: false--- 标签页需要初始化标签 hexo new page tags12Hunter-Mac:Highter.github.io yangjianwei$ hexo new page tagsINFO Created: ~/Documents/msg/github/Highter.github.io/source/tags/index.md 修改~/Documents/msg/github/Highter.github.io/source/tags/index.md 文件123456---title: 标签date: 2017-05-18 22:57:40type: "tags"comments: false--- 设置文章分类和标签添加类似下面的分类和标签，注意categories和tags的冒号后需要空格12345---title: CentOS安装JDKcategories: [java]tags: [java,centos,jdk]--- 设置阅读更多修改 主题配置文件1234# Please use &lt;!-- more --&gt; in the post to control excerpt accurately.auto_excerpt: enable: true #设置为true length: 150 效果 设置描述123456---title: CentOS安装JDKcategories: [java]tags: [java,centos,jdk]description: 本文介绍在linux系统下安装JDK，这里选择在CentOS系统下实践。#摘要描述--- 结束语上面只是一些关于主题的基础配置，更多详情配置参考Next主题使用文档]]></content>
       <categories>
         <category>hexo</category>
       </categories>
@@ -84,17 +84,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[github+hexo多终端同步]]></title>
-    <url>%2F2017%2F05%2F21%2Fgithub%2Bhexo%E5%A4%9A%E7%BB%88%E7%AB%AF%E5%90%8C%E6%AD%A5%2F</url>
-    <content type="text"><![CDATA[思路操作思路很简单，就是把站点的东西全部存放在github项目中的hexo分支中，A、B电脑只要维护项目的hexo分支就行。 初始化hexo分支(A电脑)1234567git init //初始化本地仓库git add . //添加所有的文件(hexo所有的文件)git commit -m &quot;blog source hexo&quot;git branch hexo //新建hexo分支git checkout hexo //切换到hexo分支上git remote add origin git@github.com:yourname/yourname.github.io.git //将本地与Github项目对接git push origin hexo //push到Github项目的hexo分支上 使用hexo分支(B电脑)12345678git clone -b hexo git@github.com:yourname/yourname.github.io.git //将Github中hexo分支clone到本地cd yourname.github.io //切换到刚刚clone的文件夹内npm install //安装必要的所需组件，不用再inithexo new post &quot;test&quot; //新建一个.md文件，并编辑完成自己的博客内容git add source //添加文字git commit -m &quot;测试&quot;git push origin hexo //更新分支hexo d -g //同步博客到Github中的master 维护hexo分支(A、B电脑)123456git pull origin hexo //先pull完成本地与远端的融合hexo new post &quot; new blog name&quot;git add sourcegit commit -m &quot;XX&quot;git push origin hexohexo d -g]]></content>
-      <categories>
-        <category>hexo</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[管理多个github账号]]></title>
     <url>%2F2017%2F05%2F21%2F%E7%AE%A1%E7%90%86%E5%A4%9A%E4%B8%AAgithub%E8%B4%A6%E5%8F%B7%2F</url>
     <content type="text"><![CDATA[场景描述之前在电脑上添加A账号的ssh，后来使用B账号的github，在提交代码的时候遇到这样的情况，比如fatal: remote error: Permission denied 解决方案参考这篇文章https://code.tutsplus.com/tutorials/quick-tip-how-to-work-with-github-and-multiple-accounts–net-22574]]></content>
@@ -104,6 +93,17 @@
       <tags>
         <tag>github</tag>
         <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[github+hexo多终端同步]]></title>
+    <url>%2F2017%2F05%2F21%2Fgithub%2Bhexo%E5%A4%9A%E7%BB%88%E7%AB%AF%E5%90%8C%E6%AD%A5%2F</url>
+    <content type="text"><![CDATA[思路操作思路很简单，就是把站点的东西全部存放在github项目中的hexo分支中，A、B电脑只要维护项目的hexo分支就行。 初始化hexo分支(A电脑)1234567git init //初始化本地仓库git add . //添加所有的文件(hexo所有的文件)git commit -m &quot;blog source hexo&quot;git branch hexo //新建hexo分支git checkout hexo //切换到hexo分支上git remote add origin git@github.com:yourname/yourname.github.io.git //将本地与Github项目对接git push origin hexo //push到Github项目的hexo分支上 使用hexo分支(B电脑)12345678git clone -b hexo git@github.com:yourname/yourname.github.io.git //将Github中hexo分支clone到本地cd yourname.github.io //切换到刚刚clone的文件夹内npm install //安装必要的所需组件，不用再inithexo new post &quot;test&quot; //新建一个.md文件，并编辑完成自己的博客内容git add source //添加文字git commit -m &quot;测试&quot;git push origin hexo //更新分支hexo d -g //同步博客到Github中的master 维护hexo分支(A、B电脑)123456git pull origin hexo //先pull完成本地与远端的融合hexo new post &quot; new blog name&quot;git add sourcegit commit -m &quot;XX&quot;git push origin hexohexo d -g]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
       </tags>
   </entry>
 </search>
