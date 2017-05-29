@@ -1,5 +1,6 @@
 ---
 title: Mac下安装Hexo
+date: 2017-05-26
 categories: [hexo]
 tags: [hexo]
 description: 本文介绍Hexo的安装过程，是Hexo的入门教程。

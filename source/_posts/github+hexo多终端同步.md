@@ -1,6 +1,6 @@
 ---
 title: github+hexo多终端同步
-date: 2017-05-21
+date: 2017-05-28
 categories: [hexo]
 tags: [hexo]
 description: 或许你会有这样的需求：在A电脑使用hexo写博客，也想使用B电脑用hexo写博客，这时候我要如何保证A电脑的hexo站点和B电脑的hexo站点信息同步呢？本文将用最简单的思路来解决这个问题。

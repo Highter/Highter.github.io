@@ -1,5 +1,6 @@
 ---
 title: Jenkins安装
+date: 2017-04-18
 categories: [jenkins]
 tags: [jenkins]
 description: Jenkins是一个可扩展的持续集成引擎,它非常易于安装和配置，使用Jenkins可以搭建持续集成环境。安装Jenkins安装只是一个开始！

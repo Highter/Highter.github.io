@@ -1,8 +1,10 @@
 ---
 title: CentOS安装JDK
+date: 2017-05-01
 categories: [java]
 tags: [java,centos,jdk]
 description: 本文介绍在linux系统下安装JDK，这里选择在CentOS系统下实践。
+comments: true
 ---
 
 ### 创建目录  

@@ -1,5 +1,6 @@
 ---
 title: Mac下hexo使用next主题
+date: 2017-05-26
 categories: [hexo]
 tags: [hexo]
 description: 本文介绍在mac下如何使用hexo配置next主题。

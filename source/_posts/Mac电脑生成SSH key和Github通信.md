@@ -1,5 +1,6 @@
 ---
 title: Mac电脑生成SSH key和Github通信
+date: 2017-05-27
 categories: [git]
 tags: [ssh,git,github]
 description: ssh通信可以避免每次代码提交都输入密码的麻烦。

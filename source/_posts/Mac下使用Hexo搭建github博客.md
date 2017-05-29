@@ -1,5 +1,6 @@
 ---
 title: Mac下使用Hexo搭建github博客
+date: 2017-05-26
 categories: [hexo]
 tags: [hexo,github]
 description: 拥有自己特色主题的博客无疑是一件很酷的事情，而且还是免费的！这里我将给大家分享一下hexo+github的简单使用。
