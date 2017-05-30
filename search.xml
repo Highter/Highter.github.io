@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[码农日常工具推荐]]></title>
+    <url>%2F2017%2F05%2F30%2F%E7%A0%81%E5%86%9C%E6%97%A5%E5%B8%B8%E5%B7%A5%E5%85%B7%E6%8E%A8%E8%8D%90%2F</url>
+    <content type="text"><![CDATA[原文：码农日常工具推荐&amp;version=12020002&amp;nettype=WIFI&amp;fontScale=100&amp;pass_ticket=mq732q8Q2kBhnWhBp6YUErhPlPmIeyypzr8EdY1eIa47Yg9h3I5upDN20tgjw6WE) 文档工具-Dash都说文档在手,天下我有。这个工具对于我这种喜欢前后端折腾的人来说是非常有用的,因为很多时候,我往往只记住思路,但是具体代码记不住,这个工具有很好的保存代码块功能.比如请求与响应,总有你想知道的这篇中的各种请求,我们就可以用代码块来保存,另外还可以通过占位符,在点击Use时替换掉占位符的内容 其次,这个工具还有另一个很有用的功能.比如我们有这么个场景,我们查JavaSE文档的时候是不是经常遇到这么个问题,就是我们想查某个方法,但是却要知道它在哪个类才能查,而不能根据这个方法直接去查.但是现实中,我们之所以要查往往是不记得类名,所以这个体验就不是很好,而这个工具很好的解决了这个问题.如图 如果有用过其他文档工具的同学就会发现,其他的工具是不会有这个直接根据方法就能搜索的功能的,都是必须要找到关键类才能搜索.而且还提供了Google和stackoverflow,非常贴心.该工具提供了海量文档,不过都是英文的,当然比较常用的比如JavaSE、Jquery、PHP这些是有中文的,搜一下就出来,搞不定再留言。 思维导图工具-MindNode这是一款比较美观的思维导图软件,我们平时用得比较多的还有XMind,XMind在Windows,Mac都有,但是就是颜值不高,MindNode有多种主题切换,比较好看,像我之前写的图解Java面试题系列的都是用的MindNode,具体效果可以翻看我简书之前的文章。 ###绘图工具-OmniGraffle直接先上图,比如我之前画的发送验证码的业务思维图,如果能把这个图画出来,那些把代码写出了应该是比较轻松的事。 下面就来说下,怎么画这个图。 打开软件打开软件 随意选择一个都是OK的,比如选择第一个 绘图选中方块 黑色背景设置配色这个你可以根据自己的喜好来,比如我这里用的是RGB(62,61,63) 设置好颜色之后,你可以把他添加到喜爱的 组合图形 从图中就可以看出,其实这些方块都是一些组合图形.配色这些可以自己任意调,当然,OmniGraffle本身也提供了很多好看的配色方案,可以自己尝试。 注意事项OmniGraffle中提供了大量的绘图原型,可以自己摸索,组合,配色出好看的方案.然后就是各种拖拽.但是要注意的是,黑色的背景要放在图层的最下面,图层区域就是图中Layer区域,这个你用着用着自然明白,遇到坑再留言。其他工具 其他工具不定期更新,想到什么更新什么,这里先简单一笔带过,比较感兴趣评论留言我再详细更新。 &gt;&gt;Postman Chrome插件，调试restful api的神器,比较喜欢的是他的书签功能。 &gt;&gt;jsonView Chrome插件，请求json时,能将返回的json数据格式化,非常方便,强烈推荐。 &gt;&gt;iTerm2 Mac的终端工具，网上有很多好看的配色,追求颜值的不妨一试。 &gt;&gt;欧路词典 ，比较好用的翻译软件。 &gt;&gt;MacDown 我个人比较喜欢的Mac上的Markdown编写工具,支持多种Markdown样式风格。 &gt;&gt;Shadowsocks 科学上网工具，码农必备。 &gt;&gt;Snap Mac上的手势切换工具，和Alfred的工作流差不多,不过比他轻量。 &gt;&gt;TeamViewer 远程控制电脑工具，可以远程帮妹子修电脑,当然我都是只修电脑不过夜的。 &gt;&gt;licecap Mac上gif录图的工具。 &gt;&gt;PaintCode 动画生成Object-C代码的工具,让你不再害怕酷炫动画。 &gt;&gt;HHEnumeration 最喜欢的一个Xcode插件,非常友好的枚举提示,可以github搜索一下,iOS开发强烈推荐。 &gt;&gt;Simpholders iOS开发的应该都用过,快速到达沙盒。]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>工具</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[git status中文显示乱码]]></title>
     <url>%2F2017%2F05%2F29%2Fgit%20status%E4%B8%AD%E6%96%87%E6%98%BE%E7%A4%BA%E4%B9%B1%E7%A0%81%2F</url>
     <content type="text"><![CDATA[git status显示类似如下乱码1Jenkins\345\256\211\350\243\205(war\345\214\205\345\275\242\345\274\217).md 解决方法1git config core.quotepath false]]></content>
@@ -48,13 +59,14 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Mac下安装Hexo]]></title>
-    <url>%2F2017%2F05%2F26%2FMac%E4%B8%8B%E5%AE%89%E8%A3%85Hexo%2F</url>
-    <content type="text"><![CDATA[安装流程指导安装流程：homebrew—-&gt;nodejs—-&gt;hexo 注意：hexo是基于nodejs的，而安装nodejs这里使用homebrew方式 安装homebrew1ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" 安装nodejs 1brew install node 安装hexo1sudo npm install -g hexo 初始化初始化文件夹创建存放博客的文件夹，这里我创建的文件夹名字为 Highter.github.io(为了之后和github配合使用)12Hunter-Mac:github yangjianwei$ mkdir Highter.github.ioHunter-Mac:github yangjianwei$ hexo init Highter.github.io/ 安装npm切换到所建立文件夹路径下，安装npm12Hunter-Mac:github yangjianwei$ cd Highter.github.io/Hunter-Mac:Highter.github.io yangjianwei$ npm install 启动hexo服务器1Hunter-Mac:Highter.github.io yangjianwei$ hexo server 如图表示启动成功 查看效果在浏览器输入http://localhost:4000 查看效果]]></content>
+    <title><![CDATA[Mac下使用Hexo搭建github博客]]></title>
+    <url>%2F2017%2F05%2F26%2FMac%E4%B8%8B%E4%BD%BF%E7%94%A8Hexo%E6%90%AD%E5%BB%BAgithub%E5%8D%9A%E5%AE%A2%2F</url>
+    <content type="text"><![CDATA[Mac下使用Hexo搭建github博客注意：本文实践是在mac系统下进行，hexo安装参考Mac下安装Hexo一文。 复制github仓库地址在自己的github账号下复制 *.github.io仓库的地址，如果没有，需要新建一个 关联github终端里cd到存放博客的文件夹下，这里我的文件夹名字为 Highter.github.io，编辑_config.yml，滑到最底部，将deploy里的内容改为如下：1234deploy: type: git repository: https://github.com/Highter/Highter.github.io.git // 这个地方填写自己的仓库地址 branch: master 部署到github发布到github1Hunter-Mac:Highter.github.io yangjianwei$ hexo deploy 根据提示输入用户名和密码，回车即可 注意： 运行 hexo deploy部署到github ，若提示“ERROR Deployer not found: git”，如下 则安装hexo-deployer-git,如图表示安装成功 1Hunter-Mac:Highter.github.io yangjianwei$ npm install hexo-deployer-git --save 查看效果在浏览器输入https://yangjianwei.github.io/ 查看效果(细心的朋友可能发现了访问链接和步骤2配置的仓库地址不一样。个人有几个github账号，为了方便大家看到效果，我把测试的东西推送到yangjianwei这个账号上了)]]></content>
       <categories>
         <category>hexo</category>
       </categories>
       <tags>
+        <tag>github</tag>
         <tag>hexo</tag>
       </tags>
   </entry>
@@ -70,14 +82,13 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Mac下使用Hexo搭建github博客]]></title>
-    <url>%2F2017%2F05%2F26%2FMac%E4%B8%8B%E4%BD%BF%E7%94%A8Hexo%E6%90%AD%E5%BB%BAgithub%E5%8D%9A%E5%AE%A2%2F</url>
-    <content type="text"><![CDATA[Mac下使用Hexo搭建github博客注意：本文实践是在mac系统下进行，hexo安装参考Mac下安装Hexo一文。 复制github仓库地址在自己的github账号下复制 *.github.io仓库的地址，如果没有，需要新建一个 关联github终端里cd到存放博客的文件夹下，这里我的文件夹名字为 Highter.github.io，编辑_config.yml，滑到最底部，将deploy里的内容改为如下：1234deploy: type: git repository: https://github.com/Highter/Highter.github.io.git // 这个地方填写自己的仓库地址 branch: master 部署到github发布到github1Hunter-Mac:Highter.github.io yangjianwei$ hexo deploy 根据提示输入用户名和密码，回车即可 注意： 运行 hexo deploy部署到github ，若提示“ERROR Deployer not found: git”，如下 则安装hexo-deployer-git,如图表示安装成功 1Hunter-Mac:Highter.github.io yangjianwei$ npm install hexo-deployer-git --save 查看效果在浏览器输入https://yangjianwei.github.io/ 查看效果(细心的朋友可能发现了访问链接和步骤2配置的仓库地址不一样。个人有几个github账号，为了方便大家看到效果，我把测试的东西推送到yangjianwei这个账号上了)]]></content>
+    <title><![CDATA[Mac下安装Hexo]]></title>
+    <url>%2F2017%2F05%2F26%2FMac%E4%B8%8B%E5%AE%89%E8%A3%85Hexo%2F</url>
+    <content type="text"><![CDATA[安装流程指导安装流程：homebrew—-&gt;nodejs—-&gt;hexo 注意：hexo是基于nodejs的，而安装nodejs这里使用homebrew方式 安装homebrew1ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" 安装nodejs 1brew install node 安装hexo1sudo npm install -g hexo 初始化初始化文件夹创建存放博客的文件夹，这里我创建的文件夹名字为 Highter.github.io(为了之后和github配合使用)12Hunter-Mac:github yangjianwei$ mkdir Highter.github.ioHunter-Mac:github yangjianwei$ hexo init Highter.github.io/ 安装npm切换到所建立文件夹路径下，安装npm12Hunter-Mac:github yangjianwei$ cd Highter.github.io/Hunter-Mac:Highter.github.io yangjianwei$ npm install 启动hexo服务器1Hunter-Mac:Highter.github.io yangjianwei$ hexo server 如图表示启动成功 查看效果在浏览器输入http://localhost:4000 查看效果]]></content>
       <categories>
         <category>hexo</category>
       </categories>
       <tags>
-        <tag>github</tag>
         <tag>hexo</tag>
       </tags>
   </entry>
@@ -94,14 +105,15 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Tomcat报错： Tomcat version 7.0 only supports J2EE 1.2, 1.3, 1.4, and Java EE 5 and 6 Web modules]]></title>
-    <url>%2F2017%2F05%2F04%2FTomcat%E6%8A%A5%E9%94%99%EF%BC%9A%20Tomcat%20version%207.0%20only%20supports%20J2EE%201.2%2C%201.3%2C%201.4%2C%20and%20Java%20EE%205%20and%206%20Web%20modules%2F</url>
-    <content type="text"><![CDATA[问题描述web项目加载到tomcat时报错： Tomcat version 7.0 only supports J2EE 1.2, 1.3, 1.4, and Java EE 5 and 6 Web modules如图： 处理方法修改 org.eclipse.wst.common.project.facet.core.xml文件。在eclipse的workspace里面找到该项目，在项目下找到org.eclipse.wst.common.project.facet.core.xml文件。路径：.settings-&gt;org.eclipse.wst.common.project.facet.core.xml打开文件，如下123456789&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;faceted-project&gt; &lt;fixed facet="wst.jsdt.web"/&gt; &lt;installed facet="java" version="1.7"/&gt; &lt;installed facet="jst.web" version="3.1"/&gt; &lt;installed facet="jst.jsf" version="2.2"/&gt; &lt;installed facet="jst.jaxrs" version="2.0"/&gt; &lt;installed facet="wst.jsdt.web" version="1.0"/&gt;&lt;/faceted-project&gt; 修改 ，把version修改成3.0，修改完如下123456789&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;faceted-project&gt; &lt;fixed facet="wst.jsdt.web"/&gt; &lt;installed facet="java" version="1.7"/&gt; &lt;installed facet="jst.web" version="3.0"/&gt; &lt;installed facet="jst.jsf" version="2.2"/&gt; &lt;installed facet="jst.jaxrs" version="2.0"/&gt; &lt;installed facet="wst.jsdt.web" version="1.0"/&gt;&lt;/faceted-project&gt; 处理成果]]></content>
+    <title><![CDATA[Eclipse中导入GitHub项目]]></title>
+    <url>%2F2017%2F05%2F04%2FEclipse%E4%B8%AD%E5%AF%BC%E5%85%A5GitHub%E9%A1%B9%E7%9B%AE%2F</url>
+    <content type="text"><![CDATA[注意：安装前请确认一下电脑是否安装了Git，Git的安装可以参考Git安装一文。 选择工程Eclipse中选择File-》import-》Git-》Projects from Git，点击 Next 选择仓库源选择Clone URI，点击 Next 配置仓库源信息URI填写git的仓库URL，并在Authentication中填写GitHub的用户名和密码，打钩 Store in Secure Store记住密码，方便下次进来不需要再输入用户名和密码，这里的测试仓库源地址为 ：https://github.com/Highter/SpringBoot-SourceCode.git，配置完之后点击 Next 选择分支由于项目只有一个master分支，就选择master即可，点击Next 选择本地仓库位置在Directory点击Browse选择创建的本地仓库位置 等到项目下载 导出项目类型选择导出项目名称，这里选择Import as general project，导出成为一个普通工程，最后点击Next 配置项目名称配置完项目名称点击 Finish 即可]]></content>
       <categories>
-        <category>tomcat</category>
+        <category>tools</category>
       </categories>
       <tags>
-        <tag>tomcat</tag>
+        <tag>eclipse</tag>
+        <tag>github</tag>
       </tags>
   </entry>
   <entry>
@@ -118,15 +130,14 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Eclipse中导入GitHub项目]]></title>
-    <url>%2F2017%2F05%2F04%2FEclipse%E4%B8%AD%E5%AF%BC%E5%85%A5GitHub%E9%A1%B9%E7%9B%AE%2F</url>
-    <content type="text"><![CDATA[注意：安装前请确认一下电脑是否安装了Git，Git的安装可以参考Git安装一文。 选择工程Eclipse中选择File-》import-》Git-》Projects from Git，点击 Next 选择仓库源选择Clone URI，点击 Next 配置仓库源信息URI填写git的仓库URL，并在Authentication中填写GitHub的用户名和密码，打钩 Store in Secure Store记住密码，方便下次进来不需要再输入用户名和密码，这里的测试仓库源地址为 ：https://github.com/Highter/SpringBoot-SourceCode.git，配置完之后点击 Next 选择分支由于项目只有一个master分支，就选择master即可，点击Next 选择本地仓库位置在Directory点击Browse选择创建的本地仓库位置 等到项目下载 导出项目类型选择导出项目名称，这里选择Import as general project，导出成为一个普通工程，最后点击Next 配置项目名称配置完项目名称点击 Finish 即可]]></content>
+    <title><![CDATA[Tomcat报错： Tomcat version 7.0 only supports J2EE 1.2, 1.3, 1.4, and Java EE 5 and 6 Web modules]]></title>
+    <url>%2F2017%2F05%2F04%2FTomcat%E6%8A%A5%E9%94%99%EF%BC%9A%20Tomcat%20version%207.0%20only%20supports%20J2EE%201.2%2C%201.3%2C%201.4%2C%20and%20Java%20EE%205%20and%206%20Web%20modules%2F</url>
+    <content type="text"><![CDATA[问题描述web项目加载到tomcat时报错： Tomcat version 7.0 only supports J2EE 1.2, 1.3, 1.4, and Java EE 5 and 6 Web modules如图： 处理方法修改 org.eclipse.wst.common.project.facet.core.xml文件。在eclipse的workspace里面找到该项目，在项目下找到org.eclipse.wst.common.project.facet.core.xml文件。路径：.settings-&gt;org.eclipse.wst.common.project.facet.core.xml打开文件，如下123456789&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;faceted-project&gt; &lt;fixed facet="wst.jsdt.web"/&gt; &lt;installed facet="java" version="1.7"/&gt; &lt;installed facet="jst.web" version="3.1"/&gt; &lt;installed facet="jst.jsf" version="2.2"/&gt; &lt;installed facet="jst.jaxrs" version="2.0"/&gt; &lt;installed facet="wst.jsdt.web" version="1.0"/&gt;&lt;/faceted-project&gt; 修改 ，把version修改成3.0，修改完如下123456789&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;faceted-project&gt; &lt;fixed facet="wst.jsdt.web"/&gt; &lt;installed facet="java" version="1.7"/&gt; &lt;installed facet="jst.web" version="3.0"/&gt; &lt;installed facet="jst.jsf" version="2.2"/&gt; &lt;installed facet="jst.jaxrs" version="2.0"/&gt; &lt;installed facet="wst.jsdt.web" version="1.0"/&gt;&lt;/faceted-project&gt; 处理成果]]></content>
       <categories>
-        <category>tools</category>
+        <category>tomcat</category>
       </categories>
       <tags>
-        <tag>eclipse</tag>
-        <tag>github</tag>
+        <tag>tomcat</tag>
       </tags>
   </entry>
   <entry>
@@ -177,6 +188,17 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[Jenkins安装(war包形式)]]></title>
+    <url>%2F2017%2F04%2F26%2FJenkins%E5%AE%89%E8%A3%85(war%E5%8C%85%E5%BD%A2%E5%BC%8F)%2F</url>
+    <content type="text"><![CDATA[下载下载地址： https://jenkins.io/download/选择war包下载，这里我选择的是稳定版本。 安装直接放到tomcat的webapps目录下，启动tomcat就可以了,双击startup.bat启动 配置Jenkins server配置页面在浏览器上输入 http://127.0.0.1:8080/jenkins/ 打开jenkins服务器 输入默认密码根据提示，找到密码输入，点击Continue 配置Jenkins server安装插件，这里选择推荐的插件进行安装，点击Install suggested plugins即可。当然用户也可以自定义选择插件进行安装，如果这一步选择插件有遗漏的话，后续也可以进行补充安装 等待配置等待安装，等待10分钟左右（电脑配置不同安装时间也不同） 设置用户和密码安装完之后，跳到配置用户和密码的界面，输入相关信息，设置用户和密码，点击 Sava and Finish 即可。如果这一步被跳过，默认用户名就是admin，默认密码就是3.2步骤的密码 配置成功到此，Jenkins server已经配置成功了。点击 Start using Jenkins 开启Jenkins之旅吧！ 访问Jenkins服务器登陆接下来在日常使用中，如果想打开Jenkins服务器，在浏览器输入 http://127.0.0.1:8080/jenkins ，填写配置的用户名和密码，点击登陆即可 Jenkins主界面登陆成功之后，就可以进入到Jenkins主界面了。欢迎来到新大陆！ Jenkins服务器开启和关闭在jenkins.war所在的tomcat路径下，找到bin目录比如我本地的路径： D:\Java\TOMCAT\apache-tomcat-7-8080\bin停止：shutdown.bat开始：startup.bat]]></content>
+      <categories>
+        <category>jenkins</category>
+      </categories>
+      <tags>
+        <tag>jenkins</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[jenkins+git+maven搭建自动化部署环境]]></title>
     <url>%2F2017%2F04%2F26%2Fjenkins%2Bgit%2Bmaven%E6%90%AD%E5%BB%BA%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2%E7%8E%AF%E5%A2%83%2F</url>
     <content type="text"><![CDATA[安装GitGit安装可以参考Git安装一文 安装MavenMaven的安装可以参考Maven安装一文 安装Jenkinsjenkins的安装可以参考3.1 Jenkins安装3.2 Jenkins安装(war包形式)注：为了方便，本次实验采用war包形式安装 jenkins配置插件管理经过步骤3的初始化插件安装，这时候jenkins已经具备了大部分了插件，个别插件才需要另外安装。已经点击 管理插件，进入插件管理界面。要安装两个插件：Maven Integration plugin 用来构建maven的项目,一个是对容器依赖的插件；Deploy to container Plugin 自动发布到相关容器上去 安装Maven Integration plugin如果已经安装，可直接跳过该步骤 。在系统管理／可选插件 里面，我们直接用全局搜索 Maven Integration plugin,打钩，点直接安装就行 安装Deploy to container Plugin如果已经安装，可直接跳过该步骤 。在系统管理／可选插件 里面，我们直接用全局搜索 Deploy to container Plugin,打钩，点直接安装就行 如果在使用过程中发现少了其它插件，安装步骤同4.1.1和4.1.2相似 设置全局工具进入全局工具配置页面，Global Tool Configuration Maven配置文件 JDK配置注：不要勾选自动安装，否则不能填写JAVA_HOME等信息，下面的maven、git等配置同样 Git配置说明：git选择的Path是git安装目录的cmd下的git.exe，在构建时执行git命令会调用这个程序 Maven配置 项目配置新建任务创建一个新的任务-&gt;构建一个maven项目，输入项目名，这里以JenkinsDemo为例子，点击OK 配置项目名和描述 源码管理配置源码管理这里我以Git为例子，Repository URL填写项目的地址，可以使https地址，也可以是SHH地址。注意，如果使用https地址，步骤需要点击Add-&gt;填写网站的用户名和密码，要使用SHH地址，在这之前我们必须在本机上生成了ssh密钥，并且在平台上设定过公钥才可以使用。这里我使用的是码云平台上的项目，参考文章 本地电脑和 Git @ OSC 之间SHH连接教程这是我用来测试项目的SHH地址：git@git.oschina.net:higher/webtest.git如有需要的朋友可以自行下载，https地址为: https://git.oschina.net/higher/webtest.gita.SHH方式 如果出现如下的错误，请检查公钥配置b.https方式 Build构建配置Build构建配置的Root POM填写:pom.xml；Gloals and options填写:clean package 构建后操作配置构建后操作选择Deploy war/ear to a container(如果没有这个，请检查是否安装了插件Deploy to container Plugin)，点击Add Container选择构建之后发布war包的位置，我本地用的tomcat7,所以选择它，填写内容对应如下,填写完点击 保存 即可。WAR/EAR files:target\webTest.war Tomcat 下 Manager user name:adminManager password:admin Tomcat URL:http://localhost:8080注意： jenkins构建成功之后会在 “.jenkins\workspace\任务名称\target” 路径下 产生war包，比如我本地位置为C:\Users\bank_gz\.jenkins\workspace\JenkinsDemo\target\webTest.war，如图填写的发布的Tomcat URL必须配置用户名和密码，配置的用户名和密码对应上面填写的Manager user name和Manager password,tomcat相关的配置参考tomcat配置详解，不然在构建的时候会报403的错误，如图 通过上面的步骤， 当构建时候会从git服务器拉去代码，再通过maven的clean package命令编译打包，成功时候就会在C:\Users\bank_gz\.jenkins\workspace\JenkinsDemo\target路径下产生webTest.war，同时发布到http://localhost:8080服务器下，当然Tomcat URL也可以填写其它url，比如http://localhost:8081。只要确定服务启动起来而且配置了用户名和密码就ok，这时候war包就会被加载到tomcat的webapps路径下被自动解压发布。 项目构建立即构建在新建的任务JenkinsDemo下,点击 立即构建，在构建历史上可以看到构建的历史，点击进去构建历史 查看构建日志在构建历史上点击 Console Output查看构建日志在构建历史上看到日志输出最后是Finished:SUCCESS即表示构建步骤成功 查看项目构建情况回到首页可也可以看到构建情况，如下图表示成功 测试成果在浏览器上输入http://127.0.0.1:8080/webTest/可以查到刚刚用来测试构建项目的首页]]></content>
@@ -186,17 +208,6 @@
       <tags>
         <tag>jenkins</tag>
         <tag>自动化部署</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Jenkins安装(war包形式)]]></title>
-    <url>%2F2017%2F04%2F26%2FJenkins%E5%AE%89%E8%A3%85(war%E5%8C%85%E5%BD%A2%E5%BC%8F)%2F</url>
-    <content type="text"><![CDATA[下载下载地址： https://jenkins.io/download/选择war包下载，这里我选择的是稳定版本。 安装直接放到tomcat的webapps目录下，启动tomcat就可以了,双击startup.bat启动 配置Jenkins server配置页面在浏览器上输入 http://127.0.0.1:8080/jenkins/ 打开jenkins服务器 输入默认密码根据提示，找到密码输入，点击Continue 配置Jenkins server安装插件，这里选择推荐的插件进行安装，点击Install suggested plugins即可。当然用户也可以自定义选择插件进行安装，如果这一步选择插件有遗漏的话，后续也可以进行补充安装 等待配置等待安装，等待10分钟左右（电脑配置不同安装时间也不同） 设置用户和密码安装完之后，跳到配置用户和密码的界面，输入相关信息，设置用户和密码，点击 Sava and Finish 即可。如果这一步被跳过，默认用户名就是admin，默认密码就是3.2步骤的密码 配置成功到此，Jenkins server已经配置成功了。点击 Start using Jenkins 开启Jenkins之旅吧！ 访问Jenkins服务器登陆接下来在日常使用中，如果想打开Jenkins服务器，在浏览器输入 http://127.0.0.1:8080/jenkins ，填写配置的用户名和密码，点击登陆即可 Jenkins主界面登陆成功之后，就可以进入到Jenkins主界面了。欢迎来到新大陆！ Jenkins服务器开启和关闭在jenkins.war所在的tomcat路径下，找到bin目录比如我本地的路径： D:\Java\TOMCAT\apache-tomcat-7-8080\bin停止：shutdown.bat开始：startup.bat]]></content>
-      <categories>
-        <category>jenkins</category>
-      </categories>
-      <tags>
-        <tag>jenkins</tag>
       </tags>
   </entry>
   <entry>
@@ -247,6 +258,18 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[MySQL数据库安装]]></title>
+    <url>%2F2017%2F04%2F19%2FMySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%89%E8%A3%85%2F</url>
+    <content type="text"><![CDATA[下载选择版本win版本下载地址： https://dev.mysql.com/downloads/mysql/下载官方推荐的版本，点击Download 跳转下载页跳转到下载页面，选择如图下载版本，点击Download 开始下载点击 No thanks, just start my download. 开始下载 安装双击安装包 同意协议书同意协议书，打钩之后点击Next 选择安装类型安装类型有：Developer Default 默认安装类型；Server only 仅作为服务器；Client only 仅作为客户端；Full 完全安装类型；Custom 用户自定义安装类型。我们这里以自定义Custom安装为例，选择Custom之后点击Next 选择组件选择好需要安装的组件，点击Next 检查配置 开始安装点击Execute开始安装 安装完成安装完成之后点击Next 准备配置进入准备配置页面，点击Next 开始配置这里有三个选择：1.Developer Machine(开发机器)，个人用桌面工作站，占用最少的系统资源；2.Server Machine（服务器），MySQL服务器可以同其它应用程序一起运行，例如FTP、email和web服务器。MySQL服务器配置成使用适当比例的系统资源；3.Dedicated MySQL Server Machine（专用MySQL服务器）：该选项代表只运行MySQL服务的服务器。假定运行没有运行其它应用程序。MySQL服务器配置成使用所有可用系统资源根据自己情况选择即可，一般WEB服务器选择第二个，Server Machine即可。个人电脑安装选择第一个，Developer Machine比较好，选择完点击Next 配置密码为root用户配置密码，点击Next windows配置默认，点击Next 拓展配置默认，点击Next 申请服务配置点击Execute，等待执行完点击Finish 检查校验配置最后安装图片校验一下刚刚所有的配置，最后点击Finish即可 检验找到安装程序：打开之后输入密码，输入命令：show databases，即可以查看到所有的数据库了。]]></content>
+      <categories>
+        <category>tools</category>
+      </categories>
+      <tags>
+        <tag>mysql</tag>
+        <tag>数据库</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[MySQL客户端安装之Navicat Premium]]></title>
     <url>%2F2017%2F04%2F19%2FMySQL%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%AE%89%E8%A3%85%E4%B9%8BNavicat%20Premium%2F</url>
     <content type="text"><![CDATA[破解版本(win32)链接：http://pan.baidu.com/s/1pL37Cld 密码：4sz4注：本文安装教程是使用官方版本，由于暂时未找到注册号，实际使用的是破解版本。 下载下载地址：https://www.navicat.com/download/navicat-premium选择符合自己电脑的版本，这里以win系统32位为例子。可以看到三个下载点，随便选择一个下载即可 安装双击安装包 欢迎界面点击Next 同意协议书同意协议书，点击Next 选择安装路径选择好安装路径，点击Next 选择菜单文件选择开始菜单名字，点击Next 生成图标勾选 Create a desktop icon ，创建桌面图标，点击Next 安装点击Install,开始安装 安装完成到此，已经安装完毕，点击Finish即可 使用前提确保已经安装了MySQL，如果没有安装过，参考MySQL数据库安装这篇文章 打开应用 填写信息如图填写数据库信息，点击 连接测试 可以测试是否成功，提示连接成功之后点击 确定 即可 连接 双击刚刚配置的 连接名 就可以连接到数据库了，具体要连接那个库，也是双击即可]]></content>
@@ -257,18 +280,6 @@
         <tag>mysql</tag>
         <tag>Navicat Premium</tag>
         <tag>数据库客户端</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[MySQL数据库安装]]></title>
-    <url>%2F2017%2F04%2F19%2FMySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%89%E8%A3%85%2F</url>
-    <content type="text"><![CDATA[下载选择版本win版本下载地址： https://dev.mysql.com/downloads/mysql/下载官方推荐的版本，点击Download 跳转下载页跳转到下载页面，选择如图下载版本，点击Download 开始下载点击 No thanks, just start my download. 开始下载 安装双击安装包 同意协议书同意协议书，打钩之后点击Next 选择安装类型安装类型有：Developer Default 默认安装类型；Server only 仅作为服务器；Client only 仅作为客户端；Full 完全安装类型；Custom 用户自定义安装类型。我们这里以自定义Custom安装为例，选择Custom之后点击Next 选择组件选择好需要安装的组件，点击Next 检查配置 开始安装点击Execute开始安装 安装完成安装完成之后点击Next 准备配置进入准备配置页面，点击Next 开始配置这里有三个选择：1.Developer Machine(开发机器)，个人用桌面工作站，占用最少的系统资源；2.Server Machine（服务器），MySQL服务器可以同其它应用程序一起运行，例如FTP、email和web服务器。MySQL服务器配置成使用适当比例的系统资源；3.Dedicated MySQL Server Machine（专用MySQL服务器）：该选项代表只运行MySQL服务的服务器。假定运行没有运行其它应用程序。MySQL服务器配置成使用所有可用系统资源根据自己情况选择即可，一般WEB服务器选择第二个，Server Machine即可。个人电脑安装选择第一个，Developer Machine比较好，选择完点击Next 配置密码为root用户配置密码，点击Next windows配置默认，点击Next 拓展配置默认，点击Next 申请服务配置点击Execute，等待执行完点击Finish 检查校验配置最后安装图片校验一下刚刚所有的配置，最后点击Finish即可 检验找到安装程序：打开之后输入密码，输入命令：show databases，即可以查看到所有的数据库了。]]></content>
-      <categories>
-        <category>tools</category>
-      </categories>
-      <tags>
-        <tag>mysql</tag>
-        <tag>数据库</tag>
       </tags>
   </entry>
   <entry>
@@ -285,17 +296,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Git安装]]></title>
-    <url>%2F2017%2F04%2F18%2FGit%E5%AE%89%E8%A3%85%2F</url>
-    <content type="text"><![CDATA[下载win版本下载地址： https://git-for-windows.github.io/ 安装双击安装包 Next 选择安装路径选择好安装路径之后，点击Next 选择组件默认打钩，用户可以自行选择其它，这里多选择了在桌面生成图标，点击Next 配置名称设置开始菜单的名称，默认Git，点击Next 设置环境变量在“Adjusting your PATH environment”选项中，默认即可。点击 Next注：这个步骤选择第二项“Use Git from the Windows Command Prompt”， 这样在Windows的命令行cmd中也可以运行git命令了。这样会对以后的一些操作带来方便。 选择https传输方式 配置行结束标记保持默认“Checkout Windows-style, commit Unix-style line endings” 选择终端在终端模拟器选择页面,默认即可，配置后Git Gash的终端比较易用。然后点击“Next” 配置额外选择最后配置Git额外选择默认即可，然后点击“Install”开始安装，如果之前安装过旧版本，会先卸载然后再安装新版本 等待安装 安装完成到此，Git已经安装完毕，点击Finish即可 参考文章：https://git-scm.com/book/zh/v1/%E8%B5%B7%E6%AD%A5-%E5%AE%89%E8%A3%85-Git]]></content>
-      <categories>
-        <category>git</category>
-      </categories>
-      <tags>
-        <tag>git</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[Jenkins安装]]></title>
     <url>%2F2017%2F04%2F18%2FJenkins%E5%AE%89%E8%A3%85%2F</url>
     <content type="text"><![CDATA[下载下载地址： https://jenkins.io/download/选择适合自己电脑型号的版本，我这里下载的是win系统的版本。 安装解压解压，得到jenkins.msi安装包，双击运行 欢迎界面点击Next 选择安装路径选择好安装路径之后，点击Next 安装点击Install，开始安装 等待安装 安装完成到此，Jenkins 已经安装完成，点击Finish跳转到网页上进行配置 配置Jenkins server配置页面在2.6步骤的时候点击Finish会自动跳转到配置页面，如果不小心关闭了，在浏览器上输入 http://127.0.0.1:8080 自行打开 输入默认密码根据提示，找到密码输入，点击Continue 配置Jenkins server安装插件，这里选择推荐的插件进行安装，点击Install suggested plugins即可。当然用户也可以自定义选择插件进行安装，如果这一步选择插件有遗漏的话，后续也可以进行补充安装 等待配置等待安装，等待10分钟左右（电脑配置不同安装时间也不同） 设置用户和密码安装完之后，跳到配置用户和密码的界面，输入相关信息，设置用户和密码，点击 Sava and Finish 即可。如果这一步被跳过，默认用户名就是admin，默认密码就是3.2步骤的密码 配置成功到此，Jenkins server已经配置成功了。点击 Start using Jenkins 开启Jenkins之旅吧！ 访问Jenkins服务器登陆接下来在日常使用中，如果想打开Jenkins服务器，在浏览器输入 http://127.0.0.1:8080 ，填写配置的用户名和密码，点击登陆即可 Jenkins主界面登陆成功之后，就可以进入到Jenkins主界面了。欢迎来到新大陆！ Jenkins服务器维护命令打开控制台/命令行 - &gt;转到您的Jenkins安装目录。分别执行以下命令停止：jenkins.exe stop开始：jenkins.exe start重新启动：jenkins.exe restart]]></content>
@@ -304,6 +304,17 @@
       </categories>
       <tags>
         <tag>jenkins</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Git安装]]></title>
+    <url>%2F2017%2F04%2F18%2FGit%E5%AE%89%E8%A3%85%2F</url>
+    <content type="text"><![CDATA[下载win版本下载地址： https://git-for-windows.github.io/ 安装双击安装包 Next 选择安装路径选择好安装路径之后，点击Next 选择组件默认打钩，用户可以自行选择其它，这里多选择了在桌面生成图标，点击Next 配置名称设置开始菜单的名称，默认Git，点击Next 设置环境变量在“Adjusting your PATH environment”选项中，默认即可。点击 Next注：这个步骤选择第二项“Use Git from the Windows Command Prompt”， 这样在Windows的命令行cmd中也可以运行git命令了。这样会对以后的一些操作带来方便。 选择https传输方式 配置行结束标记保持默认“Checkout Windows-style, commit Unix-style line endings” 选择终端在终端模拟器选择页面,默认即可，配置后Git Gash的终端比较易用。然后点击“Next” 配置额外选择最后配置Git额外选择默认即可，然后点击“Install”开始安装，如果之前安装过旧版本，会先卸载然后再安装新版本 等待安装 安装完成到此，Git已经安装完毕，点击Finish即可 参考文章：https://git-scm.com/book/zh/v1/%E8%B5%B7%E6%AD%A5-%E5%AE%89%E8%A3%85-Git]]></content>
+      <categories>
+        <category>git</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
       </tags>
   </entry>
   <entry>
