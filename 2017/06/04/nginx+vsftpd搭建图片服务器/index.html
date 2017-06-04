@@ -1,0 +1,1171 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="vsftpd,nginx," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="本文是在centos7系统上安装redis3.2.9集群。">
+<meta name="keywords" content="vsftpd,nginx">
+<meta property="og:type" content="article">
+<meta property="og:title" content="nginx+vsftpd搭建图片服务器">
+<meta property="og:url" content="http://yoursite.com/2017/06/04/nginx+vsftpd搭建图片服务器/index.html">
+<meta property="og:site_name" content="Highter&#39;s blog">
+<meta property="og:description" content="本文是在centos7系统上安装redis3.2.9集群。">
+<meta property="og:image" content="https://static.oschina.net/uploads/img/201706/03170643_5o0f.png">
+<meta property="og:image" content="https://static.oschina.net/uploads/img/201706/03172422_v7D0.png">
+<meta property="og:image" content="https://static.oschina.net/uploads/img/201706/04093438_EAro.png">
+<meta property="og:image" content="https://static.oschina.net/uploads/img/201706/04151721_Wufd.png">
+<meta property="og:updated_time" content="2017-06-04T07:40:26.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="nginx+vsftpd搭建图片服务器">
+<meta name="twitter:description" content="本文是在centos7系统上安装redis3.2.9集群。">
+<meta name="twitter:image" content="https://static.oschina.net/uploads/img/201706/03170643_5o0f.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/06/04/nginx+vsftpd搭建图片服务器/"/>
+
+
+
+
+
+  <title> nginx+vsftpd搭建图片服务器 | Highter's blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?56b3b1b05c9439d781cc973fe59e5816";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Highter's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocapitalize="off" autocomplete="off" autocorrect="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/04/nginx+vsftpd搭建图片服务器/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Highter">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Highter's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                nginx+vsftpd搭建图片服务器
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-04T09:58:15+08:00">
+                2017-06-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/vsftpd/" itemprop="url" rel="index">
+                    <span itemprop="name">vsftpd</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            <!--noindex-->
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/06/04/nginx+vsftpd搭建图片服务器/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="2017/06/04/nginx+vsftpd搭建图片服务器/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+              <!--/noindex-->
+            
+          
+
+          
+          
+             <span id="/2017/06/04/nginx+vsftpd搭建图片服务器/" class="leancloud_visitors" data-flag-title="nginx+vsftpd搭建图片服务器">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+              <div class="post-description">
+                  本文是在centos7系统上安装redis3.2.9集群。
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>为了方便大家看到效果，我统一在/data目录下开始操作。</p>
+<h3 id="安装-nginx"><a href="#安装-nginx" class="headerlink" title="安装 nginx"></a>安装 nginx</h3><h4 id="nginx环境安装"><a href="#nginx环境安装" class="headerlink" title="nginx环境安装"></a>nginx环境安装</h4><p><strong>安装gcc</strong><br>安装nginx需要先将官网下载的源码进行编译，编译依赖gcc环境，如果没有gcc环境，需要安装gcc：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[root@localhost data]<span class="comment"># yum install gcc-c++</span></div></pre></td></tr></table></figure></p>
+<p><strong>安装PCRE</strong><br>PCRE(Perl Compatible Regular Expressions)是一个Perl库，包括 perl 兼容的正则表达式库。nginx的http模块使用pcre来解析正则表达式，所以需要在linux上安装pcre库。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[root@localhost data]<span class="comment"># yum install -y pcre pcre-devel</span></div></pre></td></tr></table></figure></p>
+<p>注：pcre-devel是使用pcre开发的一个二次开发库。nginx也需要此库。<br><strong>安装zlib</strong><br>zlib库提供了很多种压缩和解压缩的方式，nginx使用zlib对http包的内容进行gzip，所以需要在linux上安装zlib库。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[root@localhost data]<span class="comment"># yum install -y zlib zlib-devel</span></div></pre></td></tr></table></figure></p>
+<p><strong>安装openssl</strong><br>OpenSSL 是一个强大的安全套接字层密码库，囊括主要的密码算法、常用的密钥和证书封装管理功能及SSL协议，并提供丰富的应用程序供测试或其它目的使用。<br>nginx不仅支持http协议，还支持https（即在ssl协议上传输http），所以需要在linux安装openssl库。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[root@localhost data]<span class="comment"># yum install -y openssl openssl-devel</span></div></pre></td></tr></table></figure></p>
+<h4 id="nginx安装"><a href="#nginx安装" class="headerlink" title="nginx安装"></a>nginx安装</h4><p><strong>下载</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[root@localhost data]<span class="comment"># wget http://nginx.org/download/nginx-1.12.0.tar.gz</span></div></pre></td></tr></table></figure></p>
+<p><strong>解压</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[root@localhost data]<span class="comment"># tar -zxvf nginx-1.12.0.tar.gz</span></div></pre></td></tr></table></figure></p>
+<p><strong>配置 configure</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[root@localhost data]<span class="comment"># cd nginx-1.12.0/</span></div><div class="line">[root@localhost nginx-1.12.0]<span class="comment"># ./configure</span></div></pre></td></tr></table></figure></p>
+<p><img src="https://static.oschina.net/uploads/img/201706/03170643_5o0f.png" alt="配置 configure" title="配置 configure"><br>注意：默认安装在/usr/local/nginx<br><strong>编译安装</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[root@localhost nginx-1.12.0]<span class="comment"># make</span></div><div class="line">[root@localhost nginx-1.12.0]<span class="comment"># make install</span></div></pre></td></tr></table></figure></p>
+<p><strong>查看安装目录</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[root@localhost nginx-1.12.0]<span class="comment"># whereis nginx</span></div><div class="line">nginx: /usr/<span class="built_in">local</span>/nginx</div></pre></td></tr></table></figure></p>
+<h4 id="ngnix常用命令"><a href="#ngnix常用命令" class="headerlink" title="ngnix常用命令"></a>ngnix常用命令</h4><p><strong>启动nginx</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[root@localhost nginx-1.12.0]<span class="comment"># cd /usr/local/nginx/sbin/</span></div><div class="line">[root@localhost sbin]<span class="comment"># ./nginx</span></div></pre></td></tr></table></figure></p>
+<p>注意：执行./nginx启动nginx，这里可以-c指定加载的nginx配置文件，如下：<br>./nginx -c /usr/local/nginx/conf/nginx.conf<br>如果不指定-c，nginx在启动时默认加载conf/nginx.conf文件，此文件的地址也可以在编译安装nginx时指定./configure的参数（–conf-path= 指向配置文件（nginx.conf）） </p>
+<p><strong>停止nginx</strong><br>方式1，快速停止：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[root@localhost sbin]<span class="comment"># ./nginx -s stop</span></div></pre></td></tr></table></figure>
+<p>此方式相当于先查出nginx进程id再使用kill命令强制杀掉进程。 </p>
+<p>方式2，完整停止(建议使用)： </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[root@localhost sbin]<span class="comment"># ./nginx -s quit</span></div></pre></td></tr></table></figure>
+<p>此方式停止步骤是待nginx进程处理任务完毕进行停止。 </p>
+<p><strong>重启nginx</strong>  </p>
+<p>方式1，先停止再启动（建议使用）:<br>对nginx进行重启相当于先停止nginx再启动nginx，即先执行停止命令再执行启动命令。<br>如下： </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[root@localhost sbin]<span class="comment"># ./nginx -s quit</span></div><div class="line">[root@localhost sbin]<span class="comment"># ./nginx</span></div></pre></td></tr></table></figure>
+<p>方式2，重新加载配置文件：<br>当nginx的配置文件nginx.conf修改后，要想让配置生效需要重启nginx，使用-s reload不用先停止nginx再启动nginx即可将配置信息在nginx中生效，如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[root@localhost sbin]<span class="comment"># ./nginx -s reload</span></div></pre></td></tr></table></figure></p>
+<p><strong>测试</strong><br>浏览器输入服务器地址即可<br><img src="https://static.oschina.net/uploads/img/201706/03172422_v7D0.png" alt="输入图片说明" title="在这里输入图片标题"></p>
+<h3 id="安装vsftpd组件"><a href="#安装vsftpd组件" class="headerlink" title="安装vsftpd组件"></a>安装vsftpd组件</h3><h4 id="安装vsftpd组件-1"><a href="#安装vsftpd组件-1" class="headerlink" title="安装vsftpd组件"></a>安装vsftpd组件</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[root@localhost sbin]<span class="comment"># yum -y install vsftpd</span></div></pre></td></tr></table></figure>
+<p>安装完后，有/etc/vsftpd/vsftpd.conf 文件，是vsftp的配置文件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">查看vsftpd状态: systemctl status vsftpd.service</div><div class="line">启动vsftpd: systemctl start vsftpd.service</div><div class="line">停止vsftpd: systemctl stop vsftpd.service</div><div class="line">重启vsftpd: systemctl restart vsftpd.service</div></pre></td></tr></table></figure>
+<h4 id="添加一个ftp用户"><a href="#添加一个ftp用户" class="headerlink" title="添加一个ftp用户"></a>添加一个ftp用户</h4><p>此用户就是用来登录ftp服务器用的。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[root@localhost sbin]<span class="comment"># useradd ftpuser</span></div></pre></td></tr></table></figure></p>
+<p>给ftp用户添加密码<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[root@localhost sbin]<span class="comment"># passwd ftpuser</span></div></pre></td></tr></table></figure></p>
+<p>输入两次密码后修改密码。 </p>
+<h4 id="防火墙开启21端口"><a href="#防火墙开启21端口" class="headerlink" title="防火墙开启21端口"></a>防火墙开启21端口</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[root@localhost sbin]<span class="comment"># firewall-cmd --permanent --zone=public --add-port=21/tcp</span></div><div class="line">[root@localhost sbin]<span class="comment"># firewall-cmd --permanent --zone=public --add-port=21/udp</span></div><div class="line">[root@localhost sbin]<span class="comment"># firewall-cmd --reload#重启iptables</span></div></pre></td></tr></table></figure>
+<h4 id="修改selinux"><a href="#修改selinux" class="headerlink" title="修改selinux"></a>修改selinux</h4><p>外网是可以访问上去了，可是发现没法返回目录（使用ftp的主动模式，被动模式还是无法访问），也上传不了，因为selinux作怪了。<br>执行以下命令查看状态：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">[root@localhost sbin]<span class="comment"># getsebool -a|grep ftp</span></div><div class="line">ftpd_anon_write --&gt; off</div><div class="line">ftpd_connect_all_unreserved --&gt; off</div><div class="line">ftpd_connect_db --&gt; off</div><div class="line">ftpd_full_access --&gt; off</div><div class="line">ftpd_use_cifs --&gt; off</div><div class="line">ftpd_use_fusefs --&gt; off</div><div class="line">ftpd_use_nfs --&gt; off</div><div class="line">ftpd_use_passive_mode --&gt; off</div><div class="line">httpd_can_connect_ftp --&gt; off</div><div class="line">httpd_enable_ftp_server --&gt; off</div><div class="line">tftp_anon_write --&gt; off</div><div class="line">tftp_home_dir --&gt; off</div></pre></td></tr></table></figure></p>
+<p>执行上面命令，返回的结果看到<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ftpd_full_access --&gt; off</div><div class="line">tftp_home_dir --&gt; off</div></pre></td></tr></table></figure></p>
+<p>代表没有开启外网的访问。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[root@localhost sbin]<span class="comment"># setsebool -P ftpd_full_access on</span></div><div class="line">[root@localhost sbin]<span class="comment"># setsebool -P tftp_home_dir on</span></div></pre></td></tr></table></figure></p>
+<p>这样应该没问题了（如果，还是不行，看看是不是用了ftp客户端工具用了passive模式访问了，如提示Entering Passive mode，就代表是passive模式，默认是不行的，因为ftp passive模式被iptables挡住了，下面会讲怎么开启，如果懒得开的话，就看看你客户端ftp是否有port模式的选项，或者把passive模式的选项去掉。如果客户端还是不行，看看客户端上的主机的电脑是否开了防火墙，关吧）<br>FileZilla的主动、被动模式修改：<br>菜单：编辑→设置<br><img src="https://static.oschina.net/uploads/img/201706/04093438_EAro.png" alt="输入图片说明" title="在这里输入图片标题"></p>
+<h4 id="开启被动模式"><a href="#开启被动模式" class="headerlink" title="开启被动模式"></a>开启被动模式</h4><p>默认是开启的，但是要指定一个端口范围，打开vsftpd.conf文件，在后面加上</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">pasv_min_port=30000</div><div class="line">pasv_max_port=30999</div></pre></td></tr></table></figure>
+<p>表示端口范围为30000~30999，这个可以随意改。改完重启一下vsftpd</p>
+<p>同时在防火墙中开启30000和30999端口。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">[root@localhost sbin]# firewall-cmd --permanent --zone=public --add-port=30000/tcp</div><div class="line">[root@localhost sbin]# firewall-cmd --permanent --zone=public --add-port=30000/udp</div><div class="line">[root@localhost sbin]# firewall-cmd --permanent --zone=public --add-port=30999/tcp</div><div class="line">[root@localhost sbin]# firewall-cmd --permanent --zone=public --add-port=30999/udp</div><div class="line">[root@localhost sbin]# firewall-cmd --reload#重启iptables</div></pre></td></tr></table></figure>
+<h4 id="修改vsftpd-conf文件"><a href="#修改vsftpd-conf文件" class="headerlink" title="修改vsftpd.conf文件"></a>修改vsftpd.conf文件</h4><p>vsftpd.conf在路径/etc/vsftpd下<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[root@localhost vsftpd]<span class="comment"># vi /etc/vsftpd/vsftpd.conf</span></div></pre></td></tr></table></figure></p>
+<p>原文<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">anonymous_enable=YES</div></pre></td></tr></table></figure></p>
+<p>修改为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">anonymous_enable=NO</div></pre></td></tr></table></figure></p>
+<h3 id="配置图片服务器"><a href="#配置图片服务器" class="headerlink" title="配置图片服务器"></a>配置图片服务器</h3><p>进入配置文件目录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[root@localhost vsftpd]# cd /usr/local/nginx/conf/</div><div class="line">[root@localhost vsftpd]# vi nginx.config</div></pre></td></tr></table></figure>
+<p>方法一、在配置文件server{}中location /{} 修改配置：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"> #默认请求</div><div class="line">location / &#123;</div><div class="line">   root  /home/ftpuser/images;#定义服务器的默认网站根目录位置</div><div class="line">   index index.html index.php index.htm;#定义首页索引文件的名称</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>其中：/home/ftpuser/images;为创建FTP服务账户ftpuser的根目录下的images目录</p>
+<p>方法二、在http{}内配置新服务</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">server &#123;</div><div class="line">        listen       8080;</div><div class="line">        server_name  localhost;</div><div class="line"></div><div class="line">        #charset utf-8;</div><div class="line"></div><div class="line">        #access_log  logs/host.access.log  main;</div><div class="line"></div><div class="line">        #默认请求</div><div class="line">        location / &#123;</div><div class="line">            root  /home/ftpuser/images;#定义服务器的默认网站根目录位置</div><div class="line">            index index.html index.php index.htm;#定义首页索引文件的名称</div><div class="line">           &#125;</div><div class="line">        &#125;</div></pre></td></tr></table></figure>
+<p>注意：</p>
+<p>1、nginx.conf配置文件最上面一行被注释掉的。 </p>
+<p>如果没有修改最上面一行,访问的时候回报 403！</p>
+<p>修改成上面我们创建的ftp用户ftpuser后，重新加载nginx配置文件就可以正常访问了。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">user ftpuser</div></pre></td></tr></table></figure>
+<p>2、如果ping不通服务器，尝试关闭防火墙或者在防火墙中开启80端口</p>
+<p>在防火墙中开启80端口</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[root@localhost sbin]# firewall-cmd --permanent --zone=public --add-port=21/tcp</div><div class="line">[root@localhost sbin]# firewall-cmd --permanent --zone=public --add-port=21/udp</div><div class="line">[root@localhost sbin]# firewall-cmd --reload#重启iptables</div></pre></td></tr></table></figure>
+<p>关闭防火墙</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[root@localhost sbin]# systemctl stop firewalld</div></pre></td></tr></table></figure>
+<h3 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h3><p>在/home/ftpuser/下新建文件夹images，下面放一张图片1.jpg<br>测试访问：<a href="http://192.168.0.50/1.jpg" target="_blank" rel="external">http://192.168.0.50/1.jpg</a></p>
+<p><img src="https://static.oschina.net/uploads/img/201706/04151721_Wufd.png" alt="输入图片说明" title="在这里输入图片标题"></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/wechat-qcode.jpg" alt="Highter wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎您扫一扫上面的微信公众号，订阅我的博客！</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/uploads/wechat-reward-image.jpg" alt="Highter WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/uploads/alipay-reward-image.jpg" alt="Highter Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/vsftpd/" rel="tag"># vsftpd</a>
+          
+            <a href="/tags/nginx/" rel="tag"># nginx</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/06/01/redis集群搭建/" rel="next" title="redis集群搭建">
+                <i class="fa fa-chevron-left"></i> redis集群搭建
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/06/04/centos防火墙命令/" rel="prev" title="centos防火墙命令">
+                centos防火墙命令 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="hypercomments_widget"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.jpg"
+               alt="Highter" />
+          <p class="site-author-name" itemprop="name">Highter</p>
+           
+              <p class="site-description motion-element" itemprop="description">Smile at life ^_^</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">33</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">26</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/Highter" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://my.oschina.net/sssmile/blog" target="_blank" title="开源中国">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  开源中国
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-nginx"><span class="nav-number">1.</span> <span class="nav-text">安装 nginx</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#nginx环境安装"><span class="nav-number">1.1.</span> <span class="nav-text">nginx环境安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#nginx安装"><span class="nav-number">1.2.</span> <span class="nav-text">nginx安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ngnix常用命令"><span class="nav-number">1.3.</span> <span class="nav-text">ngnix常用命令</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装vsftpd组件"><span class="nav-number">2.</span> <span class="nav-text">安装vsftpd组件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装vsftpd组件-1"><span class="nav-number">2.1.</span> <span class="nav-text">安装vsftpd组件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加一个ftp用户"><span class="nav-number">2.2.</span> <span class="nav-text">添加一个ftp用户</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#防火墙开启21端口"><span class="nav-number">2.3.</span> <span class="nav-text">防火墙开启21端口</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改selinux"><span class="nav-number">2.4.</span> <span class="nav-text">修改selinux</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#开启被动模式"><span class="nav-number">2.5.</span> <span class="nav-text">开启被动模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改vsftpd-conf文件"><span class="nav-number">2.6.</span> <span class="nav-text">修改vsftpd.conf文件</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置图片服务器"><span class="nav-number">3.</span> <span class="nav-text">配置图片服务器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#验证"><span class="nav-number">4.</span> <span class="nav-text">验证</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Highter</span>
+</div>
+
+
+<div class="powered-by">
+    个人专属
+</div>
+
+<div class="theme-info">
+  博客 -
+  <a class="theme-link" href="https://highter.github.io/">
+    Highter's blog
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+		<script type="text/javascript">
+		_hcwp = window._hcwp || [];
+
+		_hcwp.push({widget:"Bloggerstream", widget_id: 91486, selector:".hc-comment-count", label: "{\%COUNT%\}" });
+
+		
+		_hcwp.push({widget:"Stream", widget_id: 91486, xid: "2017/06/04/nginx+vsftpd搭建图片服务器/"});
+		
+
+		(function() {
+		if("HC_LOAD_INIT" in window)return;
+		HC_LOAD_INIT = true;
+		var lang = (navigator.language || navigator.systemLanguage || navigator.userLanguage || "en").substr(0, 2).toLowerCase();
+		var hcc = document.createElement("script"); hcc.type = "text/javascript"; hcc.async = true;
+		hcc.src = ("https:" == document.location.protocol ? "https" : "http")+"://w.hypercomments.com/widget/hc/91486/"+lang+"/widget.js";
+		var s = document.getElementsByTagName("script")[0];
+		s.parentNode.insertBefore(hcc, s.nextSibling);
+		})();
+		</script>
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("2SWHfXPUHcXozChiut3vghhz-gzGzoHsz", "6y5LpCGCxjLM8DL0NmQVvhRH");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>
