@@ -2,7 +2,7 @@
 title: centos防火墙命令
 categories: [linux]
 tags: [linux,命令]
-description: 本文是在centos7系统上安装redis3.2.9集群。
+description: 记录一些防火墙相关的命令。
 ---
 
 ### 查看防火墙状态

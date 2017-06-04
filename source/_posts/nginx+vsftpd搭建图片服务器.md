@@ -3,7 +3,7 @@ title: nginx+vsftpd搭建图片服务器
 date: 2017-06-04 09:58:15
 categories: [vsftpd]
 tags: [vsftpd,nginx]
-description: 本文是在centos7系统上安装redis3.2.9集群。
+description: 本文介绍nginx+vsftpd图片服务器的搭建，实验环境是在centos7下。
 ---
 
 为了方便大家看到效果，我统一在/data目录下开始操作。
