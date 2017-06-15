@@ -2,7 +2,7 @@
 title: eclipse中变量高亮
 date: 2017-06-16 06:54:15
 categories: [eclipse]
-tags:[eclipse]
+tags: [eclipse]
 description: 经常使用eclipse的朋友，变量高亮是必须的。某天你发现变量高亮失效了，别急。老司机带你跳出坑来。
 ---
 ### 快捷键

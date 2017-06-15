@@ -2,8 +2,8 @@
 title: Spring boot中使用过滤器filter
 date: 2017-06-16 07:00:34
 categories: [java]
-tags:[java,spring boot]
-description:介绍一下spring boot中filter的使用方法。
+tags: [java,spring boot]
+description: 介绍一下spring boot中filter的使用方法。
 ---
 ### 传统JavaEE
 传统的javaEE增加Filter是在web.xml中配置，如以下代码： 

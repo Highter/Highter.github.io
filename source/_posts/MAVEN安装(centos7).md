@@ -2,7 +2,7 @@
 title: MAVEN安装(centos7)
 date: 2017-06-16 06:56:32
 categories: [maven]
-tags:[maven]
+tags: [maven]
 description: Apache Maven是一个软件项目管理和综合工具。本地安装Maven可以为开发带来很多方便。
 ---
 注意：安装前请确认一下电脑是否安装了JDK，JDK的安装可以参考[JDK安装](https://my.oschina.net/sssmile/blog/879742)一文。 
