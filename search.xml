@@ -1,6 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Spring boot中使用过滤器filter]]></title>
+    <url>%2F2017%2F06%2F16%2FSpring%20boot%E4%B8%AD%E4%BD%BF%E7%94%A8%E8%BF%87%E6%BB%A4%E5%99%A8filter%2F</url>
+    <content type="text"><![CDATA[传统JavaEE传统的javaEE增加Filter是在web.xml中配置，如以下代码：123456789101112&lt;filter&gt; &lt;filter-name&gt;TestFilter&lt;/filter-name&gt; &lt;filter-class&gt;com.higher.filter.TestFilter&lt;/filter-class&gt;&lt;/filter&gt;&lt;filter-mapping&gt; &lt;filter-name&gt;TestFilter&lt;/filter-name&gt; &lt;url-pattern&gt;/*&lt;/url-pattern&gt; &lt;init-param&gt; &lt;param-name&gt;paramName&lt;/param-name&gt; &lt;param-value&gt;paramValue&lt;/param-value&gt; &lt;/init-param&gt;&lt;/filter-mapping&gt; spring boot中@Bean方式(旧方法)自定义filter1234567891011121314151617181920212223package com.higher.filter;import javax.servlet.*;import java.io.IOException;public class TestFilter implements Filter &#123; @Override public void init(FilterConfig filterConfig) throws ServletException &#123; &#125; @Override public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException &#123; System.out.println("TestFilter"); &#125; @Override public void destroy() &#123; &#125;&#125;​` 使用注解@Bean在Application.java中添加​12345678910@Bean public FilterRegistrationBean testFilterRegistration() &#123; FilterRegistrationBean registration = new FilterRegistrationBean(); registration.setFilter(new TestFilter()); registration.addUrlPatterns("/*"); registration.addInitParameter("paramName", "paramValue"); registration.setName("testFilter"); registration.setOrder(1); return registration;&#125; spring boot中@WebFilter方式(新方法-推荐)自定义filter12345678910111213141516171819202122232425262728293031323334package com.higher.filter;import java.io.IOException;import javax.servlet.Filter;import javax.servlet.FilterChain;import javax.servlet.FilterConfig;import javax.servlet.ServletException;import javax.servlet.ServletRequest;import javax.servlet.ServletResponse;import javax.servlet.annotation.WebFilter;import org.springframework.core.annotation.Order;@Order(1)@WebFilter(filterName = "testFilter ", urlPatterns = "/*")public class TestFilter implements Filter&#123; @Override public void destroy() &#123; // TODO Auto-generated method stub &#125; @Override public void doFilter(ServletRequest arg0, ServletResponse arg1, FilterChain arg2) throws IOException, ServletException &#123; // TODO Auto-generated method stub System.out.println("TestFilter"); &#125; @Override public void init(FilterConfig arg0) throws ServletException &#123; // TODO Auto-generated method stub &#125; &#125; 其中@Order注解表示执行过滤顺序，值越小，越先执行 使用注解@ServletComponentScan1234567@SpringBootApplication@ServletComponentScanpublic class ApiApplication &#123; public static void main(String[] args) &#123; SpringApplication.run(ApiApplication.class, args); &#125;&#125;]]></content>
+      <categories>
+        <category>java</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+        <tag>spring boot</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[MAVEN安装(centos7)]]></title>
+    <url>%2F2017%2F06%2F16%2FMAVEN%E5%AE%89%E8%A3%85(centos7)%2F</url>
+    <content type="text"><![CDATA[注意：安装前请确认一下电脑是否安装了JDK，JDK的安装可以参考JDK安装一文。操作路径 /data/ 下载123[root@localhost data]# mkdir maven[root@localhost data]# cd maven/[root@localhost maven]# wget http://apache.fayea.com/maven/maven-3/3.5.0/binaries/apache-maven-3.5.0-bin.tar.gz 解压1[root@localhost maven]# tar -zxvf apache-maven-3.5.0-bin.tar.gz 环境变量配置1[root@localhost maven]# vim /etc/profile 添加内容如下：123#set mavenexport M2_HOME=/data/maven/apache-maven-3.5.0export PATH=$PATH:$M2_HOME/bin 验证12345678[root@localhost maven]# source /etc/profile #使配置生效[root@localhost maven]# mvn -vApache Maven 3.5.0 (ff8f5e7444045639af65f6095c62210b5713f426; 2017-04-04T03:39:06+08:00)Maven home: /data/maven/apache-maven-3.5.0Java version: 1.8.0_131, vendor: Oracle CorporationJava home: /data/jdk/jdk1.8.0_131/jreDefault locale: zh_CN, platform encoding: UTF-8OS name: &quot;linux&quot;, version: &quot;3.10.0-514.el7.x86_64&quot;, arch: &quot;amd64&quot;, family: &quot;unix&quot; 修改仓库存位置maven 的仓库默认路径是${user.home}/.m2/repository。我们可以修改到指定路径下1[root@localhost maven]# vim apache-maven-3.5.0/conf/settings.xml 修改到指定路径下：1&lt;localRepository&gt;/data/maven/apache-maven-3.5.0/repo&lt;/localRepository&gt;]]></content>
+      <categories>
+        <category>maven</category>
+      </categories>
+      <tags>
+        <tag>maven</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[eclipse中变量高亮]]></title>
+    <url>%2F2017%2F06%2F16%2Feclipse%E4%B8%AD%E5%8F%98%E9%87%8F%E9%AB%98%E4%BA%AE%2F</url>
+    <content type="text"><![CDATA[快捷键1alt+shift+o 设置流程1windows-&gt; preferences-&gt;Java-&gt;Editor-&gt;Mark Occurences 选择最上的复选框。 其中的Local variables就是变量的高亮显示。]]></content>
+      <categories>
+        <category>eclipse</category>
+      </categories>
+      <tags>
+        <tag>eclipse</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[手机号码相关正则表达式]]></title>
+    <url>%2F2017%2F06%2F16%2F%E6%89%8B%E6%9C%BA%E5%8F%B7%E7%A0%81%E7%9B%B8%E5%85%B3%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%2F</url>
+    <content type="text"><![CDATA[123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112113114115116117118119120121122123124125126127128129130131132133134135136137138139140import java.util.regex.Matcher; import java.util.regex.Pattern; public class CheckPhoneUtils &#123; /** 电话格式验证 **/ private static final String PHONE_CALL_PATTERN = "^(\\(\\d&#123;3,4&#125;\\)|\\d&#123;3,4&#125;-)?\\d&#123;7,8&#125;(-\\d&#123;1,4&#125;)?$"; /** * 中国电信号码格式验证 手机段： 133,153,180,181,189,177,1700 **/ private static final String CHINA_TELECOM_PATTERN = "(^1(33|53|77|8[019])\\d&#123;8&#125;$)|(^1700\\d&#123;7&#125;$)"; /** * 中国联通号码格式验证 手机段：130,131,132,155,156,185,186,145,176,1709 **/ private static final String CHINA_UNICOM_PATTERN = "(^1(3[0-2]|4[5]|5[56]|7[6]|8[56])\\d&#123;8&#125;$)|(^1709\\d&#123;7&#125;$)"; /** * 中国移动号码格式验证 * 手机段：134,135,136,137,138,139,150,151,152,157,158,159,182,183,184 * ,187,188,147,178,1705 **/ private static final String CHINA_MOBILE_PATTERN = "(^1(3[4-9]|4[7]|5[0-27-9]|7[8]|8[2-478])\\d&#123;8&#125;$)|(^1705\\d&#123;7&#125;$)"; /** * 验证电话号码的格式 * @param str * 校验电话字符串 * @return 返回true,否则为false */ public static boolean isPhoneCallNum(String str) &#123; return str == null || str.trim().equals("") ? false : match(PHONE_CALL_PATTERN, str); &#125; /** * 验证【电信】手机号码的格式 * @param str * 校验手机字符串 * @return 返回true,否则为false */ public static boolean isChinaTelecomPhoneNum(String str) &#123; return str == null || str.trim().equals("") ? false : match(CHINA_TELECOM_PATTERN, str); &#125; /** * 验证【联通】手机号码的格式 * @param str * 校验手机字符串 * @return 返回true,否则为false */ public static boolean isChinaUnicomPhoneNum(String str) &#123; return str == null || str.trim().equals("") ? false : match(CHINA_UNICOM_PATTERN, str); &#125; /** * 验证【移动】手机号码的格式 * @param str * 校验手机字符串 * @return 返回true,否则为false */ public static boolean isChinaMobilePhoneNum(String str) &#123; return str == null || str.trim().equals("") ? false : match(CHINA_MOBILE_PATTERN, str); &#125; /** * 验证手机和电话号码的格式 * @param str * 校验手机字符串 * @return 返回true,否则为false */ public static boolean isPhoneNum(String str) &#123; // 如果字符串为空，直接返回false if (str == null || str.trim().equals("")) &#123; return false; &#125; else &#123; int comma = str.indexOf(",");// 是否含有逗号 int caesuraSign = str.indexOf("、");// 是否含有顿号 int space = str.trim().indexOf(" ");// 是否含有空格 if (comma == -1 &amp;&amp; caesuraSign == -1 &amp;&amp; space == -1) &#123; // 如果号码不含分隔符,直接验证 str = str.trim(); return (isPhoneCallNum(str) || isChinaTelecomPhoneNum(str) || isChinaUnicomPhoneNum(str) || isChinaMobilePhoneNum(str)) ? true : false; &#125; else &#123; // 号码含分隔符,先把分隔符统一处理为英文状态下的逗号 if (caesuraSign != -1) &#123; str = str.replaceAll("、", ","); &#125; if (space != -1) &#123; str = str.replaceAll(" ", ","); &#125; String[] phoneNumArr = str.split(","); // 遍历验证 for (String temp : phoneNumArr) &#123; temp = temp.trim(); if (isPhoneCallNum(temp) || isChinaTelecomPhoneNum(temp) || isChinaUnicomPhoneNum(temp) || isChinaMobilePhoneNum(temp)) &#123; continue; &#125; else &#123; return false; &#125; &#125; return true; &#125; &#125; &#125; /** * 执行正则表达式 * * @param pat * 表达式 * @param str * 待验证字符串 * @return 返回true,否则为false */ private static boolean match(String pat, String str) &#123; Pattern pattern = Pattern.compile(pat); Matcher match = pattern.matcher(str); return match.find(); &#125; public static void main(String[] args) &#123; System.out.println(isPhoneNum("17750581369")); System.out.println(isPhoneNum("13306061248")); System.out.println(isPhoneNum("17750581369,13306061248")); System.out.println(isPhoneNum("17750581369 13306061248")); System.out.println(isPhoneNum("17750581369、13306061248")); System.out.println(isPhoneNum("0596-3370653")); &#125;&#125;]]></content>
+      <categories>
+        <category>java</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+        <tag>正则表达式</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[centos防火墙命令]]></title>
     <url>%2F2017%2F06%2F04%2Fcentos%E9%98%B2%E7%81%AB%E5%A2%99%E5%91%BD%E4%BB%A4%2F</url>
     <content type="text"><![CDATA[查看防火墙状态1systemctl status firewalld 开启防火墙1systemctl start firewalld 关闭防火墙1systemctl stop firewalld 开启防火墙端口123firewall-cmd --permanent --zone=public --add-port=21/tcp firewall-cmd --permanent --zone=public --add-port=21/udp firewall-cmd --reload#重启iptables]]></content>
@@ -69,6 +115,18 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[管理多个github账号]]></title>
+    <url>%2F2017%2F05%2F27%2F%E7%AE%A1%E7%90%86%E5%A4%9A%E4%B8%AAgithub%E8%B4%A6%E5%8F%B7%2F</url>
+    <content type="text"><![CDATA[场景描述之前在电脑上添加A账号的ssh，后来使用B账号的github，在提交代码的时候遇到这样的情况，比如fatal: remote error: Permission denied 解决方案参考这篇文章https://code.tutsplus.com/tutorials/quick-tip-how-to-work-with-github-and-multiple-accounts–net-22574]]></content>
+      <categories>
+        <category>git</category>
+      </categories>
+      <tags>
+        <tag>github</tag>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Mac电脑生成SSH key和Github通信]]></title>
     <url>%2F2017%2F05%2F27%2FMac%E7%94%B5%E8%84%91%E7%94%9F%E6%88%90SSH%20key%E5%92%8CGithub%E9%80%9A%E4%BF%A1%2F</url>
     <content type="text"><![CDATA[检查ssh1234Hunter-Mac:Highter.github.io yangjianwei$ ls -al ~/.sshtotal 16drwx------ 3 yangjianwei staff 102 Dec 13 15:20 .drwxr-xr-x+ 60 yangjianwei staff 2040 May 14 14:58 .. 注意：如果已经存在ssh key，则可以看到 id_rsa 和 id_rsa.pub ，可跳过第二步。 生成ssh1ssh-keygen -t rsa -b 4096 -C "your_email@example.com" 邮箱填写自己的邮箱，中间一直按回车即可。 查看本地ssh查看ssh的key值 1Hunter-Mac:.ssh yangjianwei$ cat ~/.ssh/id_rsa.pub github配置ssh在github上找到ssh配置页面，Profile-&gt;SSH and GPG keys-&gt;New SSH key，填写ssh的title和key值]]></content>
@@ -79,18 +137,6 @@
         <tag>github</tag>
         <tag>git</tag>
         <tag>ssh</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[管理多个github账号]]></title>
-    <url>%2F2017%2F05%2F27%2F%E7%AE%A1%E7%90%86%E5%A4%9A%E4%B8%AAgithub%E8%B4%A6%E5%8F%B7%2F</url>
-    <content type="text"><![CDATA[场景描述之前在电脑上添加A账号的ssh，后来使用B账号的github，在提交代码的时候遇到这样的情况，比如fatal: remote error: Permission denied 解决方案参考这篇文章https://code.tutsplus.com/tutorials/quick-tip-how-to-work-with-github-and-multiple-accounts–net-22574]]></content>
-      <categories>
-        <category>git</category>
-      </categories>
-      <tags>
-        <tag>github</tag>
-        <tag>git</tag>
       </tags>
   </entry>
   <entry>
@@ -153,17 +199,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Tomcat报错： Tomcat version 7.0 only supports J2EE 1.2, 1.3, 1.4, and Java EE 5 and 6 Web modules]]></title>
-    <url>%2F2017%2F05%2F04%2FTomcat%E6%8A%A5%E9%94%99%EF%BC%9A%20Tomcat%20version%207.0%20only%20supports%20J2EE%201.2%2C%201.3%2C%201.4%2C%20and%20Java%20EE%205%20and%206%20Web%20modules%2F</url>
-    <content type="text"><![CDATA[问题描述web项目加载到tomcat时报错： Tomcat version 7.0 only supports J2EE 1.2, 1.3, 1.4, and Java EE 5 and 6 Web modules如图： 处理方法修改 org.eclipse.wst.common.project.facet.core.xml文件。在eclipse的workspace里面找到该项目，在项目下找到org.eclipse.wst.common.project.facet.core.xml文件。路径：.settings-&gt;org.eclipse.wst.common.project.facet.core.xml打开文件，如下123456789&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;faceted-project&gt; &lt;fixed facet="wst.jsdt.web"/&gt; &lt;installed facet="java" version="1.7"/&gt; &lt;installed facet="jst.web" version="3.1"/&gt; &lt;installed facet="jst.jsf" version="2.2"/&gt; &lt;installed facet="jst.jaxrs" version="2.0"/&gt; &lt;installed facet="wst.jsdt.web" version="1.0"/&gt;&lt;/faceted-project&gt; 修改 ，把version修改成3.0，修改完如下123456789&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;faceted-project&gt; &lt;fixed facet="wst.jsdt.web"/&gt; &lt;installed facet="java" version="1.7"/&gt; &lt;installed facet="jst.web" version="3.0"/&gt; &lt;installed facet="jst.jsf" version="2.2"/&gt; &lt;installed facet="jst.jaxrs" version="2.0"/&gt; &lt;installed facet="wst.jsdt.web" version="1.0"/&gt;&lt;/faceted-project&gt; 处理成果]]></content>
-      <categories>
-        <category>tomcat</category>
-      </categories>
-      <tags>
-        <tag>tomcat</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[Eclipse中导入GitHub项目]]></title>
     <url>%2F2017%2F05%2F04%2FEclipse%E4%B8%AD%E5%AF%BC%E5%85%A5GitHub%E9%A1%B9%E7%9B%AE%2F</url>
     <content type="text"><![CDATA[注意：安装前请确认一下电脑是否安装了Git，Git的安装可以参考Git安装一文。 选择工程Eclipse中选择File-》import-》Git-》Projects from Git，点击 Next 选择仓库源选择Clone URI，点击 Next 配置仓库源信息URI填写git的仓库URL，并在Authentication中填写GitHub的用户名和密码，打钩 Store in Secure Store记住密码，方便下次进来不需要再输入用户名和密码，这里的测试仓库源地址为 ：https://github.com/Highter/SpringBoot-SourceCode.git，配置完之后点击 Next 选择分支由于项目只有一个master分支，就选择master即可，点击Next 选择本地仓库位置在Directory点击Browse选择创建的本地仓库位置 等到项目下载 导出项目类型选择导出项目名称，这里选择Import as general project，导出成为一个普通工程，最后点击Next 配置项目名称配置完项目名称点击 Finish 即可]]></content>
@@ -173,6 +208,17 @@
       <tags>
         <tag>eclipse</tag>
         <tag>github</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Tomcat报错： Tomcat version 7.0 only supports J2EE 1.2, 1.3, 1.4, and Java EE 5 and 6 Web modules]]></title>
+    <url>%2F2017%2F05%2F04%2FTomcat%E6%8A%A5%E9%94%99%EF%BC%9A%20Tomcat%20version%207.0%20only%20supports%20J2EE%201.2%2C%201.3%2C%201.4%2C%20and%20Java%20EE%205%20and%206%20Web%20modules%2F</url>
+    <content type="text"><![CDATA[问题描述web项目加载到tomcat时报错： Tomcat version 7.0 only supports J2EE 1.2, 1.3, 1.4, and Java EE 5 and 6 Web modules如图： 处理方法修改 org.eclipse.wst.common.project.facet.core.xml文件。在eclipse的workspace里面找到该项目，在项目下找到org.eclipse.wst.common.project.facet.core.xml文件。路径：.settings-&gt;org.eclipse.wst.common.project.facet.core.xml打开文件，如下123456789&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;faceted-project&gt; &lt;fixed facet="wst.jsdt.web"/&gt; &lt;installed facet="java" version="1.7"/&gt; &lt;installed facet="jst.web" version="3.1"/&gt; &lt;installed facet="jst.jsf" version="2.2"/&gt; &lt;installed facet="jst.jaxrs" version="2.0"/&gt; &lt;installed facet="wst.jsdt.web" version="1.0"/&gt;&lt;/faceted-project&gt; 修改 ，把version修改成3.0，修改完如下123456789&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;faceted-project&gt; &lt;fixed facet="wst.jsdt.web"/&gt; &lt;installed facet="java" version="1.7"/&gt; &lt;installed facet="jst.web" version="3.0"/&gt; &lt;installed facet="jst.jsf" version="2.2"/&gt; &lt;installed facet="jst.jaxrs" version="2.0"/&gt; &lt;installed facet="wst.jsdt.web" version="1.0"/&gt;&lt;/faceted-project&gt; 处理成果]]></content>
+      <categories>
+        <category>tomcat</category>
+      </categories>
+      <tags>
+        <tag>tomcat</tag>
       </tags>
   </entry>
   <entry>
@@ -246,18 +292,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[oschina码云如何导入项目]]></title>
-    <url>%2F2017%2F04%2F21%2Foschina%E7%A0%81%E4%BA%91%E5%A6%82%E4%BD%95%E5%AF%BC%E5%85%A5%E9%A1%B9%E7%9B%AE%2F</url>
-    <content type="text"><![CDATA[简易的命令行入门教程:Git 全局设置:12git config --global user.name &quot;用户名&quot;git config --global user.email &quot;邮箱&quot; 创建 git 仓库:12345678mkdir webtestcd webtestgit inittouch README.mdgit add README.mdgit commit -m &quot;注释&quot;git remote add origin https://git.oschina.net/higher/webtest.gitgit push -u origin master 已有项目?123cd existing_git_repogit remote add origin https://git.oschina.net/higher/webtest.gitgit push -u origin master]]></content>
-      <categories>
-        <category>git</category>
-      </categories>
-      <tags>
-        <tag>git</tag>
-        <tag>码云</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[第三方Maven仓库地址使用]]></title>
     <url>%2F2017%2F04%2F21%2F%E7%AC%AC%E4%B8%89%E6%96%B9Maven%E4%BB%93%E5%BA%93%E5%9C%B0%E5%9D%80%E4%BD%BF%E7%94%A8%2F</url>
     <content type="text"><![CDATA[第三方Maven仓库地址使用 国内maven仓库下载东西好慢，好多企业都会自建maven仓库，对于我们这些个人开发者就悲催了，还能好好玩耍吗？还好国内还是有比较好用的maven仓库，比如：阿里云的。地址：http://maven.aliyun.com/nexus/在maven的settings.xml，文件位置在maven的安装路径下，比如我本地的路径D:\Java\MAVEN\apache-maven-3.5.0\conf文件里配置mirrors的子节点，添加如下mirror123456&lt;mirror&gt; &lt;id&gt;nexus-aliyun&lt;/id&gt; &lt;mirrorOf&gt;*&lt;/mirrorOf&gt; &lt;name&gt;Nexus aliyun&lt;/name&gt; &lt;url&gt;http://maven.aliyun.com/nexus/content/groups/public&lt;/url&gt;&lt;/mirror&gt;]]></content>
@@ -269,15 +303,15 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Eclipse中配置Maven]]></title>
-    <url>%2F2017%2F04%2F20%2FEclipse%E4%B8%AD%E9%85%8D%E7%BD%AEMaven%2F</url>
-    <content type="text"><![CDATA[注意：安装前请确认一下电脑是否安装了Maven，Maven的安装可以参考Maven安装一文。 说明安装前需先确认使用的Eclipse是否已经集成了Maven插件，如果已经集成，可以跳过步骤2。查看：Windowns-preference里面有没有maven选项，如图表示已经集成，可以跳过步骤2。 安装Maven插件填写Maven地址选择help菜单下面的install new software菜单项，点击Add。Name填写maven，Location填写maven在线安装地址，地址 http://download.eclipse.org/technology/m2e/releases。填写完点击OK 选择插件之后可以根据提示来进行安装。安装完成后需要重新启动Eclipse。安装完成重启之后我们可以看到菜单window-&gt;Preferences点击进入后会多出一栏Maven的菜单栏。 Maven插件配置添加Maven安装目录Windowns-preference-maven-installations，在出现的右边窗口中选择add按钮添加我们自己的Maven安装目录。点击Finish即可 选择目录勾选刚刚添加进来的maven目录 设置setting.xm文件点击User settings，Global Settings是全局的setting，所有用户可以访问，User Settings只有本用户才可以访问的。这里我选择Global Settings，添加setting.xml(位置在本机安装目录下面的conf文件下，当然用户也可以把setting.xml文件放在其它位置)，添加setting.xml文件之后eclipse会读setting.xml配置文件里面的仓库的存储位置，自动显示到Local Repository上，然后点击 OK，这样就完成了 eclipse上 maven 插件配置，就可以在eclipse中使用maven了。]]></content>
+    <title><![CDATA[oschina码云如何导入项目]]></title>
+    <url>%2F2017%2F04%2F21%2Foschina%E7%A0%81%E4%BA%91%E5%A6%82%E4%BD%95%E5%AF%BC%E5%85%A5%E9%A1%B9%E7%9B%AE%2F</url>
+    <content type="text"><![CDATA[简易的命令行入门教程:Git 全局设置:12git config --global user.name &quot;用户名&quot;git config --global user.email &quot;邮箱&quot; 创建 git 仓库:12345678mkdir webtestcd webtestgit inittouch README.mdgit add README.mdgit commit -m &quot;注释&quot;git remote add origin https://git.oschina.net/higher/webtest.gitgit push -u origin master 已有项目?123cd existing_git_repogit remote add origin https://git.oschina.net/higher/webtest.gitgit push -u origin master]]></content>
       <categories>
-        <category>tools</category>
+        <category>git</category>
       </categories>
       <tags>
-        <tag>eclipse</tag>
-        <tag>github</tag>
+        <tag>git</tag>
+        <tag>码云</tag>
       </tags>
   </entry>
   <entry>
@@ -293,16 +327,15 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[MySQL客户端安装之Navicat for Mysql]]></title>
-    <url>%2F2017%2F04%2F19%2FMySQL%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%AE%89%E8%A3%85%E4%B9%8BNavicat%20for%20Mysql%2F</url>
-    <content type="text"><![CDATA[下载下载地址：https://www.navicat.com/download/navicat-for-mysql选择符合自己电脑的版本，这里以win系统32位为例子。可以看到三个下载点，随便选择一个下载即可 安装双击安装包 欢迎界面点击Next 同意协议书同意协议书，点击Next 选择安装路径选择好安装路径，点击Next 选择菜单文件选择开始菜单名字，点击Next 生成图标勾选 Create a desktop icon ，创建桌面图标，点击Next 安装点击Install,开始安装 安装完成到此，已经安装完毕，点击Finish即可]]></content>
+    <title><![CDATA[Eclipse中配置Maven]]></title>
+    <url>%2F2017%2F04%2F20%2FEclipse%E4%B8%AD%E9%85%8D%E7%BD%AEMaven%2F</url>
+    <content type="text"><![CDATA[注意：安装前请确认一下电脑是否安装了Maven，Maven的安装可以参考Maven安装一文。 说明安装前需先确认使用的Eclipse是否已经集成了Maven插件，如果已经集成，可以跳过步骤2。查看：Windowns-preference里面有没有maven选项，如图表示已经集成，可以跳过步骤2。 安装Maven插件填写Maven地址选择help菜单下面的install new software菜单项，点击Add。Name填写maven，Location填写maven在线安装地址，地址 http://download.eclipse.org/technology/m2e/releases。填写完点击OK 选择插件之后可以根据提示来进行安装。安装完成后需要重新启动Eclipse。安装完成重启之后我们可以看到菜单window-&gt;Preferences点击进入后会多出一栏Maven的菜单栏。 Maven插件配置添加Maven安装目录Windowns-preference-maven-installations，在出现的右边窗口中选择add按钮添加我们自己的Maven安装目录。点击Finish即可 选择目录勾选刚刚添加进来的maven目录 设置setting.xm文件点击User settings，Global Settings是全局的setting，所有用户可以访问，User Settings只有本用户才可以访问的。这里我选择Global Settings，添加setting.xml(位置在本机安装目录下面的conf文件下，当然用户也可以把setting.xml文件放在其它位置)，添加setting.xml文件之后eclipse会读setting.xml配置文件里面的仓库的存储位置，自动显示到Local Repository上，然后点击 OK，这样就完成了 eclipse上 maven 插件配置，就可以在eclipse中使用maven了。]]></content>
       <categories>
         <category>tools</category>
       </categories>
       <tags>
-        <tag>mysql</tag>
-        <tag>Navicat Premium</tag>
-        <tag>数据库客户端</tag>
+        <tag>eclipse</tag>
+        <tag>github</tag>
       </tags>
   </entry>
   <entry>
@@ -323,6 +356,19 @@
     <content type="text"><![CDATA[破解版本(win32)链接：http://pan.baidu.com/s/1pL37Cld 密码：4sz4注：本文安装教程是使用官方版本，由于暂时未找到注册号，实际使用的是破解版本。 下载下载地址：https://www.navicat.com/download/navicat-premium选择符合自己电脑的版本，这里以win系统32位为例子。可以看到三个下载点，随便选择一个下载即可 安装双击安装包 欢迎界面点击Next 同意协议书同意协议书，点击Next 选择安装路径选择好安装路径，点击Next 选择菜单文件选择开始菜单名字，点击Next 生成图标勾选 Create a desktop icon ，创建桌面图标，点击Next 安装点击Install,开始安装 安装完成到此，已经安装完毕，点击Finish即可 使用前提确保已经安装了MySQL，如果没有安装过，参考MySQL数据库安装这篇文章 打开应用 填写信息如图填写数据库信息，点击 连接测试 可以测试是否成功，提示连接成功之后点击 确定 即可 连接 双击刚刚配置的 连接名 就可以连接到数据库了，具体要连接那个库，也是双击即可]]></content>
       <categories>
         <category>mysql</category>
+      </categories>
+      <tags>
+        <tag>mysql</tag>
+        <tag>Navicat Premium</tag>
+        <tag>数据库客户端</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[MySQL客户端安装之Navicat for Mysql]]></title>
+    <url>%2F2017%2F04%2F19%2FMySQL%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%AE%89%E8%A3%85%E4%B9%8BNavicat%20for%20Mysql%2F</url>
+    <content type="text"><![CDATA[下载下载地址：https://www.navicat.com/download/navicat-for-mysql选择符合自己电脑的版本，这里以win系统32位为例子。可以看到三个下载点，随便选择一个下载即可 安装双击安装包 欢迎界面点击Next 同意协议书同意协议书，点击Next 选择安装路径选择好安装路径，点击Next 选择菜单文件选择开始菜单名字，点击Next 生成图标勾选 Create a desktop icon ，创建桌面图标，点击Next 安装点击Install,开始安装 安装完成到此，已经安装完毕，点击Finish即可]]></content>
+      <categories>
+        <category>tools</category>
       </categories>
       <tags>
         <tag>mysql</tag>
@@ -365,6 +411,17 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[MAVEN安装]]></title>
+    <url>%2F2017%2F04%2F14%2FMAVEN%E5%AE%89%E8%A3%85%2F</url>
+    <content type="text"><![CDATA[注意：安装前请确认一下电脑是否安装了JDK，JDK的安装可以参考JDK安装一文。 下载下载地址： http://maven.apache.org/download.cgi 如图，选择适合自己电脑的版本，我这里下载的是win系统的版本。 解压 环境变量配置新建系统变量需要新建M2_HOME和MAVEN_HOME系统变量步骤：计算机→属性→高级系统设置→高级→环境变量→系统变量→新建变量名：M2_HOME变量值（填写实际安装路径）：D:\Java\MAVEN\apache-maven-3.5.0MAVEN_HOME系统变量新增同上。注:Maven 说只是添加 M2_HOME , 但一些项目仍引用 Maven 的文件夹 MAVEN_HOME, 因此，为了安全也把它添加进去。如图： 编辑Path变量在变量最后面添加：%M2_HOME%\bin;在变量值最后输入 %M2_HOME%\bin;（注意原来Path的变量值末尾有没有;号，如果没有，先输入；号再输入上面的代码） 到此，MAVEN安装与环境变量配置。 验证运行cmd 输入 mvn -v,若如图所示显示版本信息则说明安装和配置成功。 修改仓库存位置maven 的仓库默认是放在本地用户的临时文件夹下面的 .m2 文件夹下的 repository 下，我的是在 C:\Users\bank_gz.m2\repository目录下。现在我们来修改将它指定到我们自己的路径下，我现在要将仓库指定到D:\Java\MAVEN\apache-maven-3.5.0\repo 目录下，只需要将maven安装路径下conf里面的seting.xml文件。我的是在D:\Java\MAVEN\apache-maven-3.5.0\conf\seting.xml。把下面注销的本地仓库打开改成如下：修改仓库位置原因：因为maven刚安装的时候我们可以看得到maven很小，只有最基本的东西，但我们一旦使用它，就会把我们的需要的东西都下载到仓库里面，随着我们需要调用的命令越多，仓库会越来越大，所以最好不要放在c盘，不然让系统越来越慢，且以后重装系统，还要再下一次。]]></content>
+      <categories>
+        <category>maven</category>
+      </categories>
+      <tags>
+        <tag>maven</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[JDK安装]]></title>
     <url>%2F2017%2F04%2F14%2FJDK%E5%AE%89%E8%A3%85%2F</url>
     <content type="text"><![CDATA[###下载下载地址： http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html 如图，选择适合自己电脑型号的版本，我这里下载的是win系统的32位版本。 安装 双击下载之后的exe，按照提示完成安装，基本是傻瓜式的”下一步”，当然中间可以选择安装路径。注：安装完jdk之后同时会提示安装jre,也是同理安装。如图，这是安装效果： 环境变量配置新建JAVA_HOME系统变量计算机→属性→高级系统设置→高级→环境变量→系统变量→新建变量名字：JAVA_HOME路径（填写实际安装路径）：D:\Java\JDK\jdk1.8.0_121如图： 新建CLASSPATH系统变量变量名字：CLASSPATH路径： .;%JAVA_HOME%\lib;%JAVA_HOME%\lib\tools.jar（注意最前面有一点）如图： 编辑Path变量在变量最后面添加：%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin;在变量值最后输入 %JAVA_HOME%\bin;%JAVA_HOME%\jre\bin（注意原来Path的变量值末尾有没有;号，如果没有，先输入；号再输入上面的代码）到此，JDK安装与环境变量配置。 验证运行cmd 输入 java -version ，若如图所示显示版本信息则说明安装和配置成功。]]></content>
@@ -374,17 +431,6 @@
       <tags>
         <tag>java</tag>
         <tag>jdk</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[MAVEN安装]]></title>
-    <url>%2F2017%2F04%2F14%2FMAVEN%E5%AE%89%E8%A3%85%2F</url>
-    <content type="text"><![CDATA[注意：安装前请确认一下电脑是否安装了JDK，JDK的安装可以参考JDK安装一文。 下载下载地址： http://maven.apache.org/download.cgi 如图，选择适合自己电脑的版本，我这里下载的是win系统的版本。 解压 环境变量配置新建系统变量需要新建M2_HOME和MAVEN_HOME系统变量步骤：计算机→属性→高级系统设置→高级→环境变量→系统变量→新建变量名：M2_HOME变量值（填写实际安装路径）：D:\Java\MAVEN\apache-maven-3.5.0MAVEN_HOME系统变量新增同上。注:Maven 说只是添加 M2_HOME , 但一些项目仍引用 Maven 的文件夹 MAVEN_HOME, 因此，为了安全也把它添加进去。如图： 编辑Path变量在变量最后面添加：%M2_HOME%\bin;在变量值最后输入 %M2_HOME%\bin;（注意原来Path的变量值末尾有没有;号，如果没有，先输入；号再输入上面的代码） 到此，MAVEN安装与环境变量配置。 验证运行cmd 输入 mvn -v,若如图所示显示版本信息则说明安装和配置成功。 修改仓库存位置maven 的仓库默认是放在本地用户的临时文件夹下面的 .m2 文件夹下的 repository 下，我的是在 C:\Users\bank_gz.m2\repository目录下。现在我们来修改将它指定到我们自己的路径下，我现在要将仓库指定到D:\Java\MAVEN\apache-maven-3.5.0\repo 目录下，只需要将maven安装路径下conf里面的seting.xml文件。我的是在D:\Java\MAVEN\apache-maven-3.5.0\conf\seting.xml。把下面注销的本地仓库打开改成如下：修改仓库位置原因：因为maven刚安装的时候我们可以看得到maven很小，只有最基本的东西，但我们一旦使用它，就会把我们的需要的东西都下载到仓库里面，随着我们需要调用的命令越多，仓库会越来越大，所以最好不要放在c盘，不然让系统越来越慢，且以后重装系统，还要再下一次。]]></content>
-      <categories>
-        <category>maven</category>
-      </categories>
-      <tags>
-        <tag>maven</tag>
       </tags>
   </entry>
 </search>
