@@ -140,18 +140,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Eclipse中导入GitHub项目]]></title>
-    <url>%2F2017%2F05%2F04%2FEclipse%E4%B8%AD%E5%AF%BC%E5%85%A5GitHub%E9%A1%B9%E7%9B%AE%2F</url>
-    <content type="text"><![CDATA[注意：安装前请确认一下电脑是否安装了Git，Git的安装可以参考Git安装一文。 选择工程Eclipse中选择File-》import-》Git-》Projects from Git，点击 Next 选择仓库源选择Clone URI，点击 Next 配置仓库源信息URI填写git的仓库URL，并在Authentication中填写GitHub的用户名和密码，打钩 Store in Secure Store记住密码，方便下次进来不需要再输入用户名和密码，这里的测试仓库源地址为 ：https://github.com/Highter/SpringBoot-SourceCode.git，配置完之后点击 Next 选择分支由于项目只有一个master分支，就选择master即可，点击Next 选择本地仓库位置在Directory点击Browse选择创建的本地仓库位置 等到项目下载 导出项目类型选择导出项目名称，这里选择Import as general project，导出成为一个普通工程，最后点击Next 配置项目名称配置完项目名称点击 Finish 即可]]></content>
-      <categories>
-        <category>tools</category>
-      </categories>
-      <tags>
-        <tag>eclipse</tag>
-        <tag>github</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[sql批量插入-存在id相同则更新数据]]></title>
     <url>%2F2017%2F05%2F04%2Fsql%E6%89%B9%E9%87%8F%E6%8F%92%E5%85%A5%3A%E5%AD%98%E5%9C%A8id%E7%9B%B8%E5%90%8C%E5%88%99%E6%9B%B4%E6%96%B0%E6%95%B0%E6%8D%AE%2F</url>
     <content type="text"><![CDATA[建表语句12345678910SET FOREIGN_KEY_CHECKS=0;-- ------------------------------ Table structure for user-- ----------------------------DROP TABLE IF EXISTS `user`;CREATE TABLE `user` ( `a` int(11) NOT NULL, `b` varchar(20) DEFAULT NULL, PRIMARY KEY (`a`)) ENGINE=InnoDB DEFAULT CHARSET=utf8; 插入测试数据1INSERT INTO USER VALUES (1,'a'),(2,'b'),(3,'c'); 查看结果：1SELECT * from USER ; 插入存在id的测试数据1INSERT INTO USER VALUES (1,'a'),(2,'b'),(3,'c'),(4,'d') ON DUPLICATE KEY UPDATE b='test'; 查看结果：1SELECT * from USER ; 到此，我们已经可以成功看到测试结果，我们已经做到了 在sql批量插入时候，存在id相同则更新数据。]]></content>
@@ -173,6 +161,18 @@
       </categories>
       <tags>
         <tag>tomcat</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Eclipse中导入GitHub项目]]></title>
+    <url>%2F2017%2F05%2F04%2FEclipse%E4%B8%AD%E5%AF%BC%E5%85%A5GitHub%E9%A1%B9%E7%9B%AE%2F</url>
+    <content type="text"><![CDATA[注意：安装前请确认一下电脑是否安装了Git，Git的安装可以参考Git安装一文。 选择工程Eclipse中选择File-》import-》Git-》Projects from Git，点击 Next 选择仓库源选择Clone URI，点击 Next 配置仓库源信息URI填写git的仓库URL，并在Authentication中填写GitHub的用户名和密码，打钩 Store in Secure Store记住密码，方便下次进来不需要再输入用户名和密码，这里的测试仓库源地址为 ：https://github.com/Highter/SpringBoot-SourceCode.git，配置完之后点击 Next 选择分支由于项目只有一个master分支，就选择master即可，点击Next 选择本地仓库位置在Directory点击Browse选择创建的本地仓库位置 等到项目下载 导出项目类型选择导出项目名称，这里选择Import as general project，导出成为一个普通工程，最后点击Next 配置项目名称配置完项目名称点击 Finish 即可]]></content>
+      <categories>
+        <category>tools</category>
+      </categories>
+      <tags>
+        <tag>eclipse</tag>
+        <tag>github</tag>
       </tags>
   </entry>
   <entry>
@@ -269,18 +269,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Git命令之用户名和邮箱地址]]></title>
-    <url>%2F2017%2F04%2F20%2FGit%E5%91%BD%E4%BB%A4%E4%B9%8B%E7%94%A8%E6%88%B7%E5%90%8D%E5%92%8C%E9%82%AE%E7%AE%B1%E5%9C%B0%E5%9D%80%2F</url>
-    <content type="text"><![CDATA[注意：本地使用Git的话需确保已经安装了Git，安装教程参考Git安装一文。 说明用户名和邮箱地址是本地Git客户端的一个变量，不随git库而改变。每次commit都会用用户名和邮箱纪录。 修改git config –global user.name “username” 修改/配置用户名git config –global user.email “email” 修改/配置邮箱global是非必须的，当带上global说明配置的信息为全局 查看git config user.name 查看用户名git config user.email 查看邮箱]]></content>
-      <categories>
-        <category>git</category>
-      </categories>
-      <tags>
-        <tag>git</tag>
-        <tag>命令</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[Eclipse中配置Maven]]></title>
     <url>%2F2017%2F04%2F20%2FEclipse%E4%B8%AD%E9%85%8D%E7%BD%AEMaven%2F</url>
     <content type="text"><![CDATA[注意：安装前请确认一下电脑是否安装了Maven，Maven的安装可以参考Maven安装一文。 说明安装前需先确认使用的Eclipse是否已经集成了Maven插件，如果已经集成，可以跳过步骤2。查看：Windowns-preference里面有没有maven选项，如图表示已经集成，可以跳过步骤2。 安装Maven插件填写Maven地址选择help菜单下面的install new software菜单项，点击Add。Name填写maven，Location填写maven在线安装地址，地址 http://download.eclipse.org/technology/m2e/releases。填写完点击OK 选择插件之后可以根据提示来进行安装。安装完成后需要重新启动Eclipse。安装完成重启之后我们可以看到菜单window-&gt;Preferences点击进入后会多出一栏Maven的菜单栏。 Maven插件配置添加Maven安装目录Windowns-preference-maven-installations，在出现的右边窗口中选择add按钮添加我们自己的Maven安装目录。点击Finish即可 选择目录勾选刚刚添加进来的maven目录 设置setting.xm文件点击User settings，Global Settings是全局的setting，所有用户可以访问，User Settings只有本用户才可以访问的。这里我选择Global Settings，添加setting.xml(位置在本机安装目录下面的conf文件下，当然用户也可以把setting.xml文件放在其它位置)，添加setting.xml文件之后eclipse会读setting.xml配置文件里面的仓库的存储位置，自动显示到Local Repository上，然后点击 OK，这样就完成了 eclipse上 maven 插件配置，就可以在eclipse中使用maven了。]]></content>
@@ -293,15 +281,15 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[MySQL数据库安装]]></title>
-    <url>%2F2017%2F04%2F19%2FMySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%89%E8%A3%85%2F</url>
-    <content type="text"><![CDATA[下载选择版本win版本下载地址： https://dev.mysql.com/downloads/mysql/下载官方推荐的版本，点击Download 跳转下载页跳转到下载页面，选择如图下载版本，点击Download 开始下载点击 No thanks, just start my download. 开始下载 安装双击安装包 同意协议书同意协议书，打钩之后点击Next 选择安装类型安装类型有：Developer Default 默认安装类型；Server only 仅作为服务器；Client only 仅作为客户端；Full 完全安装类型；Custom 用户自定义安装类型。我们这里以自定义Custom安装为例，选择Custom之后点击Next 选择组件选择好需要安装的组件，点击Next 检查配置 开始安装点击Execute开始安装 安装完成安装完成之后点击Next 准备配置进入准备配置页面，点击Next 开始配置这里有三个选择：1.Developer Machine(开发机器)，个人用桌面工作站，占用最少的系统资源；2.Server Machine（服务器），MySQL服务器可以同其它应用程序一起运行，例如FTP、email和web服务器。MySQL服务器配置成使用适当比例的系统资源；3.Dedicated MySQL Server Machine（专用MySQL服务器）：该选项代表只运行MySQL服务的服务器。假定运行没有运行其它应用程序。MySQL服务器配置成使用所有可用系统资源根据自己情况选择即可，一般WEB服务器选择第二个，Server Machine即可。个人电脑安装选择第一个，Developer Machine比较好，选择完点击Next 配置密码为root用户配置密码，点击Next windows配置默认，点击Next 拓展配置默认，点击Next 申请服务配置点击Execute，等待执行完点击Finish 检查校验配置最后安装图片校验一下刚刚所有的配置，最后点击Finish即可 检验找到安装程序：打开之后输入密码，输入命令：show databases，即可以查看到所有的数据库了。]]></content>
+    <title><![CDATA[Git命令之用户名和邮箱地址]]></title>
+    <url>%2F2017%2F04%2F20%2FGit%E5%91%BD%E4%BB%A4%E4%B9%8B%E7%94%A8%E6%88%B7%E5%90%8D%E5%92%8C%E9%82%AE%E7%AE%B1%E5%9C%B0%E5%9D%80%2F</url>
+    <content type="text"><![CDATA[注意：本地使用Git的话需确保已经安装了Git，安装教程参考Git安装一文。 说明用户名和邮箱地址是本地Git客户端的一个变量，不随git库而改变。每次commit都会用用户名和邮箱纪录。 修改git config –global user.name “username” 修改/配置用户名git config –global user.email “email” 修改/配置邮箱global是非必须的，当带上global说明配置的信息为全局 查看git config user.name 查看用户名git config user.email 查看邮箱]]></content>
       <categories>
-        <category>tools</category>
+        <category>git</category>
       </categories>
       <tags>
-        <tag>mysql</tag>
-        <tag>数据库</tag>
+        <tag>git</tag>
+        <tag>命令</tag>
       </tags>
   </entry>
   <entry>
@@ -315,6 +303,18 @@
         <tag>mysql</tag>
         <tag>Navicat Premium</tag>
         <tag>数据库客户端</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[MySQL数据库安装]]></title>
+    <url>%2F2017%2F04%2F19%2FMySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%89%E8%A3%85%2F</url>
+    <content type="text"><![CDATA[下载选择版本win版本下载地址： https://dev.mysql.com/downloads/mysql/下载官方推荐的版本，点击Download 跳转下载页跳转到下载页面，选择如图下载版本，点击Download 开始下载点击 No thanks, just start my download. 开始下载 安装双击安装包 同意协议书同意协议书，打钩之后点击Next 选择安装类型安装类型有：Developer Default 默认安装类型；Server only 仅作为服务器；Client only 仅作为客户端；Full 完全安装类型；Custom 用户自定义安装类型。我们这里以自定义Custom安装为例，选择Custom之后点击Next 选择组件选择好需要安装的组件，点击Next 检查配置 开始安装点击Execute开始安装 安装完成安装完成之后点击Next 准备配置进入准备配置页面，点击Next 开始配置这里有三个选择：1.Developer Machine(开发机器)，个人用桌面工作站，占用最少的系统资源；2.Server Machine（服务器），MySQL服务器可以同其它应用程序一起运行，例如FTP、email和web服务器。MySQL服务器配置成使用适当比例的系统资源；3.Dedicated MySQL Server Machine（专用MySQL服务器）：该选项代表只运行MySQL服务的服务器。假定运行没有运行其它应用程序。MySQL服务器配置成使用所有可用系统资源根据自己情况选择即可，一般WEB服务器选择第二个，Server Machine即可。个人电脑安装选择第一个，Developer Machine比较好，选择完点击Next 配置密码为root用户配置密码，点击Next windows配置默认，点击Next 拓展配置默认，点击Next 申请服务配置点击Execute，等待执行完点击Finish 检查校验配置最后安装图片校验一下刚刚所有的配置，最后点击Finish即可 检验找到安装程序：打开之后输入密码，输入命令：show databases，即可以查看到所有的数据库了。]]></content>
+      <categories>
+        <category>tools</category>
+      </categories>
+      <tags>
+        <tag>mysql</tag>
+        <tag>数据库</tag>
       </tags>
   </entry>
   <entry>
