@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[centos7搭建nexus maven私服]]></title>
+    <url>%2F2017%2F07%2F25%2Fcentos7%E6%90%AD%E5%BB%BAnexus-maven%E7%A7%81%E6%9C%8D%2F</url>
+    <content type="text"><![CDATA[前提准备jdk安装参考CentOS安装JDK maven安装参考MAVEN安装（centos7） 下载下载地址：https://www.sonatype.com/download-oss-sonatype这里我使用 wget 命令下载，操作路径 /data,如下1[root@localhost data]# wget http://download.sonatype.com/nexus/3/latest-unix.tar.gz 安装配置解压123[root@localhost data]# cp latest-unix.tar.gz /usr/local/[root@localhost data]# cd /usr/local/[root@localhost local]# tar -zxvf latest-unix.tar.gz 配置环境变量1[root@localhost local]# vim /etc/profile 添加内容如下123#set nexusexport NEXUS_HOME=/usr/local/nexus-3.4.0-02export PATH=$PATH:$NEXUS_HOME/bin 最后使配置文件生效1[root@localhost local]# vim /etc/profile 启动前台启动：./bin/nexus console以后台进程启动：./bin/nexus start查看输出的日志：tail -f logs/wrapper.log12[root@localhost local]# cd nexus-3.4.0-02/[root@localhost nexus-3.4.0-02]# ./bin/nexus start 提示：1234WARNING: ************************************************************WARNING: Detected execution as &quot;root&quot; user. This is NOT recommended!WARNING: ************************************************************Starting nexus 修改nexus安装目录bin/nexus.rc文件12[root@localhost nexus-3.4.0-02]# vim /usr/local/nexus-3.4.0-02/bin/nexus.rc #添加内容：run_as_user="root" 开启端口开启端口：1[root@localhost nexus-3.4.0-02]# firewall-cmd --zone=public --add-port=8081/tcp --permanent 重启防火墙：1[root@localhost nexus-3.4.0-02]# firewall-cmd --reload 访问私服nexus3.X的默认端口是:8081nexus3.X的默认账号是:adminnexus3.X的默认密码是:admin123nexus3.X搭建的maven私服的本地访问地址是:http://私服的ip:8081**例如我的就是:http://192.168.11.88:8081/ 优化设置开机自启动123[root@localhost nexus-3.4.0-02]# ln -s /usr/local/nexus-3.4.0-02/bin/nexus /etc/init.d/nexus3[root@localhost nexus-3.4.0-02]# chkconfig --add nexus3[root@localhost nexus-3.4.0-02]# chkconfig nexus3 on 修改运行nexus3所使用的用户12[root@localhost nexus-3.4.0-02]# vim /usr/local/nexus-3.4.0-02/bin/nexus.rc # 修改内容：run_as_user="root" 修改启动时jdk版本12[root@localhost nexus-3.4.0-02]# vim /usr/local/nexus-3.4.0-02/bin/nexus#修改内容：INSTALL4J_JAVA_HOME_OVERRIDE=/usr/local/java/jdk1.8.0_121 修改默认端口12[root@localhost nexus-3.4.0-02]# vim /usr/local/nexus-3.4.0-02/etc/nexus-default.properties #修改内容：application-port=8282 修改nexus3数据以及相关日志的存储位置1[root@localhost etc]# vim /usr/local/nexus-3.4.0-02/bin/nexus.vmoptions 这里采用默认即可123-XX:LogFile=../sonatype-work/nexus3/log/jvm.log-Dkaraf.data=../sonatype-work/nexus3 -Djava.io.tmpdir=../sonatype-work/nexus3/tmp 启动命令现在我们可以启动nexus3使用如下命令：1[root@localhost nexus3]# /etc/init.d/nexus3 start 更多详情，请关注我的博客https://highter.github.io]]></content>
+      <categories>
+        <category>maven</category>
+      </categories>
+      <tags>
+        <tag>maven</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[常用的开发资源地址]]></title>
+    <url>%2F2017%2F07%2F25%2F%E5%B8%B8%E7%94%A8%E7%9A%84%E5%BC%80%E5%8F%91%E8%B5%84%E6%BA%90%E5%9C%B0%E5%9D%80%2F</url>
+    <content type="text"><![CDATA[svn插件（可集成在eclipse、myeclipse等）svn插件包下载: http://subclipse.tigris.org/servlets/ProjectDocumentList?folderID=2240]]></content>
+      <categories>
+        <category>资源</category>
+      </categories>
+      <tags>
+        <tag>资源</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[JedisClusterMaxRedirectionsException：Too many Cluster redirections]]></title>
     <url>%2F2017%2F07%2F23%2FJedisClusterMaxRedirectionsException%EF%BC%9AToo%20many%20Cluster%20redirections%2F</url>
     <content type="text"><![CDATA[在测试redis集群的时候遇到错误：redis.clients.jedis.exceptions.JedisClusterMaxRedirectionsException: Too many Cluster redirections? 错误原因：创建redis集群的时候使用的命令是：./redis-trib.rb create –replicas 1 127.0.0.1:7001 127.0.0.1:7002 127.0.0.1:7003 127.0.0.1:7004 127.0.0.1:7005 127.0.0.1:7006 但是由于Java客户端在集群之外所以是这样写的：123456789101112131415161718192021222324 @Testpublic void redisTest88()&#123; HashSet&lt;HostAndPort&gt; nodes = new HashSet&lt;HostAndPort&gt;(); boolean add = nodes.add(new HostAndPort("192.168.11.88", 7000)); nodes.add(new HostAndPort("192.168.11.88", 7001)); nodes.add(new HostAndPort("192.168.11.88", 7002)); nodes.add(new HostAndPort("192.168.11.88", 7003)); nodes.add(new HostAndPort("192.168.11.88", 7004)); nodes.add(new HostAndPort("192.168.11.88", 7005)); nodes.add(new HostAndPort("192.168.11.88", 7006)); JedisCluster cluster = new JedisCluster(nodes); System.out.println("cluster:"+cluster); String string = cluster.get("key1"); System.out.println(string); try &#123; if(cluster != null)&#123; cluster.close(); &#125; &#125; catch (Exception e) &#123; // TODO Auto-generated catch block e.printStackTrace(); &#125;&#125; host地址不匹配，导致Too many Cluster redirections 解决方法：1)将每个节点下aof、rdb、nodes.conf本地备份文件删除；2)启动所有redis节点；3)重新构建集群使用：./redis-trib.rb create –replicas 1 192.168.11.88:7001 192.168.11.88:7002 192.168.11.88:7003 192.168.11.88:7004 192.168.11.88:7005 192.168.11.88:7006]]></content>
@@ -173,6 +195,18 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[Mac下使用Hexo搭建github博客]]></title>
+    <url>%2F2017%2F05%2F26%2FMac%E4%B8%8B%E4%BD%BF%E7%94%A8Hexo%E6%90%AD%E5%BB%BAgithub%E5%8D%9A%E5%AE%A2%2F</url>
+    <content type="text"><![CDATA[Mac下使用Hexo搭建github博客注意：本文实践是在mac系统下进行，hexo安装参考Mac下安装Hexo一文。 复制github仓库地址在自己的github账号下复制 *.github.io仓库的地址，如果没有，需要新建一个 关联github终端里cd到存放博客的文件夹下，这里我的文件夹名字为 Highter.github.io，编辑_config.yml，滑到最底部，将deploy里的内容改为如下：1234deploy: type: git repository: https://github.com/Highter/Highter.github.io.git // 这个地方填写自己的仓库地址 branch: master 部署到github发布到github1Hunter-Mac:Highter.github.io yangjianwei$ hexo deploy 根据提示输入用户名和密码，回车即可 注意： 运行 hexo deploy部署到github ，若提示“ERROR Deployer not found: git”，如下 则安装hexo-deployer-git,如图表示安装成功 1Hunter-Mac:Highter.github.io yangjianwei$ npm install hexo-deployer-git --save 查看效果在浏览器输入https://yangjianwei.github.io/ 查看效果(细心的朋友可能发现了访问链接和步骤2配置的仓库地址不一样。个人有几个github账号，为了方便大家看到效果，我把测试的东西推送到yangjianwei这个账号上了)]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>github</tag>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Mac下hexo使用next主题]]></title>
     <url>%2F2017%2F05%2F26%2FMac%E4%B8%8Bhexo%E5%AE%89%E8%A3%85next%E4%B8%BB%E9%A2%98%2F</url>
     <content type="text"><![CDATA[Mac下hexo使用next主题下载主题在终端窗口下，切到 Hexo 站点目录下，下载NexT主题。这里我使用的站点目录是 Highter.github.io 1Hunter-Mac:Highter.github.io yangjianwei$ git clone https://github.com/iissnan/hexo-theme-next themes/next 开启主题在站点目录下修改 _config.yml 文件 1theme: next 验证主题验证主题需要启动服务来看效果，在启动服务前先执行 hexo clean 来清理hexo缓存 清理缓存1Hunter-Mac:Highter.github.io yangjianwei$ hexo clean 启动服务1Hunter-Mac:Highter.github.io yangjianwei$ hexo server 查看效果在浏览器输入http://localhost:4000/查看效果 设置主题设置主题方案Muse - 默认 Scheme，这是 NexT 最初的版本，黑白主调，大量留白Mist - Muse 的紧凑版本，整洁有序的单栏外观Pisces - 双栏 Scheme，小家碧玉似的清新Scheme 的切换通过更改 主题配置文件，搜索 scheme 关键字。 你会看到有三行 scheme 的配置，将你需用启用的 scheme 前面注释 # 去除即可这里选择 Pisces作为例子我的 主题配置文件 路径在：1../Highter.github.io/themes/next/_config.yml 修改如下：1234# Schemes#scheme: Muse#scheme: Mistscheme: Pisces 设置语言编辑 站点配置文件， 将 language 设置成你所需要的语言。建议明确设置你所需要的语言，例如选用简体中文，我的 站点配置文件 路径在：1../Highter.github.io/_config.yml 配置如下： 1language: zh-Hans 目前 NexT 支持的语言如以下表格所示： 语言 代码 设定示例 English en language: en 简体中文 zh-Hans language: zh-Hans Français fr-FR language: fr-FR Português pt language: pt or language: pt-BR 繁體中文 zh-hk 或者 zh-tw language: zh-hk Русский язык ru language: ru Deutsch de language: de 日本語 ja language: ja Indonesian id language: id Korean ko language: ko 设置菜单默认运行只有 Home 、Archives 、Tags修改主题 主题配置文件12345678menu: home: / #首页 categories: /categories #分类 about: /about #关于 archives: /archives #归档 tags: /tags #标签 sitemap: /sitemap.xml commonweal: /404.html 设置侧栏left - 靠左放置right - 靠右放置修改主题 主题配置文件12sidebar: position: left 头像编辑主题 主题配置文件 修改字段 avatar， 值设置成头像的链接地址。其中，头像的链接地址可以是： 地址 值 完整的互联网 URI http://example.com/avatar.png 站点内的地址 将头像放置主题目录下的 source/uploads/ （新建 uploads 目录若不存在） 配置为：avatar: /uploads/avatar.png或者 放置在 source/images/ 目录下 配置为：avatar: /images/avatar.png 头像设置示例avatar: /uploads/avatar.jpg 设置站点1234567# Sitetitle: Highter's blog #标题subtitle: Smile at life ^_^ #小标题description: Life is short,I use Java #描述author: Highter #作者language: zh-Hans #语言timezone: 添加文章把自己所写的文章添加到站点的_posts文件下 123Hunter-Mac:Highter.github.io yangjianwei$ hexo cleanINFO Deleted database.Hunter-Mac:Highter.github.io yangjianwei$ hexo s 到这一步我们可以查看一下效果 分类页当我们点击分类的时候可以看到如图 需要初始化分类 hexo new page categories12Hunter-Mac:Highter.github.io yangjianwei$ hexo new page categoriesINFO Created: ~/Documents/msg/github/Highter.github.io/source/categories/index.md 修改~/Documents/msg/github/Highter.github.io/source/categories/index.md 文件123456---title: 分类date: 2017-05-18 22:38:17type: "categories"comments: false--- 标签页需要初始化标签 hexo new page tags12Hunter-Mac:Highter.github.io yangjianwei$ hexo new page tagsINFO Created: ~/Documents/msg/github/Highter.github.io/source/tags/index.md 修改~/Documents/msg/github/Highter.github.io/source/tags/index.md 文件123456---title: 标签date: 2017-05-18 22:57:40type: "tags"comments: false--- 设置文章分类和标签添加类似下面的分类和标签，注意categories和tags的冒号后需要空格12345---title: CentOS安装JDKcategories: [java]tags: [java,centos,jdk]--- 设置阅读更多修改 主题配置文件1234# Please use &lt;!-- more --&gt; in the post to control excerpt accurately.auto_excerpt: enable: true #设置为true length: 150 效果 设置描述123456---title: CentOS安装JDKcategories: [java]tags: [java,centos,jdk]description: 本文介绍在linux系统下安装JDK，这里选择在CentOS系统下实践。#摘要描述--- 结束语上面只是一些关于主题的基础配置，更多详情配置参考Next主题使用文档]]></content>
@@ -195,18 +229,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Mac下使用Hexo搭建github博客]]></title>
-    <url>%2F2017%2F05%2F26%2FMac%E4%B8%8B%E4%BD%BF%E7%94%A8Hexo%E6%90%AD%E5%BB%BAgithub%E5%8D%9A%E5%AE%A2%2F</url>
-    <content type="text"><![CDATA[Mac下使用Hexo搭建github博客注意：本文实践是在mac系统下进行，hexo安装参考Mac下安装Hexo一文。 复制github仓库地址在自己的github账号下复制 *.github.io仓库的地址，如果没有，需要新建一个 关联github终端里cd到存放博客的文件夹下，这里我的文件夹名字为 Highter.github.io，编辑_config.yml，滑到最底部，将deploy里的内容改为如下：1234deploy: type: git repository: https://github.com/Highter/Highter.github.io.git // 这个地方填写自己的仓库地址 branch: master 部署到github发布到github1Hunter-Mac:Highter.github.io yangjianwei$ hexo deploy 根据提示输入用户名和密码，回车即可 注意： 运行 hexo deploy部署到github ，若提示“ERROR Deployer not found: git”，如下 则安装hexo-deployer-git,如图表示安装成功 1Hunter-Mac:Highter.github.io yangjianwei$ npm install hexo-deployer-git --save 查看效果在浏览器输入https://yangjianwei.github.io/ 查看效果(细心的朋友可能发现了访问链接和步骤2配置的仓库地址不一样。个人有几个github账号，为了方便大家看到效果，我把测试的东西推送到yangjianwei这个账号上了)]]></content>
-      <categories>
-        <category>hexo</category>
-      </categories>
-      <tags>
-        <tag>github</tag>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[VirtualBox安装centos7]]></title>
     <url>%2F2017%2F05%2F21%2Fvirtualbox%E5%AE%89%E8%A3%85centos%2F</url>
     <content type="text"><![CDATA[下载下载地址： https://www.centos.org/download/我这里选择的是DVD ISO版本。 创建虚拟系统新建 虚拟电脑名称和系统类型填写名称，这里填写 CentOS7,类型选择 Linux，版本选择 Other Linux(64-bit) 内存大小设置内存大小，我电脑内存是8G的，所以这里我赋予它2G，大家可以根据自己电脑配置情况设置 虚拟硬盘选择 现在创建虚拟硬盘 虚拟硬盘文件类型文件类型选择VDI(VirtualBox 磁盘映像) 动态分配建议选择动态分配，不会占用太多物理空间，根据情况动态分配 文件位置和大小选择保存位置和设置极限大小 设置虚拟系统 系统选择让 光驱 启动优先 存储选择 光驱 位置 网络设置网络，连接方式选择 网络地址转换(NAT) 安装安装首页选择 Install CentOS Linux 7,回车 选择语言 安装主界面进入安装主界面之后要设置 软件选择 和 安装位置 软件选择选择所需要的附加选项，点击 完成 安装位置选择 本地标准磁盘，点击 完成 开始安装设置完 软件选择 和 安装位置 之后点击 开始安装 用户设置设置 ROOT密码 和 创建用户 ROOT密码 创建用户 等待安装设置完 ROOT密码 和 创建用户 之后等待安装 安装完成安装完成之后点击 重启 即可 启动启动前配置启动的时候提示需要同意协议书和设置网络，如果你在步骤 4.3 上已经设置了，这里就不需要再设置 同意协议书勾选 同意 复选框，点击 完成 即可 设置网络点击右边开关，显示 开启 之后点击完成即可 输入用户密码输入步骤 4.4.2 设置的密码 系统主界面登录之后可以看到系统的主界面，如图]]></content>
@@ -219,17 +241,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Tomcat报错： Tomcat version 7.0 only supports J2EE 1.2, 1.3, 1.4, and Java EE 5 and 6 Web modules]]></title>
-    <url>%2F2017%2F05%2F04%2FTomcat%E6%8A%A5%E9%94%99%EF%BC%9A%20Tomcat%20version%207.0%20only%20supports%20J2EE%201.2%2C%201.3%2C%201.4%2C%20and%20Java%20EE%205%20and%206%20Web%20modules%2F</url>
-    <content type="text"><![CDATA[问题描述web项目加载到tomcat时报错： Tomcat version 7.0 only supports J2EE 1.2, 1.3, 1.4, and Java EE 5 and 6 Web modules如图： 处理方法修改 org.eclipse.wst.common.project.facet.core.xml文件。在eclipse的workspace里面找到该项目，在项目下找到org.eclipse.wst.common.project.facet.core.xml文件。路径：.settings-&gt;org.eclipse.wst.common.project.facet.core.xml打开文件，如下123456789&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;faceted-project&gt; &lt;fixed facet="wst.jsdt.web"/&gt; &lt;installed facet="java" version="1.7"/&gt; &lt;installed facet="jst.web" version="3.1"/&gt; &lt;installed facet="jst.jsf" version="2.2"/&gt; &lt;installed facet="jst.jaxrs" version="2.0"/&gt; &lt;installed facet="wst.jsdt.web" version="1.0"/&gt;&lt;/faceted-project&gt; 修改 ，把version修改成3.0，修改完如下123456789&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;faceted-project&gt; &lt;fixed facet="wst.jsdt.web"/&gt; &lt;installed facet="java" version="1.7"/&gt; &lt;installed facet="jst.web" version="3.0"/&gt; &lt;installed facet="jst.jsf" version="2.2"/&gt; &lt;installed facet="jst.jaxrs" version="2.0"/&gt; &lt;installed facet="wst.jsdt.web" version="1.0"/&gt;&lt;/faceted-project&gt; 处理成果]]></content>
-      <categories>
-        <category>tomcat</category>
-      </categories>
-      <tags>
-        <tag>tomcat</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[Eclipse中导入GitHub项目]]></title>
     <url>%2F2017%2F05%2F04%2FEclipse%E4%B8%AD%E5%AF%BC%E5%85%A5GitHub%E9%A1%B9%E7%9B%AE%2F</url>
     <content type="text"><![CDATA[注意：安装前请确认一下电脑是否安装了Git，Git的安装可以参考Git安装一文。 选择工程Eclipse中选择File-》import-》Git-》Projects from Git，点击 Next 选择仓库源选择Clone URI，点击 Next 配置仓库源信息URI填写git的仓库URL，并在Authentication中填写GitHub的用户名和密码，打钩 Store in Secure Store记住密码，方便下次进来不需要再输入用户名和密码，这里的测试仓库源地址为 ：https://github.com/Highter/SpringBoot-SourceCode.git，配置完之后点击 Next 选择分支由于项目只有一个master分支，就选择master即可，点击Next 选择本地仓库位置在Directory点击Browse选择创建的本地仓库位置 等到项目下载 导出项目类型选择导出项目名称，这里选择Import as general project，导出成为一个普通工程，最后点击Next 配置项目名称配置完项目名称点击 Finish 即可]]></content>
@@ -239,6 +250,17 @@
       <tags>
         <tag>eclipse</tag>
         <tag>github</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Tomcat报错： Tomcat version 7.0 only supports J2EE 1.2, 1.3, 1.4, and Java EE 5 and 6 Web modules]]></title>
+    <url>%2F2017%2F05%2F04%2FTomcat%E6%8A%A5%E9%94%99%EF%BC%9A%20Tomcat%20version%207.0%20only%20supports%20J2EE%201.2%2C%201.3%2C%201.4%2C%20and%20Java%20EE%205%20and%206%20Web%20modules%2F</url>
+    <content type="text"><![CDATA[问题描述web项目加载到tomcat时报错： Tomcat version 7.0 only supports J2EE 1.2, 1.3, 1.4, and Java EE 5 and 6 Web modules如图： 处理方法修改 org.eclipse.wst.common.project.facet.core.xml文件。在eclipse的workspace里面找到该项目，在项目下找到org.eclipse.wst.common.project.facet.core.xml文件。路径：.settings-&gt;org.eclipse.wst.common.project.facet.core.xml打开文件，如下123456789&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;faceted-project&gt; &lt;fixed facet="wst.jsdt.web"/&gt; &lt;installed facet="java" version="1.7"/&gt; &lt;installed facet="jst.web" version="3.1"/&gt; &lt;installed facet="jst.jsf" version="2.2"/&gt; &lt;installed facet="jst.jaxrs" version="2.0"/&gt; &lt;installed facet="wst.jsdt.web" version="1.0"/&gt;&lt;/faceted-project&gt; 修改 ，把version修改成3.0，修改完如下123456789&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;faceted-project&gt; &lt;fixed facet="wst.jsdt.web"/&gt; &lt;installed facet="java" version="1.7"/&gt; &lt;installed facet="jst.web" version="3.0"/&gt; &lt;installed facet="jst.jsf" version="2.2"/&gt; &lt;installed facet="jst.jaxrs" version="2.0"/&gt; &lt;installed facet="wst.jsdt.web" version="1.0"/&gt;&lt;/faceted-project&gt; 处理成果]]></content>
+      <categories>
+        <category>tomcat</category>
+      </categories>
+      <tags>
+        <tag>tomcat</tag>
       </tags>
   </entry>
   <entry>
@@ -325,17 +347,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[第三方Maven仓库地址使用]]></title>
-    <url>%2F2017%2F04%2F21%2F%E7%AC%AC%E4%B8%89%E6%96%B9Maven%E4%BB%93%E5%BA%93%E5%9C%B0%E5%9D%80%E4%BD%BF%E7%94%A8%2F</url>
-    <content type="text"><![CDATA[第三方Maven仓库地址使用 国内maven仓库下载东西好慢，好多企业都会自建maven仓库，对于我们这些个人开发者就悲催了，还能好好玩耍吗？还好国内还是有比较好用的maven仓库，比如：阿里云的。地址：http://maven.aliyun.com/nexus/在maven的settings.xml，文件位置在maven的安装路径下，比如我本地的路径D:\Java\MAVEN\apache-maven-3.5.0\conf文件里配置mirrors的子节点，添加如下mirror123456&lt;mirror&gt; &lt;id&gt;nexus-aliyun&lt;/id&gt; &lt;mirrorOf&gt;*&lt;/mirrorOf&gt; &lt;name&gt;Nexus aliyun&lt;/name&gt; &lt;url&gt;http://maven.aliyun.com/nexus/content/groups/public&lt;/url&gt;&lt;/mirror&gt;]]></content>
-      <categories>
-        <category>maven</category>
-      </categories>
-      <tags>
-        <tag>maven</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[oschina码云如何导入项目]]></title>
     <url>%2F2017%2F04%2F21%2Foschina%E7%A0%81%E4%BA%91%E5%A6%82%E4%BD%95%E5%AF%BC%E5%85%A5%E9%A1%B9%E7%9B%AE%2F</url>
     <content type="text"><![CDATA[简易的命令行入门教程:Git 全局设置:12git config --global user.name &quot;用户名&quot;git config --global user.email &quot;邮箱&quot; 创建 git 仓库:12345678mkdir webtestcd webtestgit inittouch README.mdgit add README.mdgit commit -m &quot;注释&quot;git remote add origin https://git.oschina.net/higher/webtest.gitgit push -u origin master 已有项目?123cd existing_git_repogit remote add origin https://git.oschina.net/higher/webtest.gitgit push -u origin master]]></content>
@@ -345,6 +356,17 @@
       <tags>
         <tag>git</tag>
         <tag>码云</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[第三方Maven仓库地址使用]]></title>
+    <url>%2F2017%2F04%2F21%2F%E7%AC%AC%E4%B8%89%E6%96%B9Maven%E4%BB%93%E5%BA%93%E5%9C%B0%E5%9D%80%E4%BD%BF%E7%94%A8%2F</url>
+    <content type="text"><![CDATA[第三方Maven仓库地址使用 国内maven仓库下载东西好慢，好多企业都会自建maven仓库，对于我们这些个人开发者就悲催了，还能好好玩耍吗？还好国内还是有比较好用的maven仓库，比如：阿里云的。地址：http://maven.aliyun.com/nexus/在maven的settings.xml，文件位置在maven的安装路径下，比如我本地的路径D:\Java\MAVEN\apache-maven-3.5.0\conf文件里配置mirrors的子节点，添加如下mirror123456&lt;mirror&gt; &lt;id&gt;nexus-aliyun&lt;/id&gt; &lt;mirrorOf&gt;*&lt;/mirrorOf&gt; &lt;name&gt;Nexus aliyun&lt;/name&gt; &lt;url&gt;http://maven.aliyun.com/nexus/content/groups/public&lt;/url&gt;&lt;/mirror&gt;]]></content>
+      <categories>
+        <category>maven</category>
+      </categories>
+      <tags>
+        <tag>maven</tag>
       </tags>
   </entry>
   <entry>
@@ -372,11 +394,11 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[MySQL客户端安装之Navicat Premium]]></title>
-    <url>%2F2017%2F04%2F19%2FMySQL%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%AE%89%E8%A3%85%E4%B9%8BNavicat%20Premium%2F</url>
-    <content type="text"><![CDATA[破解版本(win32)链接：http://pan.baidu.com/s/1pL37Cld 密码：4sz4注：本文安装教程是使用官方版本，由于暂时未找到注册号，实际使用的是破解版本。 下载下载地址：https://www.navicat.com/download/navicat-premium选择符合自己电脑的版本，这里以win系统32位为例子。可以看到三个下载点，随便选择一个下载即可 安装双击安装包 欢迎界面点击Next 同意协议书同意协议书，点击Next 选择安装路径选择好安装路径，点击Next 选择菜单文件选择开始菜单名字，点击Next 生成图标勾选 Create a desktop icon ，创建桌面图标，点击Next 安装点击Install,开始安装 安装完成到此，已经安装完毕，点击Finish即可 使用前提确保已经安装了MySQL，如果没有安装过，参考MySQL数据库安装这篇文章 打开应用 填写信息如图填写数据库信息，点击 连接测试 可以测试是否成功，提示连接成功之后点击 确定 即可 连接 双击刚刚配置的 连接名 就可以连接到数据库了，具体要连接那个库，也是双击即可]]></content>
+    <title><![CDATA[MySQL客户端安装之Navicat for Mysql]]></title>
+    <url>%2F2017%2F04%2F19%2FMySQL%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%AE%89%E8%A3%85%E4%B9%8BNavicat%20for%20Mysql%2F</url>
+    <content type="text"><![CDATA[下载下载地址：https://www.navicat.com/download/navicat-for-mysql选择符合自己电脑的版本，这里以win系统32位为例子。可以看到三个下载点，随便选择一个下载即可 安装双击安装包 欢迎界面点击Next 同意协议书同意协议书，点击Next 选择安装路径选择好安装路径，点击Next 选择菜单文件选择开始菜单名字，点击Next 生成图标勾选 Create a desktop icon ，创建桌面图标，点击Next 安装点击Install,开始安装 安装完成到此，已经安装完毕，点击Finish即可]]></content>
       <categories>
-        <category>mysql</category>
+        <category>tools</category>
       </categories>
       <tags>
         <tag>mysql</tag>
@@ -397,27 +419,16 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[MySQL客户端安装之Navicat for Mysql]]></title>
-    <url>%2F2017%2F04%2F19%2FMySQL%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%AE%89%E8%A3%85%E4%B9%8BNavicat%20for%20Mysql%2F</url>
-    <content type="text"><![CDATA[下载下载地址：https://www.navicat.com/download/navicat-for-mysql选择符合自己电脑的版本，这里以win系统32位为例子。可以看到三个下载点，随便选择一个下载即可 安装双击安装包 欢迎界面点击Next 同意协议书同意协议书，点击Next 选择安装路径选择好安装路径，点击Next 选择菜单文件选择开始菜单名字，点击Next 生成图标勾选 Create a desktop icon ，创建桌面图标，点击Next 安装点击Install,开始安装 安装完成到此，已经安装完毕，点击Finish即可]]></content>
+    <title><![CDATA[MySQL客户端安装之Navicat Premium]]></title>
+    <url>%2F2017%2F04%2F19%2FMySQL%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%AE%89%E8%A3%85%E4%B9%8BNavicat%20Premium%2F</url>
+    <content type="text"><![CDATA[破解版本(win32)链接：http://pan.baidu.com/s/1pL37Cld 密码：4sz4注：本文安装教程是使用官方版本，由于暂时未找到注册号，实际使用的是破解版本。 下载下载地址：https://www.navicat.com/download/navicat-premium选择符合自己电脑的版本，这里以win系统32位为例子。可以看到三个下载点，随便选择一个下载即可 安装双击安装包 欢迎界面点击Next 同意协议书同意协议书，点击Next 选择安装路径选择好安装路径，点击Next 选择菜单文件选择开始菜单名字，点击Next 生成图标勾选 Create a desktop icon ，创建桌面图标，点击Next 安装点击Install,开始安装 安装完成到此，已经安装完毕，点击Finish即可 使用前提确保已经安装了MySQL，如果没有安装过，参考MySQL数据库安装这篇文章 打开应用 填写信息如图填写数据库信息，点击 连接测试 可以测试是否成功，提示连接成功之后点击 确定 即可 连接 双击刚刚配置的 连接名 就可以连接到数据库了，具体要连接那个库，也是双击即可]]></content>
       <categories>
-        <category>tools</category>
+        <category>mysql</category>
       </categories>
       <tags>
         <tag>mysql</tag>
         <tag>Navicat Premium</tag>
         <tag>数据库客户端</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Git安装]]></title>
-    <url>%2F2017%2F04%2F18%2FGit%E5%AE%89%E8%A3%85%2F</url>
-    <content type="text"><![CDATA[下载win版本下载地址： https://git-for-windows.github.io/ 安装双击安装包 Next 选择安装路径选择好安装路径之后，点击Next 选择组件默认打钩，用户可以自行选择其它，这里多选择了在桌面生成图标，点击Next 配置名称设置开始菜单的名称，默认Git，点击Next 设置环境变量在“Adjusting your PATH environment”选项中，默认即可。点击 Next注：这个步骤选择第二项“Use Git from the Windows Command Prompt”， 这样在Windows的命令行cmd中也可以运行git命令了。这样会对以后的一些操作带来方便。 选择https传输方式 配置行结束标记保持默认“Checkout Windows-style, commit Unix-style line endings” 选择终端在终端模拟器选择页面,默认即可，配置后Git Gash的终端比较易用。然后点击“Next” 配置额外选择最后配置Git额外选择默认即可，然后点击“Install”开始安装，如果之前安装过旧版本，会先卸载然后再安装新版本 等待安装 安装完成到此，Git已经安装完毕，点击Finish即可 参考文章：https://git-scm.com/book/zh/v1/%E8%B5%B7%E6%AD%A5-%E5%AE%89%E8%A3%85-Git]]></content>
-      <categories>
-        <category>git</category>
-      </categories>
-      <tags>
-        <tag>git</tag>
       </tags>
   </entry>
   <entry>
@@ -429,6 +440,17 @@
       </categories>
       <tags>
         <tag>jenkins</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Git安装]]></title>
+    <url>%2F2017%2F04%2F18%2FGit%E5%AE%89%E8%A3%85%2F</url>
+    <content type="text"><![CDATA[下载win版本下载地址： https://git-for-windows.github.io/ 安装双击安装包 Next 选择安装路径选择好安装路径之后，点击Next 选择组件默认打钩，用户可以自行选择其它，这里多选择了在桌面生成图标，点击Next 配置名称设置开始菜单的名称，默认Git，点击Next 设置环境变量在“Adjusting your PATH environment”选项中，默认即可。点击 Next注：这个步骤选择第二项“Use Git from the Windows Command Prompt”， 这样在Windows的命令行cmd中也可以运行git命令了。这样会对以后的一些操作带来方便。 选择https传输方式 配置行结束标记保持默认“Checkout Windows-style, commit Unix-style line endings” 选择终端在终端模拟器选择页面,默认即可，配置后Git Gash的终端比较易用。然后点击“Next” 配置额外选择最后配置Git额外选择默认即可，然后点击“Install”开始安装，如果之前安装过旧版本，会先卸载然后再安装新版本 等待安装 安装完成到此，Git已经安装完毕，点击Finish即可 参考文章：https://git-scm.com/book/zh/v1/%E8%B5%B7%E6%AD%A5-%E5%AE%89%E8%A3%85-Git]]></content>
+      <categories>
+        <category>git</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
       </tags>
   </entry>
   <entry>
