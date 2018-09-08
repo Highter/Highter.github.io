@@ -12,52 +12,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[mac下安装docker]]></title>
-    <url>%2F2017%2F10%2F19%2Fmac%E4%B8%8B%E5%AE%89%E8%A3%85docker%2F</url>
-    <content type="text"><![CDATA[MQ 全称为 Message Queue, 消息队列（MQ）是一种应用程序对应用程序的通信方法。应用程序通过读写出入队列的消息（针对应用程序的数据）来通信，而无需专用连接来链接它们。RabbitMQ 是一个在 AMQP 基础上完整的，可复用的企业消息系统。他遵循 Mozilla Public License 开源协议。本文操作路劲在/data目录下。 安装 Erlang1[root@localhost data]# sudo yum install erlang 安装RabbitMQ Server]]></content>
-      <categories>
-        <category>docker</category>
-      </categories>
-      <tags>
-        <tag>docker</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[青春路上，爱情花开]]></title>
-    <url>%2F2017%2F09%2F10%2F%E9%9D%92%E6%98%A5%E8%B7%AF%E4%B8%8A%EF%BC%8C%E7%88%B1%E6%83%85%E8%8A%B1%E5%BC%80%2F</url>
-    <content type="text"><![CDATA[​ 遥想过去的遥想过去的种种，我们从相识、相知到相爱，种种过去犹在眼前。 ​ 2007年初，那是初二第二学期的时候，我开始留意到了你，坐在我前两排的一个不起眼女孩，那时候我们的交集就是我喊起立，大家一起起立，你呢，就一直子催着我们组交作业。有一天放学之后，轮到值日的调皮的同学跑路了，出于责任心的我一个人留下来打扫卫生。做好事真的有回报，那天我打扫完你和另外几个人女生出去玩刚回来，客气的跟我打了招呼，然后给我了你们的大头贴。那时候的我欣喜若狂，小心翼翼珍藏这枚大头贴，心里想，原来你也喜欢我。前几天还特地炫耀问当时给我大头贴，你说：大家都给，我就跟着给。好吧，或许这无意之举使我们爱情开始萌芽。 ​ 到初三的时候，我们在同一层的不同班。我每次都留意你的成绩，总在你成绩下降的时候假装如救星般出来，利用下课的几分钟站在走廊看着木棉花花开，分享学习心得，献上我自以为是的笔记。初三对我们来说太重要了，一年下来我们彼此间的书信来往寥寥几封，生怕影响彼此成绩，言语沟通都很谨慎，书信汇总起来就是两句话：谢谢你，加油。那时候我们都不懂爱情，也没有对彼此说过一句喜欢的话，都只知道对方也在陪着彼此学习，最后，给你写笔记的我中考成绩不堪入目。 ​ 2008年，我们考入了同一个高中，那时的我们真的没有交集了，不同栋楼，不同班级，甚至不同报考方向。每一次校道遇到你，我依然兴高采烈打招呼，甚至脸红，举止无常，想起来，那时候真的让你很难堪。但是每年的圣诞节你都会收到我的一份小礼物和一份鼓励信，因为初中你说过你喜欢圣诞节。那是很懵懂，只知道心里喜欢着你，想着高中结束，就去表白。 ​ 终于，到了2011年，我们步入了大学，不同城市，对于你的情况我只能通过朋友传递我这边。那时候我开始慌了，一直问我自己：你心里到底是怎么想的？2012年的三分月，那时候是大一第一期，我在朋友的陪伴下，怀着忐忑的心情一群人来到广外找你，那天晚上我说出了憋在心里5年多的一句话：我爱你，做我女朋友吧！你犹豫了，告诉我：为什么初中不告诉我？我以为你一直把我单做好朋友，现在太突然了，我已经不了解你了。那晚，你愿意让我牵着手，之后看着你离去的影子，我强忍着痛苦，在广外的校道上跑了好多圈，朋友们都陪着通宵一个晚上。隔天，我回到学校，度过了黑暗的几天。事后我才知道，我的朋友们在背后帮我去找你说了很多关于我的事情，才会接下来的几个月之约。你说愿意给我几个月的时间，用行动证明自己，让双方更加了解彼此，弥补高中缺失的回忆。那时候的我又满血复活了，生活又多了一份期待，好傻好傻，觉得提高成绩，积极参与各种校园活动就是证明自己。但是在2012年的7月份，也就是你生日那天，你通过电话告诉我，愿意做我女朋友了，好开心，好兴奋。终于等到你，那天…我失眠了。 ​ 大二、三年我们是异地恋，想在想起来也是很佩服我们两人，那时候所有的喜怒哀乐通过电话就可以搞定了。到了大四那一年我过来广州了，直到现在，我们都住一起，慢慢习惯彼此的生活方式，互相帮对方分析职场未来，共同面对生活中的点点滴滴。一起熬夜准备工作，一起炒菜做饭，一起走南走北。 ​ 感谢你陪我走过风风雨雨，感谢你一直以来的不离不弃，感谢你今天跟我一起跟我结婚。以前我需要你，未来我依然离不开你，请你嫁给我吧。今天在亲朋好友的见证下，做我的妻子吧，让我做你一辈子的守护神。]]></content>
-      <tags>
-        <tag>日记</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[婚礼流程]]></title>
-    <url>%2F2017%2F09%2F10%2F%E5%A9%9A%E7%A4%BC%E6%B5%81%E7%A8%8B%2F</url>
-    <content type="text"><![CDATA[司仪建议流程1、主持人开场白；2、兄弟姐妹团出场（需提前彩排）;3、新郎上台；4、新娘+新娘父亲出场，新郎交接，父亲回席；5、新郎+新娘走红毯入场；6、爱情誓言；7、交换戒指(伴娘呈上对戒，用戒指盒装好) ；8、亲吻礼；9、切蛋糕，倒香槟，交杯酒；10、双方主婚人上台致辞及全场祝酒；11、抛花球；12、礼成，新人退场，开席 优化流程一、开席前仪式1、主持人开场白；2、兄弟姐妹团出场（需提前彩排）；3、新郎情叙爱情史-走向新娘(讲爱情历程，从台上走下台下，走到新娘为止)4、新郎+新娘走红毯入场上台；5、爱情誓言；6、交换戒指(伴娘呈上对戒，用戒指盒装好) ；7、亲吻礼；8、切蛋糕，倒香槟，交杯酒；9、双方主婚人上台致辞及全场祝酒；10、抛花球；11、礼成，新人退场，开席 二、开席后节目互动1、兄弟、姐妹团舞蹈表演2、献歌(男女各一首)3、你想对新娘和新娘说什么？4、小游戏听音乐做动作具体玩法：先由司仪端了一个装有各类搞怪道具的盘子上来，盘子上盖了块红布。台上的来宾每人上去抢一样道具，根据不同道具，听音乐表演节目，表演最到位者则获得大奖。一般来说，会安排一位来宾抢不到道具。各道具功能如下：1、一把拔眉毛的钳子：播放的音乐是《眉飞色舞》；2、一把板刷：播放的音乐是《喜唰唰》；3、两根火腿肠绑在一起：播放的音乐是《双截棍》；4、一卷卷筒纸+一顶礼帽：播放的音乐是《上海滩》；5、没有抢到道具的那位：杜德伟的《脱掉》。看点：比较high的是抽到《双截棍》和《眉飞色舞》的男生，最倒霉的则是什么也没有抢到的那位，他不得不跟着音乐做到：衣服脱掉脱掉、裤子脱掉脱掉、全部脱掉脱掉……]]></content>
-      <tags>
-        <tag>日记</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[婚礼深情表白]]></title>
-    <url>%2F2017%2F08%2F21%2F%E6%B7%B1%E6%83%85%E8%A1%A8%E7%99%BD%2F</url>
-    <content type="text"><![CDATA[新郎致辞：相识相知6年了，一同走过的这6年，不管是快乐、还是痛苦，你都与我一起分享、分担。你给我很多建议和帮助，默默支持我的工作，让我沐浴在爱的海洋。未来的路，我愿意与你牵手，共同渡过，一起看潮起潮落，一起品人生百味。]]></content>
-      <tags>
-        <tag>日记</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[忏悔书]]></title>
-    <url>%2F2017%2F08%2F18%2F%E5%BF%83%E8%A1%80%E6%9D%A5%E6%BD%AE%E7%9A%84%E5%BF%8F%E6%82%94%E4%B9%A6%2F</url>
-    <content type="text"><![CDATA[吾之罪，深矣！ 其罪一：数日以来，每聊人生大事或柴米油盐，压力倍增致使吾之脾气大躁，冒天下之大不韪，凶神恶煞，口气不佳，实属幼稚之举。余甚愚，汝爱之深，言之切，于斯近日之所行，心感愧疚，日后定当弃余之躁气，改其言行，深思熟虑，稳重担当，成娘子之靠山。 其罪二：薪酬乃能力之体现。吾盲目自信，高估自身，避天下高薪之人比天下底薪之辈，借此盖底薪一事。且吾进步缓慢，浑浑噩噩混日子，此乃实情。吾已知晓，痛心改过，誓要怒拒“生于忧患，死于安乐”之生活，在此，借孟子之言鼓励自身：故天将降大任于斯人也，必先苦其心志，劳其筋骨，饿其体肤，空乏其身，行拂乱其所为，所以动心忍性，曾益其所不能。 其罪三：娘子常借成功友人之名鼓舞斯人，奈何吾心胸狭隘，不堪对比，常以小人之心度娘子之腹，态度恶劣，推卸责任，让娘子处于为难之境，屡屡蹂躏娘子爱夫之心。七尺男儿，当有海乃百川之胸襟，知耻奋上之勇气，律己爱妻之品行，今余人心如刀绞，愁眉深锁，甚悲之…恳请娘子给予余人信心，吾以成功为榜，不久将来，吾终将证明自我，脱颖而出。 数日以来，余心饱尝煎熬，愧疚之感久久萦绕，悔有当初，不得释怀，遂撰此文，以示忏悔！]]></content>
-      <categories>
-        <category>生活</category>
-      </categories>
-      <tags>
-        <tag>日记</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[centos7搭建nexus maven私服]]></title>
     <url>%2F2017%2F07%2F25%2Fcentos7%E6%90%AD%E5%BB%BAnexus-maven%E7%A7%81%E6%9C%8D%2F</url>
     <content type="text"><![CDATA[前提准备jdk安装参考CentOS安装JDK maven安装参考MAVEN安装（centos7） 下载下载地址：https://www.sonatype.com/download-oss-sonatype这里我使用 wget 命令下载，操作路径 /data,如下1[root@localhost data]# wget http://download.sonatype.com/nexus/3/latest-unix.tar.gz 安装配置解压123[root@localhost data]# cp latest-unix.tar.gz /usr/local/[root@localhost data]# cd /usr/local/[root@localhost local]# tar -zxvf latest-unix.tar.gz 配置环境变量1[root@localhost local]# vim /etc/profile 添加内容如下123#set nexusexport NEXUS_HOME=/usr/local/nexus-3.4.0-02export PATH=$PATH:$NEXUS_HOME/bin 最后使配置文件生效1[root@localhost local]# vim /etc/profile 启动前台启动：./bin/nexus console以后台进程启动：./bin/nexus start查看输出的日志：tail -f logs/wrapper.log12[root@localhost local]# cd nexus-3.4.0-02/[root@localhost nexus-3.4.0-02]# ./bin/nexus start 提示：1234WARNING: ************************************************************WARNING: Detected execution as &quot;root&quot; user. This is NOT recommended!WARNING: ************************************************************Starting nexus 修改nexus安装目录bin/nexus.rc文件12[root@localhost nexus-3.4.0-02]# vim /usr/local/nexus-3.4.0-02/bin/nexus.rc #添加内容：run_as_user="root" 开启端口开启端口：1[root@localhost nexus-3.4.0-02]# firewall-cmd --zone=public --add-port=8081/tcp --permanent 重启防火墙：1[root@localhost nexus-3.4.0-02]# firewall-cmd --reload 访问私服nexus3.X的默认端口是:8081nexus3.X的默认账号是:adminnexus3.X的默认密码是:admin123nexus3.X搭建的maven私服的本地访问地址是:http://私服的ip:8081**例如我的就是:http://192.168.11.88:8081/ 优化设置开机自启动123[root@localhost nexus-3.4.0-02]# ln -s /usr/local/nexus-3.4.0-02/bin/nexus /etc/init.d/nexus3[root@localhost nexus-3.4.0-02]# chkconfig --add nexus3[root@localhost nexus-3.4.0-02]# chkconfig nexus3 on 修改运行nexus3所使用的用户12[root@localhost nexus-3.4.0-02]# vim /usr/local/nexus-3.4.0-02/bin/nexus.rc # 修改内容：run_as_user="root" 修改启动时jdk版本12[root@localhost nexus-3.4.0-02]# vim /usr/local/nexus-3.4.0-02/bin/nexus#修改内容：INSTALL4J_JAVA_HOME_OVERRIDE=/usr/local/java/jdk1.8.0_121 修改默认端口12[root@localhost nexus-3.4.0-02]# vim /usr/local/nexus-3.4.0-02/etc/nexus-default.properties #修改内容：application-port=8282 修改nexus3数据以及相关日志的存储位置1[root@localhost etc]# vim /usr/local/nexus-3.4.0-02/bin/nexus.vmoptions 这里采用默认即可123-XX:LogFile=../sonatype-work/nexus3/log/jvm.log-Dkaraf.data=../sonatype-work/nexus3 -Djava.io.tmpdir=../sonatype-work/nexus3/tmp 启动命令现在我们可以启动nexus3使用如下命令：1[root@localhost nexus3]# /etc/init.d/nexus3 start 更多详情，请关注我的博客https://highter.github.io]]></content>
@@ -91,20 +45,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[RabbitMQ安装]]></title>
+    <title><![CDATA[RabbitMQ安装[centos]]]></title>
     <url>%2F2017%2F07%2F23%2FRabbitMQ%E5%AE%89%E8%A3%85%2F</url>
     <content type="text"><![CDATA[MQ 全称为 Message Queue, 消息队列（MQ）是一种应用程序对应用程序的通信方法。应用程序通过读写出入队列的消息（针对应用程序的数据）来通信，而无需专用连接来链接它们。RabbitMQ 是一个在 AMQP 基础上完整的，可复用的企业消息系统。他遵循 Mozilla Public License 开源协议。本文操作路劲在/data目录下。 安装 Erlang1[root@localhost data]# sudo yum install erlang 安装RabbitMQ Server下载地址：https://www.rabbitmq.com/download.html12[root@localhost data]# rpm --import https://www.rabbitmq.com/rabbitmq-release-signing-key.asc[root@localhost data]# yum install rabbitmq-server-3.6.10-1.el7.noarch.rpm 启动服务设置开机启动chkconfig rabbitmq-server on启动service rabbitmq-server start停止service rabbitmq-server stop 安装 web 管理页面1[root@localhost data]# rabbitmq-plugins enable rabbitmq_management 安装完成后就可以使用http://ip:15672进行访问了。web 页面需要用户，所以下边就需要对用户进行配置 设置开机启动:chkconfig rabbitmq-server on 用户管理用户列表rabbitmqctl list_users新增用户rabbitmqctl add_user Username Password删除用户rabbitmqctl delete_user Username修改密码rabbitmqctl change_password Username Newpassword注意：用户添加完成后还不能登录 web 页面，还需要给用户添加角色 用户角色超级管理员(administrator)可登陆管理控制台(启用management plugin的情况下)，可查看所有的信息，并且可以对用户，策略(policy)进行操作。监控者(monitoring)可登陆管理控制台(启用management plugin的情况下)，同时可以查看rabbitmq节点的相关信息(进程数，内存使用情况，磁盘使用情况等)策略制定者(policymaker)可登陆管理控制台(启用management plugin的情况下), 同时可以对policy进行管理。但无法查看节点的相关信息。普通管理者(management)仅可登陆管理控制台(启用management plugin的情况下)，无法看到节点信息，也无法对策略进行管理。其他无法登陆管理控制台，通常就是普通的生产者和消费者。 了解了这些后，就可以根据需要给不同的用户设置不同的角色，以便按需管理。 赋予用户角色:rabbitmqctl set_user_tags User Tag一个用户可以有多个角色，多个 tag 使用空格分开即可。赋予角色之后登陆效果如图： 更多详情，请关注我的博客https://highter.github.io/]]></content>
-      <categories>
-        <category>rabbitmq</category>
-      </categories>
-      <tags>
-        <tag>rabbitmq</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[RabbitMQ安装]]></title>
-    <url>%2F2017%2F07%2F23%2FRabbitMQ%E5%AE%89%E8%A3%851%2F</url>
-    <content type="text"></content>
       <categories>
         <category>rabbitmq</category>
       </categories>
@@ -263,6 +206,17 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[Mac下安装Hexo]]></title>
+    <url>%2F2017%2F05%2F26%2FMac%E4%B8%8B%E5%AE%89%E8%A3%85Hexo%2F</url>
+    <content type="text"><![CDATA[安装流程指导安装流程：homebrew—-&gt;nodejs—-&gt;hexo 注意：hexo是基于nodejs的，而安装nodejs这里使用homebrew方式 安装homebrew1ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" 安装nodejs 1brew install node 安装hexo1sudo npm install -g hexo 初始化初始化文件夹创建存放博客的文件夹，这里我创建的文件夹名字为 Highter.github.io(为了之后和github配合使用)12Hunter-Mac:github yangjianwei$ mkdir Highter.github.ioHunter-Mac:github yangjianwei$ hexo init Highter.github.io/ 安装npm切换到所建立文件夹路径下，安装npm12Hunter-Mac:github yangjianwei$ cd Highter.github.io/Hunter-Mac:Highter.github.io yangjianwei$ npm install 启动hexo服务器1Hunter-Mac:Highter.github.io yangjianwei$ hexo server 如图表示启动成功 查看效果在浏览器输入http://localhost:4000 查看效果]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Mac下使用Hexo搭建github博客]]></title>
     <url>%2F2017%2F05%2F26%2FMac%E4%B8%8B%E4%BD%BF%E7%94%A8Hexo%E6%90%AD%E5%BB%BAgithub%E5%8D%9A%E5%AE%A2%2F</url>
     <content type="text"><![CDATA[Mac下使用Hexo搭建github博客注意：本文实践是在mac系统下进行，hexo安装参考Mac下安装Hexo一文。 复制github仓库地址在自己的github账号下复制 *.github.io仓库的地址，如果没有，需要新建一个 关联github终端里cd到存放博客的文件夹下，这里我的文件夹名字为 Highter.github.io，编辑_config.yml，滑到最底部，将deploy里的内容改为如下：1234deploy: type: git repository: https://github.com/Highter/Highter.github.io.git // 这个地方填写自己的仓库地址 branch: master 部署到github发布到github1Hunter-Mac:Highter.github.io yangjianwei$ hexo deploy 根据提示输入用户名和密码，回车即可 注意： 运行 hexo deploy部署到github ，若提示“ERROR Deployer not found: git”，如下 则安装hexo-deployer-git,如图表示安装成功 1Hunter-Mac:Highter.github.io yangjianwei$ npm install hexo-deployer-git --save 查看效果在浏览器输入https://yangjianwei.github.io/ 查看效果(细心的朋友可能发现了访问链接和步骤2配置的仓库地址不一样。个人有几个github账号，为了方便大家看到效果，我把测试的东西推送到yangjianwei这个账号上了)]]></content>
@@ -271,17 +225,6 @@
       </categories>
       <tags>
         <tag>github</tag>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Mac下安装Hexo]]></title>
-    <url>%2F2017%2F05%2F26%2FMac%E4%B8%8B%E5%AE%89%E8%A3%85Hexo%2F</url>
-    <content type="text"><![CDATA[安装流程指导安装流程：homebrew—-&gt;nodejs—-&gt;hexo 注意：hexo是基于nodejs的，而安装nodejs这里使用homebrew方式 安装homebrew1ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" 安装nodejs 1brew install node 安装hexo1sudo npm install -g hexo 初始化初始化文件夹创建存放博客的文件夹，这里我创建的文件夹名字为 Highter.github.io(为了之后和github配合使用)12Hunter-Mac:github yangjianwei$ mkdir Highter.github.ioHunter-Mac:github yangjianwei$ hexo init Highter.github.io/ 安装npm切换到所建立文件夹路径下，安装npm12Hunter-Mac:github yangjianwei$ cd Highter.github.io/Hunter-Mac:Highter.github.io yangjianwei$ npm install 启动hexo服务器1Hunter-Mac:Highter.github.io yangjianwei$ hexo server 如图表示启动成功 查看效果在浏览器输入http://localhost:4000 查看效果]]></content>
-      <categories>
-        <category>hexo</category>
-      </categories>
-      <tags>
         <tag>hexo</tag>
       </tags>
   </entry>
@@ -309,6 +252,17 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[Tomcat报错： Tomcat version 7.0 only supports J2EE 1.2, 1.3, 1.4, and Java EE 5 and 6 Web modules]]></title>
+    <url>%2F2017%2F05%2F04%2FTomcat%E6%8A%A5%E9%94%99%EF%BC%9A%20Tomcat%20version%207.0%20only%20supports%20J2EE%201.2%2C%201.3%2C%201.4%2C%20and%20Java%20EE%205%20and%206%20Web%20modules%2F</url>
+    <content type="text"><![CDATA[问题描述web项目加载到tomcat时报错： Tomcat version 7.0 only supports J2EE 1.2, 1.3, 1.4, and Java EE 5 and 6 Web modules如图： 处理方法修改 org.eclipse.wst.common.project.facet.core.xml文件。在eclipse的workspace里面找到该项目，在项目下找到org.eclipse.wst.common.project.facet.core.xml文件。路径：.settings-&gt;org.eclipse.wst.common.project.facet.core.xml打开文件，如下123456789&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;faceted-project&gt; &lt;fixed facet="wst.jsdt.web"/&gt; &lt;installed facet="java" version="1.7"/&gt; &lt;installed facet="jst.web" version="3.1"/&gt; &lt;installed facet="jst.jsf" version="2.2"/&gt; &lt;installed facet="jst.jaxrs" version="2.0"/&gt; &lt;installed facet="wst.jsdt.web" version="1.0"/&gt;&lt;/faceted-project&gt; 修改 ，把version修改成3.0，修改完如下123456789&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;faceted-project&gt; &lt;fixed facet="wst.jsdt.web"/&gt; &lt;installed facet="java" version="1.7"/&gt; &lt;installed facet="jst.web" version="3.0"/&gt; &lt;installed facet="jst.jsf" version="2.2"/&gt; &lt;installed facet="jst.jaxrs" version="2.0"/&gt; &lt;installed facet="wst.jsdt.web" version="1.0"/&gt;&lt;/faceted-project&gt; 处理成果]]></content>
+      <categories>
+        <category>tomcat</category>
+      </categories>
+      <tags>
+        <tag>tomcat</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Eclipse中导入GitHub项目]]></title>
     <url>%2F2017%2F05%2F04%2FEclipse%E4%B8%AD%E5%AF%BC%E5%85%A5GitHub%E9%A1%B9%E7%9B%AE%2F</url>
     <content type="text"><![CDATA[注意：安装前请确认一下电脑是否安装了Git，Git的安装可以参考Git安装一文。 选择工程Eclipse中选择File-》import-》Git-》Projects from Git，点击 Next 选择仓库源选择Clone URI，点击 Next 配置仓库源信息URI填写git的仓库URL，并在Authentication中填写GitHub的用户名和密码，打钩 Store in Secure Store记住密码，方便下次进来不需要再输入用户名和密码，这里的测试仓库源地址为 ：https://github.com/Highter/SpringBoot-SourceCode.git，配置完之后点击 Next 选择分支由于项目只有一个master分支，就选择master即可，点击Next 选择本地仓库位置在Directory点击Browse选择创建的本地仓库位置 等到项目下载 导出项目类型选择导出项目名称，这里选择Import as general project，导出成为一个普通工程，最后点击Next 配置项目名称配置完项目名称点击 Finish 即可]]></content>
@@ -331,17 +285,6 @@
         <tag>mysql</tag>
         <tag>数据库</tag>
         <tag>sql</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Tomcat报错： Tomcat version 7.0 only supports J2EE 1.2, 1.3, 1.4, and Java EE 5 and 6 Web modules]]></title>
-    <url>%2F2017%2F05%2F04%2FTomcat%E6%8A%A5%E9%94%99%EF%BC%9A%20Tomcat%20version%207.0%20only%20supports%20J2EE%201.2%2C%201.3%2C%201.4%2C%20and%20Java%20EE%205%20and%206%20Web%20modules%2F</url>
-    <content type="text"><![CDATA[问题描述web项目加载到tomcat时报错： Tomcat version 7.0 only supports J2EE 1.2, 1.3, 1.4, and Java EE 5 and 6 Web modules如图： 处理方法修改 org.eclipse.wst.common.project.facet.core.xml文件。在eclipse的workspace里面找到该项目，在项目下找到org.eclipse.wst.common.project.facet.core.xml文件。路径：.settings-&gt;org.eclipse.wst.common.project.facet.core.xml打开文件，如下123456789&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;faceted-project&gt; &lt;fixed facet="wst.jsdt.web"/&gt; &lt;installed facet="java" version="1.7"/&gt; &lt;installed facet="jst.web" version="3.1"/&gt; &lt;installed facet="jst.jsf" version="2.2"/&gt; &lt;installed facet="jst.jaxrs" version="2.0"/&gt; &lt;installed facet="wst.jsdt.web" version="1.0"/&gt;&lt;/faceted-project&gt; 修改 ，把version修改成3.0，修改完如下123456789&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;faceted-project&gt; &lt;fixed facet="wst.jsdt.web"/&gt; &lt;installed facet="java" version="1.7"/&gt; &lt;installed facet="jst.web" version="3.0"/&gt; &lt;installed facet="jst.jsf" version="2.2"/&gt; &lt;installed facet="jst.jaxrs" version="2.0"/&gt; &lt;installed facet="wst.jsdt.web" version="1.0"/&gt;&lt;/faceted-project&gt; 处理成果]]></content>
-      <categories>
-        <category>tomcat</category>
-      </categories>
-      <tags>
-        <tag>tomcat</tag>
       </tags>
   </entry>
   <entry>
@@ -415,6 +358,17 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[第三方Maven仓库地址使用]]></title>
+    <url>%2F2017%2F04%2F21%2F%E7%AC%AC%E4%B8%89%E6%96%B9Maven%E4%BB%93%E5%BA%93%E5%9C%B0%E5%9D%80%E4%BD%BF%E7%94%A8%2F</url>
+    <content type="text"><![CDATA[第三方Maven仓库地址使用 国内maven仓库下载东西好慢，好多企业都会自建maven仓库，对于我们这些个人开发者就悲催了，还能好好玩耍吗？还好国内还是有比较好用的maven仓库，比如：阿里云的。地址：http://maven.aliyun.com/nexus/在maven的settings.xml，文件位置在maven的安装路径下，比如我本地的路径D:\Java\MAVEN\apache-maven-3.5.0\conf文件里配置mirrors的子节点，添加如下mirror123456&lt;mirror&gt; &lt;id&gt;nexus-aliyun&lt;/id&gt; &lt;mirrorOf&gt;*&lt;/mirrorOf&gt; &lt;name&gt;Nexus aliyun&lt;/name&gt; &lt;url&gt;http://maven.aliyun.com/nexus/content/groups/public&lt;/url&gt;&lt;/mirror&gt;]]></content>
+      <categories>
+        <category>maven</category>
+      </categories>
+      <tags>
+        <tag>maven</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[oschina码云如何导入项目]]></title>
     <url>%2F2017%2F04%2F21%2Foschina%E7%A0%81%E4%BA%91%E5%A6%82%E4%BD%95%E5%AF%BC%E5%85%A5%E9%A1%B9%E7%9B%AE%2F</url>
     <content type="text"><![CDATA[简易的命令行入门教程:Git 全局设置:12git config --global user.name &quot;用户名&quot;git config --global user.email &quot;邮箱&quot; 创建 git 仓库:12345678mkdir webtestcd webtestgit inittouch README.mdgit add README.mdgit commit -m &quot;注释&quot;git remote add origin https://git.oschina.net/higher/webtest.gitgit push -u origin master 已有项目?123cd existing_git_repogit remote add origin https://git.oschina.net/higher/webtest.gitgit push -u origin master]]></content>
@@ -427,14 +381,15 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[第三方Maven仓库地址使用]]></title>
-    <url>%2F2017%2F04%2F21%2F%E7%AC%AC%E4%B8%89%E6%96%B9Maven%E4%BB%93%E5%BA%93%E5%9C%B0%E5%9D%80%E4%BD%BF%E7%94%A8%2F</url>
-    <content type="text"><![CDATA[第三方Maven仓库地址使用 国内maven仓库下载东西好慢，好多企业都会自建maven仓库，对于我们这些个人开发者就悲催了，还能好好玩耍吗？还好国内还是有比较好用的maven仓库，比如：阿里云的。地址：http://maven.aliyun.com/nexus/在maven的settings.xml，文件位置在maven的安装路径下，比如我本地的路径D:\Java\MAVEN\apache-maven-3.5.0\conf文件里配置mirrors的子节点，添加如下mirror123456&lt;mirror&gt; &lt;id&gt;nexus-aliyun&lt;/id&gt; &lt;mirrorOf&gt;*&lt;/mirrorOf&gt; &lt;name&gt;Nexus aliyun&lt;/name&gt; &lt;url&gt;http://maven.aliyun.com/nexus/content/groups/public&lt;/url&gt;&lt;/mirror&gt;]]></content>
+    <title><![CDATA[Git命令之用户名和邮箱地址]]></title>
+    <url>%2F2017%2F04%2F20%2FGit%E5%91%BD%E4%BB%A4%E4%B9%8B%E7%94%A8%E6%88%B7%E5%90%8D%E5%92%8C%E9%82%AE%E7%AE%B1%E5%9C%B0%E5%9D%80%2F</url>
+    <content type="text"><![CDATA[注意：本地使用Git的话需确保已经安装了Git，安装教程参考Git安装一文。 说明用户名和邮箱地址是本地Git客户端的一个变量，不随git库而改变。每次commit都会用用户名和邮箱纪录。 修改git config –global user.name “username” 修改/配置用户名git config –global user.email “email” 修改/配置邮箱global是非必须的，当带上global说明配置的信息为全局 查看git config user.name 查看用户名git config user.email 查看邮箱]]></content>
       <categories>
-        <category>maven</category>
+        <category>git</category>
       </categories>
       <tags>
-        <tag>maven</tag>
+        <tag>git</tag>
+        <tag>命令</tag>
       </tags>
   </entry>
   <entry>
@@ -447,18 +402,6 @@
       <tags>
         <tag>eclipse</tag>
         <tag>github</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Git命令之用户名和邮箱地址]]></title>
-    <url>%2F2017%2F04%2F20%2FGit%E5%91%BD%E4%BB%A4%E4%B9%8B%E7%94%A8%E6%88%B7%E5%90%8D%E5%92%8C%E9%82%AE%E7%AE%B1%E5%9C%B0%E5%9D%80%2F</url>
-    <content type="text"><![CDATA[注意：本地使用Git的话需确保已经安装了Git，安装教程参考Git安装一文。 说明用户名和邮箱地址是本地Git客户端的一个变量，不随git库而改变。每次commit都会用用户名和邮箱纪录。 修改git config –global user.name “username” 修改/配置用户名git config –global user.email “email” 修改/配置邮箱global是非必须的，当带上global说明配置的信息为全局 查看git config user.name 查看用户名git config user.email 查看邮箱]]></content>
-      <categories>
-        <category>git</category>
-      </categories>
-      <tags>
-        <tag>git</tag>
-        <tag>命令</tag>
       </tags>
   </entry>
   <entry>
@@ -500,17 +443,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Git安装]]></title>
-    <url>%2F2017%2F04%2F18%2FGit%E5%AE%89%E8%A3%85%2F</url>
-    <content type="text"><![CDATA[下载win版本下载地址： https://git-for-windows.github.io/ 安装双击安装包 Next 选择安装路径选择好安装路径之后，点击Next 选择组件默认打钩，用户可以自行选择其它，这里多选择了在桌面生成图标，点击Next 配置名称设置开始菜单的名称，默认Git，点击Next 设置环境变量在“Adjusting your PATH environment”选项中，默认即可。点击 Next注：这个步骤选择第二项“Use Git from the Windows Command Prompt”， 这样在Windows的命令行cmd中也可以运行git命令了。这样会对以后的一些操作带来方便。 选择https传输方式 配置行结束标记保持默认“Checkout Windows-style, commit Unix-style line endings” 选择终端在终端模拟器选择页面,默认即可，配置后Git Gash的终端比较易用。然后点击“Next” 配置额外选择最后配置Git额外选择默认即可，然后点击“Install”开始安装，如果之前安装过旧版本，会先卸载然后再安装新版本 等待安装 安装完成到此，Git已经安装完毕，点击Finish即可 参考文章：https://git-scm.com/book/zh/v1/%E8%B5%B7%E6%AD%A5-%E5%AE%89%E8%A3%85-Git]]></content>
-      <categories>
-        <category>git</category>
-      </categories>
-      <tags>
-        <tag>git</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[Jenkins安装]]></title>
     <url>%2F2017%2F04%2F18%2FJenkins%E5%AE%89%E8%A3%85%2F</url>
     <content type="text"><![CDATA[下载下载地址： https://jenkins.io/download/选择适合自己电脑型号的版本，我这里下载的是win系统的版本。 安装解压解压，得到jenkins.msi安装包，双击运行 欢迎界面点击Next 选择安装路径选择好安装路径之后，点击Next 安装点击Install，开始安装 等待安装 安装完成到此，Jenkins 已经安装完成，点击Finish跳转到网页上进行配置 配置Jenkins server配置页面在2.6步骤的时候点击Finish会自动跳转到配置页面，如果不小心关闭了，在浏览器上输入 http://127.0.0.1:8080 自行打开 输入默认密码根据提示，找到密码输入，点击Continue 配置Jenkins server安装插件，这里选择推荐的插件进行安装，点击Install suggested plugins即可。当然用户也可以自定义选择插件进行安装，如果这一步选择插件有遗漏的话，后续也可以进行补充安装 等待配置等待安装，等待10分钟左右（电脑配置不同安装时间也不同） 设置用户和密码安装完之后，跳到配置用户和密码的界面，输入相关信息，设置用户和密码，点击 Sava and Finish 即可。如果这一步被跳过，默认用户名就是admin，默认密码就是3.2步骤的密码 配置成功到此，Jenkins server已经配置成功了。点击 Start using Jenkins 开启Jenkins之旅吧！ 访问Jenkins服务器登陆接下来在日常使用中，如果想打开Jenkins服务器，在浏览器输入 http://127.0.0.1:8080 ，填写配置的用户名和密码，点击登陆即可 Jenkins主界面登陆成功之后，就可以进入到Jenkins主界面了。欢迎来到新大陆！ Jenkins服务器维护命令打开控制台/命令行 - &gt;转到您的Jenkins安装目录。分别执行以下命令停止：jenkins.exe stop开始：jenkins.exe start重新启动：jenkins.exe restart]]></content>
@@ -519,6 +451,17 @@
       </categories>
       <tags>
         <tag>jenkins</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Git安装]]></title>
+    <url>%2F2017%2F04%2F18%2FGit%E5%AE%89%E8%A3%85%2F</url>
+    <content type="text"><![CDATA[下载win版本下载地址： https://git-for-windows.github.io/ 安装双击安装包 Next 选择安装路径选择好安装路径之后，点击Next 选择组件默认打钩，用户可以自行选择其它，这里多选择了在桌面生成图标，点击Next 配置名称设置开始菜单的名称，默认Git，点击Next 设置环境变量在“Adjusting your PATH environment”选项中，默认即可。点击 Next注：这个步骤选择第二项“Use Git from the Windows Command Prompt”， 这样在Windows的命令行cmd中也可以运行git命令了。这样会对以后的一些操作带来方便。 选择https传输方式 配置行结束标记保持默认“Checkout Windows-style, commit Unix-style line endings” 选择终端在终端模拟器选择页面,默认即可，配置后Git Gash的终端比较易用。然后点击“Next” 配置额外选择最后配置Git额外选择默认即可，然后点击“Install”开始安装，如果之前安装过旧版本，会先卸载然后再安装新版本 等待安装 安装完成到此，Git已经安装完毕，点击Finish即可 参考文章：https://git-scm.com/book/zh/v1/%E8%B5%B7%E6%AD%A5-%E5%AE%89%E8%A3%85-Git]]></content>
+      <categories>
+        <category>git</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
       </tags>
   </entry>
   <entry>
@@ -534,6 +477,17 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[MAVEN安装]]></title>
+    <url>%2F2017%2F04%2F14%2FMAVEN%E5%AE%89%E8%A3%85%2F</url>
+    <content type="text"><![CDATA[注意：安装前请确认一下电脑是否安装了JDK，JDK的安装可以参考JDK安装一文。 下载下载地址： http://maven.apache.org/download.cgi 如图，选择适合自己电脑的版本，我这里下载的是win系统的版本。 解压 环境变量配置新建系统变量需要新建M2_HOME和MAVEN_HOME系统变量步骤：计算机→属性→高级系统设置→高级→环境变量→系统变量→新建变量名：M2_HOME变量值（填写实际安装路径）：D:\Java\MAVEN\apache-maven-3.5.0MAVEN_HOME系统变量新增同上。注:Maven 说只是添加 M2_HOME , 但一些项目仍引用 Maven 的文件夹 MAVEN_HOME, 因此，为了安全也把它添加进去。如图： 编辑Path变量在变量最后面添加：%M2_HOME%\bin;在变量值最后输入 %M2_HOME%\bin;（注意原来Path的变量值末尾有没有;号，如果没有，先输入；号再输入上面的代码） 到此，MAVEN安装与环境变量配置。 验证运行cmd 输入 mvn -v,若如图所示显示版本信息则说明安装和配置成功。 修改仓库存位置maven 的仓库默认是放在本地用户的临时文件夹下面的 .m2 文件夹下的 repository 下，我的是在 C:\Users\bank_gz.m2\repository目录下。现在我们来修改将它指定到我们自己的路径下，我现在要将仓库指定到D:\Java\MAVEN\apache-maven-3.5.0\repo 目录下，只需要将maven安装路径下conf里面的seting.xml文件。我的是在D:\Java\MAVEN\apache-maven-3.5.0\conf\seting.xml。把下面注销的本地仓库打开改成如下：修改仓库位置原因：因为maven刚安装的时候我们可以看得到maven很小，只有最基本的东西，但我们一旦使用它，就会把我们的需要的东西都下载到仓库里面，随着我们需要调用的命令越多，仓库会越来越大，所以最好不要放在c盘，不然让系统越来越慢，且以后重装系统，还要再下一次。]]></content>
+      <categories>
+        <category>maven</category>
+      </categories>
+      <tags>
+        <tag>maven</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[JDK安装]]></title>
     <url>%2F2017%2F04%2F14%2FJDK%E5%AE%89%E8%A3%85%2F</url>
     <content type="text"><![CDATA[###下载下载地址： http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html 如图，选择适合自己电脑型号的版本，我这里下载的是win系统的32位版本。 安装 双击下载之后的exe，按照提示完成安装，基本是傻瓜式的”下一步”，当然中间可以选择安装路径。注：安装完jdk之后同时会提示安装jre,也是同理安装。如图，这是安装效果： 环境变量配置新建JAVA_HOME系统变量计算机→属性→高级系统设置→高级→环境变量→系统变量→新建变量名字：JAVA_HOME路径（填写实际安装路径）：D:\Java\JDK\jdk1.8.0_121如图： 新建CLASSPATH系统变量变量名字：CLASSPATH路径： .;%JAVA_HOME%\lib;%JAVA_HOME%\lib\tools.jar（注意最前面有一点）如图： 编辑Path变量在变量最后面添加：%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin;在变量值最后输入 %JAVA_HOME%\bin;%JAVA_HOME%\jre\bin（注意原来Path的变量值末尾有没有;号，如果没有，先输入；号再输入上面的代码）到此，JDK安装与环境变量配置。 验证运行cmd 输入 java -version ，若如图所示显示版本信息则说明安装和配置成功。]]></content>
@@ -543,17 +497,6 @@
       <tags>
         <tag>java</tag>
         <tag>jdk</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[MAVEN安装]]></title>
-    <url>%2F2017%2F04%2F14%2FMAVEN%E5%AE%89%E8%A3%85%2F</url>
-    <content type="text"><![CDATA[注意：安装前请确认一下电脑是否安装了JDK，JDK的安装可以参考JDK安装一文。 下载下载地址： http://maven.apache.org/download.cgi 如图，选择适合自己电脑的版本，我这里下载的是win系统的版本。 解压 环境变量配置新建系统变量需要新建M2_HOME和MAVEN_HOME系统变量步骤：计算机→属性→高级系统设置→高级→环境变量→系统变量→新建变量名：M2_HOME变量值（填写实际安装路径）：D:\Java\MAVEN\apache-maven-3.5.0MAVEN_HOME系统变量新增同上。注:Maven 说只是添加 M2_HOME , 但一些项目仍引用 Maven 的文件夹 MAVEN_HOME, 因此，为了安全也把它添加进去。如图： 编辑Path变量在变量最后面添加：%M2_HOME%\bin;在变量值最后输入 %M2_HOME%\bin;（注意原来Path的变量值末尾有没有;号，如果没有，先输入；号再输入上面的代码） 到此，MAVEN安装与环境变量配置。 验证运行cmd 输入 mvn -v,若如图所示显示版本信息则说明安装和配置成功。 修改仓库存位置maven 的仓库默认是放在本地用户的临时文件夹下面的 .m2 文件夹下的 repository 下，我的是在 C:\Users\bank_gz.m2\repository目录下。现在我们来修改将它指定到我们自己的路径下，我现在要将仓库指定到D:\Java\MAVEN\apache-maven-3.5.0\repo 目录下，只需要将maven安装路径下conf里面的seting.xml文件。我的是在D:\Java\MAVEN\apache-maven-3.5.0\conf\seting.xml。把下面注销的本地仓库打开改成如下：修改仓库位置原因：因为maven刚安装的时候我们可以看得到maven很小，只有最基本的东西，但我们一旦使用它，就会把我们的需要的东西都下载到仓库里面，随着我们需要调用的命令越多，仓库会越来越大，所以最好不要放在c盘，不然让系统越来越慢，且以后重装系统，还要再下一次。]]></content>
-      <categories>
-        <category>maven</category>
-      </categories>
-      <tags>
-        <tag>maven</tag>
       </tags>
   </entry>
 </search>
