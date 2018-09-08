@@ -217,17 +217,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Mac下hexo使用next主题]]></title>
-    <url>%2F2017%2F05%2F26%2FMac%E4%B8%8Bhexo%E5%AE%89%E8%A3%85next%E4%B8%BB%E9%A2%98%2F</url>
-    <content type="text"><![CDATA[Mac下hexo使用next主题下载主题在终端窗口下，切到 Hexo 站点目录下，下载NexT主题。这里我使用的站点目录是 Highter.github.io 1Hunter-Mac:Highter.github.io yangjianwei$ git clone https://github.com/iissnan/hexo-theme-next themes/next 开启主题在站点目录下修改 _config.yml 文件 1theme: next 验证主题验证主题需要启动服务来看效果，在启动服务前先执行 hexo clean 来清理hexo缓存 清理缓存1Hunter-Mac:Highter.github.io yangjianwei$ hexo clean 启动服务1Hunter-Mac:Highter.github.io yangjianwei$ hexo server 查看效果在浏览器输入http://localhost:4000/查看效果 设置主题设置主题方案Muse - 默认 Scheme，这是 NexT 最初的版本，黑白主调，大量留白Mist - Muse 的紧凑版本，整洁有序的单栏外观Pisces - 双栏 Scheme，小家碧玉似的清新Scheme 的切换通过更改 主题配置文件，搜索 scheme 关键字。 你会看到有三行 scheme 的配置，将你需用启用的 scheme 前面注释 # 去除即可这里选择 Pisces作为例子我的 主题配置文件 路径在：1../Highter.github.io/themes/next/_config.yml 修改如下：1234# Schemes#scheme: Muse#scheme: Mistscheme: Pisces 设置语言编辑 站点配置文件， 将 language 设置成你所需要的语言。建议明确设置你所需要的语言，例如选用简体中文，我的 站点配置文件 路径在：1../Highter.github.io/_config.yml 配置如下： 1language: zh-Hans 目前 NexT 支持的语言如以下表格所示： 语言 代码 设定示例 English en language: en 简体中文 zh-Hans language: zh-Hans Français fr-FR language: fr-FR Português pt language: pt or language: pt-BR 繁體中文 zh-hk 或者 zh-tw language: zh-hk Русский язык ru language: ru Deutsch de language: de 日本語 ja language: ja Indonesian id language: id Korean ko language: ko 设置菜单默认运行只有 Home 、Archives 、Tags修改主题 主题配置文件12345678menu: home: / #首页 categories: /categories #分类 about: /about #关于 archives: /archives #归档 tags: /tags #标签 sitemap: /sitemap.xml commonweal: /404.html 设置侧栏left - 靠左放置right - 靠右放置修改主题 主题配置文件12sidebar: position: left 头像编辑主题 主题配置文件 修改字段 avatar， 值设置成头像的链接地址。其中，头像的链接地址可以是： 地址 值 完整的互联网 URI http://example.com/avatar.png 站点内的地址 将头像放置主题目录下的 source/uploads/ （新建 uploads 目录若不存在） 配置为：avatar: /uploads/avatar.png或者 放置在 source/images/ 目录下 配置为：avatar: /images/avatar.png 头像设置示例avatar: /uploads/avatar.jpg 设置站点1234567# Sitetitle: Highter's blog #标题subtitle: Smile at life ^_^ #小标题description: Life is short,I use Java #描述author: Highter #作者language: zh-Hans #语言timezone: 添加文章把自己所写的文章添加到站点的_posts文件下 123Hunter-Mac:Highter.github.io yangjianwei$ hexo cleanINFO Deleted database.Hunter-Mac:Highter.github.io yangjianwei$ hexo s 到这一步我们可以查看一下效果 分类页当我们点击分类的时候可以看到如图 需要初始化分类 hexo new page categories12Hunter-Mac:Highter.github.io yangjianwei$ hexo new page categoriesINFO Created: ~/Documents/msg/github/Highter.github.io/source/categories/index.md 修改~/Documents/msg/github/Highter.github.io/source/categories/index.md 文件123456---title: 分类date: 2017-05-18 22:38:17type: "categories"comments: false--- 标签页需要初始化标签 hexo new page tags12Hunter-Mac:Highter.github.io yangjianwei$ hexo new page tagsINFO Created: ~/Documents/msg/github/Highter.github.io/source/tags/index.md 修改~/Documents/msg/github/Highter.github.io/source/tags/index.md 文件123456---title: 标签date: 2017-05-18 22:57:40type: "tags"comments: false--- 设置文章分类和标签添加类似下面的分类和标签，注意categories和tags的冒号后需要空格12345---title: CentOS安装JDKcategories: [java]tags: [java,centos,jdk]--- 设置阅读更多修改 主题配置文件1234# Please use &lt;!-- more --&gt; in the post to control excerpt accurately.auto_excerpt: enable: true #设置为true length: 150 效果 设置描述123456---title: CentOS安装JDKcategories: [java]tags: [java,centos,jdk]description: 本文介绍在linux系统下安装JDK，这里选择在CentOS系统下实践。#摘要描述--- 结束语上面只是一些关于主题的基础配置，更多详情配置参考Next主题使用文档]]></content>
-      <categories>
-        <category>hexo</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[Mac下使用Hexo搭建github博客]]></title>
     <url>%2F2017%2F05%2F26%2FMac%E4%B8%8B%E4%BD%BF%E7%94%A8Hexo%E6%90%AD%E5%BB%BAgithub%E5%8D%9A%E5%AE%A2%2F</url>
     <content type="text"><![CDATA[Mac下使用Hexo搭建github博客注意：本文实践是在mac系统下进行，hexo安装参考Mac下安装Hexo一文。 复制github仓库地址在自己的github账号下复制 *.github.io仓库的地址，如果没有，需要新建一个 关联github终端里cd到存放博客的文件夹下，这里我的文件夹名字为 Highter.github.io，编辑_config.yml，滑到最底部，将deploy里的内容改为如下：1234deploy: type: git repository: https://github.com/Highter/Highter.github.io.git // 这个地方填写自己的仓库地址 branch: master 部署到github发布到github1Hunter-Mac:Highter.github.io yangjianwei$ hexo deploy 根据提示输入用户名和密码，回车即可 注意： 运行 hexo deploy部署到github ，若提示“ERROR Deployer not found: git”，如下 则安装hexo-deployer-git,如图表示安装成功 1Hunter-Mac:Highter.github.io yangjianwei$ npm install hexo-deployer-git --save 查看效果在浏览器输入https://yangjianwei.github.io/ 查看效果(细心的朋友可能发现了访问链接和步骤2配置的仓库地址不一样。个人有几个github账号，为了方便大家看到效果，我把测试的东西推送到yangjianwei这个账号上了)]]></content>
@@ -236,6 +225,17 @@
       </categories>
       <tags>
         <tag>github</tag>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Mac下hexo使用next主题]]></title>
+    <url>%2F2017%2F05%2F26%2FMac%E4%B8%8Bhexo%E5%AE%89%E8%A3%85next%E4%B8%BB%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[Mac下hexo使用next主题下载主题在终端窗口下，切到 Hexo 站点目录下，下载NexT主题。这里我使用的站点目录是 Highter.github.io 1Hunter-Mac:Highter.github.io yangjianwei$ git clone https://github.com/iissnan/hexo-theme-next themes/next 开启主题在站点目录下修改 _config.yml 文件 1theme: next 验证主题验证主题需要启动服务来看效果，在启动服务前先执行 hexo clean 来清理hexo缓存 清理缓存1Hunter-Mac:Highter.github.io yangjianwei$ hexo clean 启动服务1Hunter-Mac:Highter.github.io yangjianwei$ hexo server 查看效果在浏览器输入http://localhost:4000/查看效果 设置主题设置主题方案Muse - 默认 Scheme，这是 NexT 最初的版本，黑白主调，大量留白Mist - Muse 的紧凑版本，整洁有序的单栏外观Pisces - 双栏 Scheme，小家碧玉似的清新Scheme 的切换通过更改 主题配置文件，搜索 scheme 关键字。 你会看到有三行 scheme 的配置，将你需用启用的 scheme 前面注释 # 去除即可这里选择 Pisces作为例子我的 主题配置文件 路径在：1../Highter.github.io/themes/next/_config.yml 修改如下：1234# Schemes#scheme: Muse#scheme: Mistscheme: Pisces 设置语言编辑 站点配置文件， 将 language 设置成你所需要的语言。建议明确设置你所需要的语言，例如选用简体中文，我的 站点配置文件 路径在：1../Highter.github.io/_config.yml 配置如下： 1language: zh-Hans 目前 NexT 支持的语言如以下表格所示： 语言 代码 设定示例 English en language: en 简体中文 zh-Hans language: zh-Hans Français fr-FR language: fr-FR Português pt language: pt or language: pt-BR 繁體中文 zh-hk 或者 zh-tw language: zh-hk Русский язык ru language: ru Deutsch de language: de 日本語 ja language: ja Indonesian id language: id Korean ko language: ko 设置菜单默认运行只有 Home 、Archives 、Tags修改主题 主题配置文件12345678menu: home: / #首页 categories: /categories #分类 about: /about #关于 archives: /archives #归档 tags: /tags #标签 sitemap: /sitemap.xml commonweal: /404.html 设置侧栏left - 靠左放置right - 靠右放置修改主题 主题配置文件12sidebar: position: left 头像编辑主题 主题配置文件 修改字段 avatar， 值设置成头像的链接地址。其中，头像的链接地址可以是： 地址 值 完整的互联网 URI http://example.com/avatar.png 站点内的地址 将头像放置主题目录下的 source/uploads/ （新建 uploads 目录若不存在） 配置为：avatar: /uploads/avatar.png或者 放置在 source/images/ 目录下 配置为：avatar: /images/avatar.png 头像设置示例avatar: /uploads/avatar.jpg 设置站点1234567# Sitetitle: Highter's blog #标题subtitle: Smile at life ^_^ #小标题description: Life is short,I use Java #描述author: Highter #作者language: zh-Hans #语言timezone: 添加文章把自己所写的文章添加到站点的_posts文件下 123Hunter-Mac:Highter.github.io yangjianwei$ hexo cleanINFO Deleted database.Hunter-Mac:Highter.github.io yangjianwei$ hexo s 到这一步我们可以查看一下效果 分类页当我们点击分类的时候可以看到如图 需要初始化分类 hexo new page categories12Hunter-Mac:Highter.github.io yangjianwei$ hexo new page categoriesINFO Created: ~/Documents/msg/github/Highter.github.io/source/categories/index.md 修改~/Documents/msg/github/Highter.github.io/source/categories/index.md 文件123456---title: 分类date: 2017-05-18 22:38:17type: "categories"comments: false--- 标签页需要初始化标签 hexo new page tags12Hunter-Mac:Highter.github.io yangjianwei$ hexo new page tagsINFO Created: ~/Documents/msg/github/Highter.github.io/source/tags/index.md 修改~/Documents/msg/github/Highter.github.io/source/tags/index.md 文件123456---title: 标签date: 2017-05-18 22:57:40type: "tags"comments: false--- 设置文章分类和标签添加类似下面的分类和标签，注意categories和tags的冒号后需要空格12345---title: CentOS安装JDKcategories: [java]tags: [java,centos,jdk]--- 设置阅读更多修改 主题配置文件1234# Please use &lt;!-- more --&gt; in the post to control excerpt accurately.auto_excerpt: enable: true #设置为true length: 150 效果 设置描述123456---title: CentOS安装JDKcategories: [java]tags: [java,centos,jdk]description: 本文介绍在linux系统下安装JDK，这里选择在CentOS系统下实践。#摘要描述--- 结束语上面只是一些关于主题的基础配置，更多详情配置参考Next主题使用文档]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
         <tag>hexo</tag>
       </tags>
   </entry>
@@ -249,19 +249,6 @@
       <tags>
         <tag>centos</tag>
         <tag>linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[sql批量插入-存在id相同则更新数据]]></title>
-    <url>%2F2017%2F05%2F04%2Fsql%E6%89%B9%E9%87%8F%E6%8F%92%E5%85%A5%3A%E5%AD%98%E5%9C%A8id%E7%9B%B8%E5%90%8C%E5%88%99%E6%9B%B4%E6%96%B0%E6%95%B0%E6%8D%AE%2F</url>
-    <content type="text"><![CDATA[建表语句12345678910SET FOREIGN_KEY_CHECKS=0;-- ------------------------------ Table structure for user-- ----------------------------DROP TABLE IF EXISTS `user`;CREATE TABLE `user` ( `a` int(11) NOT NULL, `b` varchar(20) DEFAULT NULL, PRIMARY KEY (`a`)) ENGINE=InnoDB DEFAULT CHARSET=utf8; 插入测试数据1INSERT INTO USER VALUES (1,'a'),(2,'b'),(3,'c'); 查看结果：1SELECT * from USER ; 插入存在id的测试数据1INSERT INTO USER VALUES (1,'a'),(2,'b'),(3,'c'),(4,'d') ON DUPLICATE KEY UPDATE b='test'; 查看结果：1SELECT * from USER ; 到此，我们已经可以成功看到测试结果，我们已经做到了 在sql批量插入时候，存在id相同则更新数据。]]></content>
-      <categories>
-        <category>mysql</category>
-      </categories>
-      <tags>
-        <tag>mysql</tag>
-        <tag>数据库</tag>
-        <tag>sql</tag>
       </tags>
   </entry>
   <entry>
@@ -285,6 +272,19 @@
       </categories>
       <tags>
         <tag>tomcat</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[sql批量插入-存在id相同则更新数据]]></title>
+    <url>%2F2017%2F05%2F04%2Fsql%E6%89%B9%E9%87%8F%E6%8F%92%E5%85%A5%3A%E5%AD%98%E5%9C%A8id%E7%9B%B8%E5%90%8C%E5%88%99%E6%9B%B4%E6%96%B0%E6%95%B0%E6%8D%AE%2F</url>
+    <content type="text"><![CDATA[建表语句12345678910SET FOREIGN_KEY_CHECKS=0;-- ------------------------------ Table structure for user-- ----------------------------DROP TABLE IF EXISTS `user`;CREATE TABLE `user` ( `a` int(11) NOT NULL, `b` varchar(20) DEFAULT NULL, PRIMARY KEY (`a`)) ENGINE=InnoDB DEFAULT CHARSET=utf8; 插入测试数据1INSERT INTO USER VALUES (1,'a'),(2,'b'),(3,'c'); 查看结果：1SELECT * from USER ; 插入存在id的测试数据1INSERT INTO USER VALUES (1,'a'),(2,'b'),(3,'c'),(4,'d') ON DUPLICATE KEY UPDATE b='test'; 查看结果：1SELECT * from USER ; 到此，我们已经可以成功看到测试结果，我们已经做到了 在sql批量插入时候，存在id相同则更新数据。]]></content>
+      <categories>
+        <category>mysql</category>
+      </categories>
+      <tags>
+        <tag>mysql</tag>
+        <tag>数据库</tag>
+        <tag>sql</tag>
       </tags>
   </entry>
   <entry>
@@ -443,17 +443,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Jenkins安装]]></title>
-    <url>%2F2017%2F04%2F18%2FJenkins%E5%AE%89%E8%A3%85%2F</url>
-    <content type="text"><![CDATA[下载下载地址： https://jenkins.io/download/选择适合自己电脑型号的版本，我这里下载的是win系统的版本。 安装解压解压，得到jenkins.msi安装包，双击运行 欢迎界面点击Next 选择安装路径选择好安装路径之后，点击Next 安装点击Install，开始安装 等待安装 安装完成到此，Jenkins 已经安装完成，点击Finish跳转到网页上进行配置 配置Jenkins server配置页面在2.6步骤的时候点击Finish会自动跳转到配置页面，如果不小心关闭了，在浏览器上输入 http://127.0.0.1:8080 自行打开 输入默认密码根据提示，找到密码输入，点击Continue 配置Jenkins server安装插件，这里选择推荐的插件进行安装，点击Install suggested plugins即可。当然用户也可以自定义选择插件进行安装，如果这一步选择插件有遗漏的话，后续也可以进行补充安装 等待配置等待安装，等待10分钟左右（电脑配置不同安装时间也不同） 设置用户和密码安装完之后，跳到配置用户和密码的界面，输入相关信息，设置用户和密码，点击 Sava and Finish 即可。如果这一步被跳过，默认用户名就是admin，默认密码就是3.2步骤的密码 配置成功到此，Jenkins server已经配置成功了。点击 Start using Jenkins 开启Jenkins之旅吧！ 访问Jenkins服务器登陆接下来在日常使用中，如果想打开Jenkins服务器，在浏览器输入 http://127.0.0.1:8080 ，填写配置的用户名和密码，点击登陆即可 Jenkins主界面登陆成功之后，就可以进入到Jenkins主界面了。欢迎来到新大陆！ Jenkins服务器维护命令打开控制台/命令行 - &gt;转到您的Jenkins安装目录。分别执行以下命令停止：jenkins.exe stop开始：jenkins.exe start重新启动：jenkins.exe restart]]></content>
-      <categories>
-        <category>jenkins</category>
-      </categories>
-      <tags>
-        <tag>jenkins</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[Git安装]]></title>
     <url>%2F2017%2F04%2F18%2FGit%E5%AE%89%E8%A3%85%2F</url>
     <content type="text"><![CDATA[下载win版本下载地址： https://git-for-windows.github.io/ 安装双击安装包 Next 选择安装路径选择好安装路径之后，点击Next 选择组件默认打钩，用户可以自行选择其它，这里多选择了在桌面生成图标，点击Next 配置名称设置开始菜单的名称，默认Git，点击Next 设置环境变量在“Adjusting your PATH environment”选项中，默认即可。点击 Next注：这个步骤选择第二项“Use Git from the Windows Command Prompt”， 这样在Windows的命令行cmd中也可以运行git命令了。这样会对以后的一些操作带来方便。 选择https传输方式 配置行结束标记保持默认“Checkout Windows-style, commit Unix-style line endings” 选择终端在终端模拟器选择页面,默认即可，配置后Git Gash的终端比较易用。然后点击“Next” 配置额外选择最后配置Git额外选择默认即可，然后点击“Install”开始安装，如果之前安装过旧版本，会先卸载然后再安装新版本 等待安装 安装完成到此，Git已经安装完毕，点击Finish即可 参考文章：https://git-scm.com/book/zh/v1/%E8%B5%B7%E6%AD%A5-%E5%AE%89%E8%A3%85-Git]]></content>
@@ -462,6 +451,17 @@
       </categories>
       <tags>
         <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Jenkins安装]]></title>
+    <url>%2F2017%2F04%2F18%2FJenkins%E5%AE%89%E8%A3%85%2F</url>
+    <content type="text"><![CDATA[下载下载地址： https://jenkins.io/download/选择适合自己电脑型号的版本，我这里下载的是win系统的版本。 安装解压解压，得到jenkins.msi安装包，双击运行 欢迎界面点击Next 选择安装路径选择好安装路径之后，点击Next 安装点击Install，开始安装 等待安装 安装完成到此，Jenkins 已经安装完成，点击Finish跳转到网页上进行配置 配置Jenkins server配置页面在2.6步骤的时候点击Finish会自动跳转到配置页面，如果不小心关闭了，在浏览器上输入 http://127.0.0.1:8080 自行打开 输入默认密码根据提示，找到密码输入，点击Continue 配置Jenkins server安装插件，这里选择推荐的插件进行安装，点击Install suggested plugins即可。当然用户也可以自定义选择插件进行安装，如果这一步选择插件有遗漏的话，后续也可以进行补充安装 等待配置等待安装，等待10分钟左右（电脑配置不同安装时间也不同） 设置用户和密码安装完之后，跳到配置用户和密码的界面，输入相关信息，设置用户和密码，点击 Sava and Finish 即可。如果这一步被跳过，默认用户名就是admin，默认密码就是3.2步骤的密码 配置成功到此，Jenkins server已经配置成功了。点击 Start using Jenkins 开启Jenkins之旅吧！ 访问Jenkins服务器登陆接下来在日常使用中，如果想打开Jenkins服务器，在浏览器输入 http://127.0.0.1:8080 ，填写配置的用户名和密码，点击登陆即可 Jenkins主界面登陆成功之后，就可以进入到Jenkins主界面了。欢迎来到新大陆！ Jenkins服务器维护命令打开控制台/命令行 - &gt;转到您的Jenkins安装目录。分别执行以下命令停止：jenkins.exe stop开始：jenkins.exe start重新启动：jenkins.exe restart]]></content>
+      <categories>
+        <category>jenkins</category>
+      </categories>
+      <tags>
+        <tag>jenkins</tag>
       </tags>
   </entry>
   <entry>
@@ -477,6 +477,17 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[MAVEN安装]]></title>
+    <url>%2F2017%2F04%2F14%2FMAVEN%E5%AE%89%E8%A3%85%2F</url>
+    <content type="text"><![CDATA[注意：安装前请确认一下电脑是否安装了JDK，JDK的安装可以参考JDK安装一文。 下载下载地址： http://maven.apache.org/download.cgi 如图，选择适合自己电脑的版本，我这里下载的是win系统的版本。 解压 环境变量配置新建系统变量需要新建M2_HOME和MAVEN_HOME系统变量步骤：计算机→属性→高级系统设置→高级→环境变量→系统变量→新建变量名：M2_HOME变量值（填写实际安装路径）：D:\Java\MAVEN\apache-maven-3.5.0MAVEN_HOME系统变量新增同上。注:Maven 说只是添加 M2_HOME , 但一些项目仍引用 Maven 的文件夹 MAVEN_HOME, 因此，为了安全也把它添加进去。如图： 编辑Path变量在变量最后面添加：%M2_HOME%\bin;在变量值最后输入 %M2_HOME%\bin;（注意原来Path的变量值末尾有没有;号，如果没有，先输入；号再输入上面的代码） 到此，MAVEN安装与环境变量配置。 验证运行cmd 输入 mvn -v,若如图所示显示版本信息则说明安装和配置成功。 修改仓库存位置maven 的仓库默认是放在本地用户的临时文件夹下面的 .m2 文件夹下的 repository 下，我的是在 C:\Users\bank_gz.m2\repository目录下。现在我们来修改将它指定到我们自己的路径下，我现在要将仓库指定到D:\Java\MAVEN\apache-maven-3.5.0\repo 目录下，只需要将maven安装路径下conf里面的seting.xml文件。我的是在D:\Java\MAVEN\apache-maven-3.5.0\conf\seting.xml。把下面注销的本地仓库打开改成如下：修改仓库位置原因：因为maven刚安装的时候我们可以看得到maven很小，只有最基本的东西，但我们一旦使用它，就会把我们的需要的东西都下载到仓库里面，随着我们需要调用的命令越多，仓库会越来越大，所以最好不要放在c盘，不然让系统越来越慢，且以后重装系统，还要再下一次。]]></content>
+      <categories>
+        <category>maven</category>
+      </categories>
+      <tags>
+        <tag>maven</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[JDK安装]]></title>
     <url>%2F2017%2F04%2F14%2FJDK%E5%AE%89%E8%A3%85%2F</url>
     <content type="text"><![CDATA[###下载下载地址： http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html 如图，选择适合自己电脑型号的版本，我这里下载的是win系统的32位版本。 安装 双击下载之后的exe，按照提示完成安装，基本是傻瓜式的”下一步”，当然中间可以选择安装路径。注：安装完jdk之后同时会提示安装jre,也是同理安装。如图，这是安装效果： 环境变量配置新建JAVA_HOME系统变量计算机→属性→高级系统设置→高级→环境变量→系统变量→新建变量名字：JAVA_HOME路径（填写实际安装路径）：D:\Java\JDK\jdk1.8.0_121如图： 新建CLASSPATH系统变量变量名字：CLASSPATH路径： .;%JAVA_HOME%\lib;%JAVA_HOME%\lib\tools.jar（注意最前面有一点）如图： 编辑Path变量在变量最后面添加：%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin;在变量值最后输入 %JAVA_HOME%\bin;%JAVA_HOME%\jre\bin（注意原来Path的变量值末尾有没有;号，如果没有，先输入；号再输入上面的代码）到此，JDK安装与环境变量配置。 验证运行cmd 输入 java -version ，若如图所示显示版本信息则说明安装和配置成功。]]></content>
@@ -486,17 +497,6 @@
       <tags>
         <tag>java</tag>
         <tag>jdk</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[MAVEN安装]]></title>
-    <url>%2F2017%2F04%2F14%2FMAVEN%E5%AE%89%E8%A3%85%2F</url>
-    <content type="text"><![CDATA[注意：安装前请确认一下电脑是否安装了JDK，JDK的安装可以参考JDK安装一文。 下载下载地址： http://maven.apache.org/download.cgi 如图，选择适合自己电脑的版本，我这里下载的是win系统的版本。 解压 环境变量配置新建系统变量需要新建M2_HOME和MAVEN_HOME系统变量步骤：计算机→属性→高级系统设置→高级→环境变量→系统变量→新建变量名：M2_HOME变量值（填写实际安装路径）：D:\Java\MAVEN\apache-maven-3.5.0MAVEN_HOME系统变量新增同上。注:Maven 说只是添加 M2_HOME , 但一些项目仍引用 Maven 的文件夹 MAVEN_HOME, 因此，为了安全也把它添加进去。如图： 编辑Path变量在变量最后面添加：%M2_HOME%\bin;在变量值最后输入 %M2_HOME%\bin;（注意原来Path的变量值末尾有没有;号，如果没有，先输入；号再输入上面的代码） 到此，MAVEN安装与环境变量配置。 验证运行cmd 输入 mvn -v,若如图所示显示版本信息则说明安装和配置成功。 修改仓库存位置maven 的仓库默认是放在本地用户的临时文件夹下面的 .m2 文件夹下的 repository 下，我的是在 C:\Users\bank_gz.m2\repository目录下。现在我们来修改将它指定到我们自己的路径下，我现在要将仓库指定到D:\Java\MAVEN\apache-maven-3.5.0\repo 目录下，只需要将maven安装路径下conf里面的seting.xml文件。我的是在D:\Java\MAVEN\apache-maven-3.5.0\conf\seting.xml。把下面注销的本地仓库打开改成如下：修改仓库位置原因：因为maven刚安装的时候我们可以看得到maven很小，只有最基本的东西，但我们一旦使用它，就会把我们的需要的东西都下载到仓库里面，随着我们需要调用的命令越多，仓库会越来越大，所以最好不要放在c盘，不然让系统越来越慢，且以后重装系统，还要再下一次。]]></content>
-      <categories>
-        <category>maven</category>
-      </categories>
-      <tags>
-        <tag>maven</tag>
       </tags>
   </entry>
 </search>
