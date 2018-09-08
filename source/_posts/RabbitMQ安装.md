@@ -1,5 +1,5 @@
 ---
-title: RabbitMQ安装
+title: RabbitMQ安装[centos]
 date: 2017-07-23 21:41:30
 categories: [rabbitmq]
 tags: [rabbitmq]
