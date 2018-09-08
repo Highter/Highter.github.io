@@ -7,6 +7,7 @@ description: maven官方提供的仓库在国内下载速度惨不忍睹，我�
 ---
 
  **第三方Maven仓库地址使用  ** 
+
 国内maven仓库下载东西好慢，好多企业都会自建maven仓库，对于我们这些个人开发者就悲催了，还能好好玩耍吗？
 还好国内还是有比较好用的maven仓库，比如：阿里云的。
 地址：http://maven.aliyun.com/nexus/ 
