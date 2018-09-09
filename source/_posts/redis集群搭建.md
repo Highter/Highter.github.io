@@ -5,7 +5,6 @@ categories: [redis]
 tags: [redis]
 description: 本文是在centos7系统上安装redis3.2.9集群。
 ---
-### centos7搭建redis集群
 ### 安装集群环境
 ```shell
 [root@localhost data]# yum install gcc g++  
