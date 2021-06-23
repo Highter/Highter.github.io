@@ -34,11 +34,10 @@ $ brew install gradle
 
 1、下载
 地址： https://gradle.org/releases/
- 如图，可以选择所需版本
-
-![image-20210623162444929](/Users/yangjianwei/Library/Application Support/typora-user-images/image-20210623162444929.png)
+可以在页面上选择所需版本下载。
 
 2、解压
+
 ```shell
 $ unzip -d /Users/yangjianwei/Documents/software/gradle gradle-7.1-bin.zip
 $ ls /Users/yangjianwei/Documents/software/gradle/gradle-7.1
